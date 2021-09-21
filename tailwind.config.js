@@ -19,7 +19,9 @@ module.exports = {
                     dark: '#1C212B'
                 },
                 'brand-pink': {
+                    light: '#ff4d93',
                     DEFAULT: '#FA0062',
+                    dark: '#a50041',
                 },
             },
         },
@@ -28,6 +30,7 @@ module.exports = {
     variants: {
         extend: {
             opacity: ['disabled'],
+            backgroundColor: ['active'],
         },
     },
 

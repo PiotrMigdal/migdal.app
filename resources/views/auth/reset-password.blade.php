@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current " />
             </a>
         </x-slot>
 
@@ -39,9 +39,9 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
+                <x-btn-primary>
                     {{ __('Reset Password') }}
-                </x-button>
+                </x-btn-primary>
             </div>
         </form>
     </x-auth-card>
