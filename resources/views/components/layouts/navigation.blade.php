@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-brand-gray-light border-b border-brand-gray-dark">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -65,7 +65,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-0.5">
+        <div class="pt-2 pb-3 space-y-0.5 shadow-md">
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('About') }}
             </x-responsive-nav-link>
@@ -81,7 +81,7 @@
                 <div class="font-medium text-sm ">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="px-4 text-brand-pink">
+            <div class="px-4">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -89,7 +89,7 @@
                     <a :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        <x-btn-secondary>{{ __('Log Out') }}</x-btn-secondary>
                     </a>
                 </form>
             </div>

@@ -2,6 +2,6 @@
     <x-slot name="header">
         {{ __('Timeline ' . Auth::user()->name) }}
     </x-slot>
-    test
+    adadas
 </x-layouts.app>
 
