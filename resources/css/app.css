@@ -3,13 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
-    /* .btn {
-        @apply inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:outline-none disabled:opacity-25 transition ease-in-out duration-150
+    .h1 {
+        @apply font-bold mt-8 mb-6 sm:text-2xl text-xl
     }
-    .btn-primary {
-        @apply bg-brand-pink text-white hover:bg-brand-pink-light active:bg-brand-pink-dark focus:border-brand-pink-dark focus:ring ring-brand-pink-light
-    }
-    .btn-secondary {
-        @apply bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 focus:border-gray-900 focus:ring ring-gray-300
-    } */
 }
