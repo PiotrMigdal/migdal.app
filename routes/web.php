@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TimelineController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AboutController::class, 'index'])->middleware('auth')->name('about');
 Route::get('/timeline', [TimelineController::class, 'index'])->middleware('auth')->name('timeline');
+Route::get('/projects', [ProjectController::class, 'index'])->middleware('auth')->name('projects');
+Route::get('/courses', [CourseController::class, 'index'])->middleware('auth')->name('courses');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

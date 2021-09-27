@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="bg-brand-gray-light border-b border-brand-gray-dark">
+<nav x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -17,6 +17,12 @@
                     </x-nav-link>
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                         {{ __('Timeline') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
+                        {{ __('Courses') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -71,6 +77,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                 {{ __('Timeline') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
+                {{ __('Projects') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
+                {{ __('Courses') }}
             </x-responsive-nav-link>
         </div>
 

@@ -2,8 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer components {
-    .h1 {
+@layer base {
+    h1 {
         @apply font-bold mt-8 mb-6 sm:text-2xl text-xl
     }
+    h2 {
+        @apply font-bold my-3 text-lg
+    }
+    h3 {
+        @apply font-bold my-2 text-sm
+    }
+
 }

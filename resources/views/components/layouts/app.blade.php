@@ -16,13 +16,13 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-brand-gray text-gray-50">
+    <body class="font-sans antialiased bg-brand-gray-dark text-gray-50">
         <div class="min-h-screen">
             @include('components.layouts.navigation')
 
             <!-- Page Heading -->
-            <header class="shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header class="shadow bg-brand-gray py-6">
+                <div class="border-b-2 container lg:px-8 mx-auto px-4 py-6 mb-6 sm:px-6">
                     <h2 class="font-semibold text-xl leading-tight uppercase">
                     {{ $header }}
                     </h2>
@@ -30,21 +30,23 @@
             </header>
 
             <!-- Page Content -->
-            <main>
-                <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div class="overflow-hidden">
+            <main class="bg-brand-gray">
+                <div class="container mx-auto px-6 lg:px-8">
+                    <div class="overflow-hidden pb-16">
                         {{ $slot }}
                     </div>
                 </div>
             </main>
-            <footer class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="bg-gradient-to-r from-transparent via-brand-pink to-transparent h-0.5"></div>
-                <div class="py-6 flex justify-between">
-                    <div>
-                        Created by Piotr Migdal in 2021.
-                    </div>
-                    <div>
-                        See more on <a class="text-brand-pink-dark" href="#" >GitHub</a>
+            <footer>
+                <div class="container mx-auto px-6 lg:px-8">
+                    <div class="bg-gradient-to-r from-transparent via-brand-pink to-transparent h-0.5"></div>
+                    <div class="py-6 flex justify-between">
+                        <div>
+                            Created by Piotr Migdal in 2021.
+                        </div>
+                        <div>
+                            See more on <a class="text-brand-pink-dark" href="#" >GitHub</a>
+                        </div>
                     </div>
                 </div>
             </footer>
