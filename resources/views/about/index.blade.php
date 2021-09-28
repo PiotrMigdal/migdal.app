@@ -16,7 +16,7 @@
         </aside>
         <section class="lg:col-span-3">
             <h1>
-                Why this website done
+                {{ Auth::user()->about_me_title }}
             </h1>
             <p class="tracking-wide my-2">Section. Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sed! At facere sunt molestias voluptates perspiciatis quam quas iusto quia vitae, libero quibusdam autem vel modi ducimus soluta perferendis id! Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sed! At facere sunt molestias voluptates perspiciatis quam quas iusto quia vitae, libero quibusdam autem vel modi ducimus soluta perferendis id!</p>
             <p class="tracking-wide my-2">Section. Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sed! At facere sunt molestias voluptates perspiciatis quam quas iusto quia vitae, libero quibusdam autem vel modi ducimus soluta perferendis id!</p>

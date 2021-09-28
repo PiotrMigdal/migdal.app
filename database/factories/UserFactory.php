@@ -23,11 +23,18 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'username' => $this->faker->unique()->userName(),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'about_me_title' => $this->faker->sentence(),
+            'about_me_body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
+            'education' => $this->faker->boolean(50) ? $this->faker->city() . ' University' : $this->faker->city() . ' College',
+            'age' => $this->faker->numberBetween($min = 18, $max = 70),
+            'main_job' => $this->faker->jobTitle(),
+            'aditional_job' => $this->faker->boolean(50) ? $this->faker->jobTitle() : ''
         ];
     }
 
