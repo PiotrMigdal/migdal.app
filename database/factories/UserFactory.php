@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'education' => $this->faker->boolean(50) ? $this->faker->city() . ' University' : $this->faker->city() . ' College',
             'age' => $this->faker->numberBetween($min = 18, $max = 70),
             'main_job' => $this->faker->jobTitle(),
-            'aditional_job' => $this->faker->boolean(50) ? $this->faker->jobTitle() : ''
+            'additional_job' => $this->faker->boolean(50) ? $this->faker->jobTitle() : ''
         ];
     }
 

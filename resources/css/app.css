@@ -13,4 +13,8 @@
         @apply font-bold my-2 text-sm
     }
 
+    .img-large-circle {
+        @apply m-auto h-48 w-48 rounded-full border-gray-50 border-2 object-cover
+    }
+
 }

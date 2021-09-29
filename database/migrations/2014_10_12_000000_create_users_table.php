@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('education')->nullable();
             $table->string('age')->nullable();
             $table->string('main_job')->nullable();
-            $table->string('aditional_job')->nullable();
+            $table->string('additional_job')->nullable();
             $table->timestamps();
         });
     }
