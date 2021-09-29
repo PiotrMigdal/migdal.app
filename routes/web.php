@@ -19,10 +19,24 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [AboutController::class, 'index'])->middleware('auth')->name('about');
-Route::get('/timeline', [TimelineController::class, 'index'])->middleware('auth')->name('timeline');
-Route::get('/projects', [ProjectController::class, 'index'])->middleware('auth')->name('projects');
-Route::get('/courses', [CourseController::class, 'index'])->middleware('auth')->name('courses');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [AboutController::class, 'index'])->name('about');
+    Route::get('/timeline', [TimelineController::class, 'index'])->name('timeline');
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('/courses', [CourseController::class, 'index'])->name('courses');
+
+
+    // ADMIN PANEL
+    Route::get('/admin', [CourseController::class, 'index'])->name('admin');
+
+    Route::get('admin/posts/create', [AdminPostController::class, 'create']);
+    Route::post('admin/posts', [AdminPostController::class, 'store']);
+    Route::get('admin/posts', [AdminPostController::class, 'index']);
+    Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
+    Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
+    Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

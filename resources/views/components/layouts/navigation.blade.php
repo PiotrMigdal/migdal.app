@@ -10,7 +10,7 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Left navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('About') }}
@@ -27,8 +27,13 @@
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            <!-- Right navigation Links -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <div class="mx-7">
+                    <x-nav-link-admin :href="route('admin')" :active="request()->routeIs('admin')">
+                        {{ __('Admin') }}
+                    </x-nav-link-admin>
+                </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium  hover: hover:border-gray-300 focus:outline-none focus: focus:border-gray-300 transition duration-150 ease-in-out">
@@ -84,6 +89,9 @@
             <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
                 {{ __('Courses') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link-admin :href="route('admin')" :active="request()->routeIs('admin')">
+                {{ __('Admin') }}
+            </x-responsive-nav-link-admin>
         </div>
 
         <!-- Responsive Settings Options -->
