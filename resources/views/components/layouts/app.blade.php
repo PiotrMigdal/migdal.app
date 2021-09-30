@@ -39,5 +39,6 @@
             </main>
             @include('components.layouts._footer')
         </div>
+        <x-flash />
     </body>
 </html>
