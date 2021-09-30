@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TimelineController;
@@ -28,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
 
     // ADMIN PANEL
-    Route::get('/admin', [CourseController::class, 'index'])->name('admin');
+    Route::get('/admin', [AdminAboutController::class, 'index'])->name('admin');
 
     Route::get('admin/posts/create', [AdminPostController::class, 'create']);
     Route::post('admin/posts', [AdminPostController::class, 'store']);

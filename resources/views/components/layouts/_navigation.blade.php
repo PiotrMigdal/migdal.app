@@ -30,9 +30,9 @@
             <!-- Right navigation Links -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="mx-7">
-                    <x-nav-link-admin :href="route('admin')" :active="request()->routeIs('admin')">
+                    <x-nav-link-special :href="route('admin')" :active="request()->routeIs('admin')">
                         {{ __('Admin') }}
-                    </x-nav-link-admin>
+                    </x-nav-link-special>
                 </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -89,9 +89,9 @@
             <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
                 {{ __('Courses') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link-admin :href="route('admin')" :active="request()->routeIs('admin')">
+            <x-responsive-nav-link-special :href="route('admin')" :active="request()->routeIs('admin')">
                 {{ __('Admin') }}
-            </x-responsive-nav-link-admin>
+            </x-responsive-nav-link-special>
         </div>
 
         <!-- Responsive Settings Options -->

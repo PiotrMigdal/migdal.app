@@ -18,7 +18,7 @@
     </head>
     <body class="font-sans antialiased bg-brand-gray-dark text-gray-50">
         <div class="min-h-screen">
-            @include('components.layouts.navigation')
+            @include('components.layouts._navigation')
 
             <!-- Page Heading -->
             <header class="shadow bg-brand-gray py-6">
@@ -37,19 +37,7 @@
                     </div>
                 </div>
             </main>
-            <footer>
-                <div class="container mx-auto px-6 lg:px-8">
-                    <div class="bg-gradient-to-r from-transparent via-brand-pink to-transparent h-0.5"></div>
-                    <div class="py-6 flex justify-between">
-                        <div>
-                            Created by Piotr Migdal in 2021.
-                        </div>
-                        <div>
-                            See more on <a class="text-brand-pink-dark" href="#" >GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            @include('components.layouts._footer')
         </div>
     </body>
 </html>
