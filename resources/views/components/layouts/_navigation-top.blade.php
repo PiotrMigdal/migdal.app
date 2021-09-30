@@ -13,27 +13,19 @@
                 <!-- Left navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('About') }}
+                        {{ __('Piotr Migdal') }}
                     </x-nav-link>
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
-                        {{ __('Timeline') }}
+                        {{ __('Other colleagues') }}
                     </x-nav-link>
                     <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
-                        {{ __('Projects') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
-                        {{ __('Courses') }}
+                        {{ __('My account') }}
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Right navigation Links -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <div class="mx-7">
-                    <x-nav-link-special :href="route('admin')" :active="request()->routeIs('admin')">
-                        {{ __('Admin') }}
-                    </x-nav-link-special>
-                </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium  hover: hover:border-gray-300 focus:outline-none focus: focus:border-gray-300 transition duration-150 ease-in-out">
@@ -78,20 +70,14 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-0.5 shadow-md">
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                {{ __('About') }}
+                {{ __('Piotr Migdal') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
-                {{ __('Timeline') }}
+                {{ __('Other colleagues') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
-                {{ __('Projects') }}
+                {{ __('My account') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
-                {{ __('Courses') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link-special :href="route('admin')" :active="request()->routeIs('admin')">
-                {{ __('Admin') }}
-            </x-responsive-nav-link-special>
         </div>
 
         <!-- Responsive Settings Options -->

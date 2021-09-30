@@ -1,5 +1,5 @@
 
-<x-layouts.app>
+<x-layouts.layout>
     <x-slot name="header">
         Admin  Panel
     </x-slot>
@@ -23,7 +23,7 @@
             </nav>
         </aside>
 
-        <!-- Responsive top navigation -->
+        <!-- Responsive left navigation -->
         <nav class="sm:hidden grid grid-cols-2 gap-2">
                 <x-responsive-nav-left-link :href="route('admin')" :active="request()->routeIs('admin')">
                     {{ __('About') }}
@@ -46,4 +46,4 @@
             </div>
         </article>
     </div>
-</x-layouts.app>
+</x-layouts.layout>

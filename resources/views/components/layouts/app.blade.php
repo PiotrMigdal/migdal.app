@@ -1,44 +1,58 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<x-layouts.layout>
+    <x-slot name="header">
+        {{ $header }}
+    </x-slot>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <div class="sm:flex">
+        <!-- Left navigation -->
+        <aside class="hidden mt-5 sm:block w-48 sm:flex-shrink-0">
+            <nav class="bg-brand-gray-dark mr-8">
+                <x-nav-left-link :href="route('about')" :active="request()->routeIs('about')">
+                    {{ __('About') }}
+                </x-nav-left-link>
+                <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+                    {{ __('Timeline') }}
+                </x-nav-left-link>
+                <x-nav-left-link :href="route('projects')" :active="request()->routeIs('projects')">
+                    {{ __('Projects') }}
+                </x-nav-left-link>
+                <x-nav-left-link :href="route('courses')" :active="request()->routeIs('courses')">
+                    {{ __('Courses') }}
+                </x-nav-left-link>
+            </nav>
+        </aside>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- Responsive left navigation -->
+        <nav class="sm:hidden grid grid-cols-2 gap-2">
+                <x-responsive-nav-left-link :href="route('about')" :active="request()->routeIs('about')">
+                    {{ __('About') }}
+                </x-responsive-nav-left-link>
+                <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+                    {{ __('Timeline') }}
+                </x-responsive-nav-left-link>
+                <x-responsive-nav-left-link :href="route('projects')" :active="request()->routeIs('projects')">
+                    {{ __('Projects') }}
+                </x-responsive-nav-left-link>
+                <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
+                    {{ __('Courses') }}
+                </x-responsive-nav-link>
+        </nav>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased bg-brand-gray-dark text-gray-50">
-        <div class="min-h-screen">
-            @include('components.layouts._navigation')
-
-            <!-- Page Heading -->
-            <header class="shadow bg-brand-gray py-6">
+        <article class="flex-1">
+            <header class="py-4">
                 <div class="border-b-2 container lg:px-8 mx-auto px-4 py-6 mb-6 sm:px-6">
                     <h2 class="font-semibold text-xl leading-tight uppercase">
                     {{ $header }}
                     </h2>
                 </div>
             </header>
-
-            <!-- Page Content -->
-            <main class="bg-brand-gray">
-                <div class="container mx-auto px-6 lg:px-8">
-                    <div class="overflow-hidden pb-16">
-                        {{ $slot }}
-                    </div>
+            <!-- Settings content -->
+            <section>
+                <div class="my-3">
+                    {{ $slot }}
                 </div>
-            </main>
-            @include('components.layouts._footer')
-        </div>
-        <x-flash />
-    </body>
-</html>
+            </section>
+        </article>
+    </div>
+</x-layouts.layout>

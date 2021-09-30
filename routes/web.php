@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TimelineController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [AboutController::class, 'index'])->name('about');
+    Route::get('/{user:username}', [UserController::class, 'show'])->name('user');
     Route::get('/timeline', [TimelineController::class, 'index'])->name('timeline');
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
     Route::get('/courses', [CourseController::class, 'index'])->name('courses');
