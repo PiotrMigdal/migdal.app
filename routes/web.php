@@ -7,6 +7,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\UserController;
+use App\Models\About;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +26,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AboutController::class, 'index'])->name('about');
-    Route::get('/{user:username}', [UserController::class, 'show'])->name('user');
-    Route::get('/timeline', [TimelineController::class, 'index'])->name('timeline');
-    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
-    Route::get('/courses', [CourseController::class, 'index'])->name('courses');
+    Route::get('/users/{user:username}', [UserController::class, 'show'])->name('user');
+    Route::get('/users/{user:username}/about', [UserController::class, 'about'])->name('about');
+
+
+    Route::get('/users/timeline', [TimelineController::class, 'index'])->name('timeline');
+    Route::get('/users/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('/users/courses', [CourseController::class, 'index'])->name('courses');
 
 
     // ADMIN PANEL

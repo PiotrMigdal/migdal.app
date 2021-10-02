@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index() {
 
-    }
     public function show(User $user)
     {
         return view('user.show', [
+            'user' => $user
+        ]);
+    }
+    public function about(User $user)
+    {
+        return view('user.about', [
             'user' => $user
         ]);
     }

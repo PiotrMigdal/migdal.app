@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         About::factory(10)->create();
 
-        $user = User::factory()->create([
+
+        User::factory()->create([
             'username' => 'PiotrMigdal',
             'name' => 'Piotr Migdal',
             'email' => 'p.f.migdal@gmail.com',
@@ -26,6 +27,13 @@ class DatabaseSeeder extends Seeder
             'age' => 100,
             'main_job' => 'Civil Engineer',
             'additional_job' => 'Sole trader'
+        ]);
+        About::factory()->create([
+            'user_id' => 11,
+            'title' => 'Awesome about',
+            'slug' => 'awesome-about',
+            'excerpt' => '<p>excerpt here</p>',
+            'body' => '<p>body here</p>'
         ]);
     }
 }

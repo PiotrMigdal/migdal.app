@@ -1,14 +1,10 @@
-
+@props(['user'])
 <x-layouts.layout>
-    <x-slot name="header">
-        {{ $header }}
-    </x-slot>
-
     <div class="sm:flex">
         <!-- Left navigation -->
         <aside class="hidden mt-5 sm:block w-48 sm:flex-shrink-0">
             <nav class="bg-brand-gray-dark mr-8">
-                <x-nav-left-link :href="route('about')" :active="request()->routeIs('about')">
+                <x-nav-left-link :href="route('about', $user->username)" :active="request()->routeIs('about')">
                     {{ __('About') }}
                 </x-nav-left-link>
                 <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -25,7 +21,7 @@
 
         <!-- Responsive left navigation -->
         <nav class="sm:hidden grid grid-cols-2 gap-2">
-                <x-responsive-nav-left-link :href="route('about')" :active="request()->routeIs('about')">
+                <x-responsive-nav-left-link :href="route('about', $user->username)" :active="request()->routeIs('about')">
                     {{ __('About') }}
                 </x-responsive-nav-left-link>
                 <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -40,11 +36,12 @@
         </nav>
 
         <article class="flex-1">
+            <!-- Page Heading -->
             <header class="py-4">
-                <div class="border-b-2 container lg:px-8 mx-auto px-4 py-6 mb-6 sm:px-6">
-                    <h2 class="font-semibold text-xl leading-tight uppercase">
+                <div class="shadow-lg lg:px-8 mx-auto px-4 py-6 mb-6 sm:px-6">
+                    <div class="bg-brand-gray-dark font-semibold inline leading-tight px-8 py-2 rounded-full shadow-md tracking-wide uppercase">
                     {{ $header }}
-                    </h2>
+                    </div>
                 </div>
             </header>
             <!-- Settings content -->

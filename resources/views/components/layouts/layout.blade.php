@@ -24,8 +24,6 @@
             <main class="bg-brand-gray">
                 <div class="container mx-auto px-6 lg:px-8">
                     <div class="overflow-hidden pb-16">
-
-                        <!-- Page Heading -->
                         {{ $slot }}
                     </div>
                 </div>

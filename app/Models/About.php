@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class About extends Model
 {
     use HasFactory;
-
-    public function author()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 }

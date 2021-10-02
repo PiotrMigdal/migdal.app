@@ -1,8 +1,5 @@
 
 <x-layouts.layout>
-    <x-slot name="header">
-        Admin  Panel
-    </x-slot>
 
     <div class="sm:flex">
         <!-- Left navigation -->

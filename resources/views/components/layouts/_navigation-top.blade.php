@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('about') }}">
+                    <a href="/users/PiotrMigdal">
                         <x-logo-horizontal class="block h-10 w-auto fill-current " />
                     </a>
                 </div>
 
                 <!-- Left navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                    <x-nav-link href="/users/PiotrMigdal" :active="request()->Is('users/PiotrMigdal')">
                         {{ __('Piotr Migdal') }}
                     </x-nav-link>
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -69,7 +69,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-0.5 shadow-md">
-            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
+            <x-responsive-nav-link href="/users/piotrmigdal" :active="request()->Is('users/piotrmigdal')">
                 {{ __('Piotr Migdal') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
