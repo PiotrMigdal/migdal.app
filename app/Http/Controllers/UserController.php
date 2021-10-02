@@ -14,10 +14,4 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
-    public function about(User $user)
-    {
-        return view('user.about', [
-            'user' => $user
-        ]);
-    }
 }

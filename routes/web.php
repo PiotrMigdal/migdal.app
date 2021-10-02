@@ -27,7 +27,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/users/{user:username}', [UserController::class, 'show'])->name('user');
-    Route::get('/users/{user:username}/about', [UserController::class, 'about'])->name('about');
+    Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about');
+
+    Route::get('/users/{user:username}/about/{about:slug}', [AboutController::class, 'show'])->name('show.about');
+
+    Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about');
 
 
     Route::get('/users/timeline', [TimelineController::class, 'index'])->name('timeline');
