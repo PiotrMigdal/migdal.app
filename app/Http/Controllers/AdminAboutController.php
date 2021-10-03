@@ -8,8 +8,4 @@ use Illuminate\Validation\Rule;
 
 class AdminAboutController extends Controller
 {
-    public function index()
-    {
-        return view('admin.about.index');
-    }
 }

@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                         {{ __('Other colleagues') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
+                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
                         {{ __('My account') }}
                     </x-nav-link>
                 </div>

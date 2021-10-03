@@ -8,6 +8,10 @@ use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
 {
+    public function index()
+    {
+        return view('admin.user.index');
+    }
     public function update(User $user) {
         $attributes = request()->validate([
             'name' => 'required|max:255',

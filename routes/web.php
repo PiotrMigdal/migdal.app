@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
 
 
     // ADMIN PANEL
-    Route::get('/admin', [AdminAboutController::class, 'index'])->name('admin');
+    Route::get('/admin', [AdminUserController::class, 'index'])->name('admin');
 
     Route::post('admin/user', [AdminUserController::class, 'store']);
 
