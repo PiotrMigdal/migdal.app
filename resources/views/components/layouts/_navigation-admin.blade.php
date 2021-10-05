@@ -5,7 +5,7 @@
         <x-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+        <x-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs('about.index.admin')">
             {{ __('About') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -25,8 +25,8 @@
         <x-responsive-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
-            {{ __('Timeline') }}
+        <x-responsive-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs('about.index.admin')">
+            {{ __('About') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Courses') }}
