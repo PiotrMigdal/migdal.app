@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('user.update');
     Route::get('/admin/about', [AdminAboutController::class, 'index'])->name('about.index.admin');
     Route::get('/admin/about/{about}', [AdminAboutController::class, 'edit'])->name('about.edit');
+    Route::patch('admin/about/{about}', [AdminAboutController::class, 'update'])->name('about.update');
 
 
 

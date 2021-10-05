@@ -17,7 +17,7 @@
 
                     <div class="flex m-auto">
                         <div class="p-3 md:p-8 m-auto">
-                            <a href="/admin/posts/{{ $about->id }}/edit" class="text-blue-500 hover:text-blue-700" title="Edit">Edit</a>
+                            <a href="{{ route('about.edit', $about->id) }}" class="text-blue-500 hover:text-blue-700" title="Edit">Edit</a>
                         </div>
 
                         <div class="p-3 md:p-8 m-auto">

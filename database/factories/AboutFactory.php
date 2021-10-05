@@ -25,7 +25,6 @@ class AboutFactory extends Factory
         return [
             'user_id' => User::factory(),
             'title' => $this->faker->sentence(),
-            'slug' => $this->faker->slug(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(4)) . '</p>',
             'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(8)) . '</p>'
         ];

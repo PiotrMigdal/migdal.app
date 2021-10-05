@@ -24,7 +24,7 @@
                         <x-form.input name='education' :value="old('education', Auth::user()->education)"/>
                         <x-form.input name='main_job' labelname='Main job' :value="old('main_job', Auth::user()->main_job)"/>
                         <x-form.input name='additional_job' labelname='Additional job' :value="old('additional_job', Auth::user()->additional_job)"/>
-                        <div class="flex justify-end"><x-form.button>Publish</x-form.button></div>
+                        <div class="flex justify-end"><x-form.button>Save</x-form.button></div>
                     </div>
                 </div>
             </div>

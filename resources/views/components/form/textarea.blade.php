@@ -5,7 +5,8 @@
     @endif
 
     <textarea name="{{ $name }}" id="{{ $name }}" required
-    class="border border-gray-300 rounded-sm w-full {{ !$label ? 'mt-3' : '' }}">{{ $slot ?? old($name) }}</textarea>
+    {{ $attributes->merge(['class' => 'bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-pink focus:ring-opacity-50 p-2 ring-1 ring-brand-gray-light rounded-md shadow-sm w-full resize-y overflow-hidden']) }}
+    >{{ $slot ?? old($name) }}</textarea>
 
     <x-form.error name="{{ $name }}"/>
 </div>
