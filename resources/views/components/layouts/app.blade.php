@@ -10,7 +10,7 @@
         <article class="flex-1">
             <!-- Page Heading -->
             <header class="py-4">
-                <div class="lg:px-8 mb-6 mx-auto px-4 py-6 sm:px-6">
+                <div class="lg:px-8 mx-auto px-4 py-6 sm:px-6">
                     <div class="bg-brand-gray-dark font-semibold inline leading-tight px-8 py-2 rounded-full shadow-md tracking-wide uppercase">
                     {{ $header }}
                     </div>

@@ -1,7 +1,7 @@
-@props(['name', 'label' => true])
+@props(['name', 'label' => true, 'labelname'])
 <div class="mb-6">
     @if ($label)
-        <x-form.label name="{{ $name }}"/>
+        <x-form.label name="{{ $labelname ?? $name }}"/>
     @endif
 
     <textarea name="{{ $name }}" id="{{ $name }}" required

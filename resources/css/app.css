@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* input webkit override default browser behaviour which caused background colour change */
 @layer base {
     h1 {
         @apply font-bold mt-8 mb-6 sm:text-2xl text-xl
@@ -11,6 +12,11 @@
     }
     h3 {
         @apply font-bold my-2 text-sm
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
     }
 
 }

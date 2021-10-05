@@ -12,20 +12,18 @@ class AdminUserController extends Controller
     {
         return view('admin.user.index');
     }
-    public function update(User $user) {
+    public function update(User $user)
+    {
         $attributes = request()->validate([
             'name' => 'required|max:255',
-            'username' => ['required|max:255', Rule::unique('user', 'username')->ignore($user->id)],
-            'email' => 'required|max:255|email|unique:users,email',
-            'thumbnail' => 'image',
-            'age',
-            'education',
-            'main_job',
-            'additional_job',
-            'about_me_title',
-            'about_me_body'
+            'username' => ['required', Rule::unique('users', 'username')->ignore($user->id)],
+            'email' => ['required', 'max:255', 'email', Rule::unique('users', 'email')->ignore($user->id)],
+            'age' => 'max:255',
+            'education' => 'max:255',
+            'main_job' => 'max:255',
+            'additional_job' => 'max:255'
         ]);
         $user->update($attributes);
-        return back()->with('success', 'Post updated!');
+        return back()->with('success', 'User upated!');
     }
 }

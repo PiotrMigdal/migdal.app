@@ -23,7 +23,7 @@
 <!-- Responsive left navigation -->
 <nav class="sm:hidden grid grid-cols-2 gap-2">
         <x-responsive-nav-left-link :href="route('admin')" :active="request()->routeIs('admin')">
-            {{ __('timeline') }}
+            {{ __('Profile') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}

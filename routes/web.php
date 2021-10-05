@@ -28,27 +28,29 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/users/{user:username}', [UserController::class, 'show'])->name('user');
     Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about');
-
     Route::get('/users/{user:username}/about/{about:slug}', [AboutController::class, 'show'])->name('show.about');
 
-    Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about');
 
+
+
+    // ADMIN PANEL
+    Route::get('/admin/user', [AdminUserController::class, 'index'])->name('admin');
+
+    Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('admin.update');
+
+
+
+
+
+    // Route::get('admin/posts/create', [AdminPostController::class, 'create']);
+    // Route::get('admin/posts', [AdminPostController::class, 'index']);
+    // Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
+    // Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
+    // Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
 
     Route::get('/users/timeline', [TimelineController::class, 'index'])->name('timeline');
     Route::get('/users/projects', [ProjectController::class, 'index'])->name('projects');
     Route::get('/users/courses', [CourseController::class, 'index'])->name('courses');
-
-
-    // ADMIN PANEL
-    Route::get('/admin', [AdminUserController::class, 'index'])->name('admin');
-
-    Route::post('admin/user', [AdminUserController::class, 'store']);
-
-    Route::get('admin/posts/create', [AdminPostController::class, 'create']);
-    Route::get('admin/posts', [AdminPostController::class, 'index']);
-    Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
-    Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
-    Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
 });
 
 Route::get('/dashboard', function () {
