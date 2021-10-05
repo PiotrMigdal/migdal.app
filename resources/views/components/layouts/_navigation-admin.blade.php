@@ -2,7 +2,7 @@
 <!-- Left navigation -->
 <aside class="hidden mt-5 sm:block w-48 sm:flex-shrink-0">
     <nav class="bg-brand-gray-dark mr-8">
-        <x-nav-left-link :href="route('admin')" :active="request()->routeIs('admin')">
+        <x-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -22,7 +22,7 @@
 
 <!-- Responsive left navigation -->
 <nav class="sm:hidden grid grid-cols-2 gap-2">
-        <x-responsive-nav-left-link :href="route('admin')" :active="request()->routeIs('admin')">
+        <x-responsive-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">

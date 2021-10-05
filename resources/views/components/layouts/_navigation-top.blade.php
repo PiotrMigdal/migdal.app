@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                         {{ __('Other colleagues') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                    <x-nav-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
                         {{ __('My account') }}
                     </x-nav-link>
                 </div>
@@ -75,7 +75,7 @@
             <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                 {{ __('Other colleagues') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
+            <x-responsive-nav-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
                 {{ __('My account') }}
             </x-responsive-nav-link>
         </div>

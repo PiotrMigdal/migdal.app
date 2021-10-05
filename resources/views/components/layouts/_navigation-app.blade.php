@@ -2,7 +2,7 @@
 <!-- Left navigation -->
 <aside class="hidden mt-5 sm:block w-48 sm:flex-shrink-0">
     <nav class="bg-brand-gray-dark mr-8">
-        <x-nav-left-link :href="route('about', $user->username)" :active="request()->routeIs(['about', 'show.about'])">
+        <x-nav-left-link :href="route('about.index', $user->username)" :active="request()->routeIs(['about.index', 'show.about'])">
             {{ __('About') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -19,7 +19,7 @@
 
 <!-- Responsive left navigation -->
 <nav class="sm:hidden grid grid-cols-2 gap-2">
-        <x-responsive-nav-left-link :href="route('about', $user->username)" :active="request()->routeIs(['about', 'show.about'])">
+        <x-responsive-nav-left-link :href="route('about.index', $user->username)" :active="request()->routeIs(['about.index', 'show.about'])">
             {{ __('About') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
