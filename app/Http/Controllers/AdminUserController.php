@@ -8,9 +8,9 @@ use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
 {
-    public function index()
+    public function edit()
     {
-        return view('admin.user.index');
+        return view('admin.user.edit');
     }
     public function update(User $user)
     {

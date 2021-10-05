@@ -1,6 +1,6 @@
 <x-layouts.app :user="$about->user">
     <x-slot name="header">
-        {{ __('About ' . $about->user->name) }}
+        <x-header-link :href="route('user', $user->username)">{{ $user->name }}</x-header-link> / <x-header-link :href="route('about', $user->username)">About</x-header-link> / {{ $about->title }}
     </x-slot>
         <x-about-card>
             <x-slot name="title">

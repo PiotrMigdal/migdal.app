@@ -28,13 +28,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/users/{user:username}', [UserController::class, 'show'])->name('user');
     Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about');
-    Route::get('/users/{user:username}/about/{about:slug}', [AboutController::class, 'show'])->name('show.about');
+    Route::get('/users/{user:username}/about/{about}', [AboutController::class, 'show'])->name('about.show');
 
 
 
 
     // ADMIN PANEL
-    Route::get('/admin/user', [AdminUserController::class, 'index'])->name('admin');
+    Route::get('/admin/user', [AdminUserController::class, 'edit'])->name('admin');
 
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('admin.update');
 

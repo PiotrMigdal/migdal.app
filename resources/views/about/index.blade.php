@@ -1,7 +1,7 @@
 
 <x-layouts.app :user="$user">
     <x-slot name="header">
-        <a class="text-brand-pink-light hover:text-brand-pink" href="/users/{{ $user->username }}">{{ $user->name }}</a> / about
+        <x-header-link :href="route('user', $user->username)">{{ $user->name }}</x-header-link> / about
     </x-slot>
     @foreach ($user->abouts as $about)
         <x-about-card>
@@ -10,7 +10,7 @@
             </x-slot>
             {!! $about->excerpt !!}
             <div class="flex justify-end">
-                <x-btn-link-primary :href="route('show.about', [$user->username, $about->slug])">
+                <x-btn-link-primary :href="route('about.show', [$user->username, $about])">
                     Read more
                 </x-btn-link-primary>
             </div>
