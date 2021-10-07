@@ -10,9 +10,11 @@
             </x-slot>
             {!! $about->excerpt !!}
             <div class="flex justify-end">
-                <x-btn-link-primary :href="route('about.show', [$user->username, $about])">
-                    Read more
-                </x-btn-link-primary>
+                <a href="{{ route('about.show', [$user->username, $about]) }}">
+                    <x-btn-primary>
+                        Read more
+                    </x-btn-primary>
+                </a>
             </div>
         </x-about-card>
     @endforeach

@@ -22,7 +22,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Redirect to home page
+Route::get('/', function () {
+    return redirect('/users/PiotrMigdal');
+})->name('home');
 
 
 Route::middleware('auth')->group(function () {
@@ -55,8 +58,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/users/courses', [CourseController::class, 'index'])->name('courses');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -8,8 +8,10 @@
             </x-slot>
             {!! $about->body !!}
         </x-about-card>
-        <x-btn-link-primary :href="route('about.index', $user->username)">
-            < back
-        </x-btn-link-primary>
+        <a href="{{ route('about.index', $user->username) }}">
+            <x-btn-primary>
+                < back
+            </x-btn-primary>
+        </a>
 </x-layouts.app>
 
