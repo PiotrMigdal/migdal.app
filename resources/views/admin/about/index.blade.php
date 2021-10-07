@@ -5,7 +5,7 @@
     <form action="/admin/about/{{ Auth::user()->id }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
-        <x-admin-card>
+        <div class="card-shadow">
             @foreach (Auth::user()->abouts as $about)
                 <div class="md:flex sm:flex-wrap hover:bg-brand-gray-dark rounded-2xl">
                     <div class="p-8 m-auto">
@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="p-3 md:p-8 m-auto">
-                            <form action="/admin/posts/{{ $about->id }}" method="post">
+                            <form action="{{ route('about.destroy', $about->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="text-red-500 hover:text-red-700" title="Delete">Delete</button>
@@ -32,8 +32,8 @@
                 <div class="m-4 bg-gradient-to-r from-transparent via-gray-100 to-transparent h-0.5"></div>
             @endforeach
             <div class="text-center w-full p-4">
-                <x-link-add href="#">add about</x-link-add>
+                <x-link-add href="{{ route('about.create' ) }}">add about</x-link-add>
             </div>
-        </x-admin-card>
+        </div>
     </form>
 </x-layouts.app>

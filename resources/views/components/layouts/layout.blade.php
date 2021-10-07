@@ -22,7 +22,7 @@
 
             <!-- Page Content -->
             <main class="bg-brand-gray">
-                <div class="container mx-auto px-6 lg:px-8">
+                <div class="container mx-auto px-4 sm:p-6 lg:px-8">
                     <div class="overflow-hidden pb-16">
                         {{ $slot }}
                     </div>

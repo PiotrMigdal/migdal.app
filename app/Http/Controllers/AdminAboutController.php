@@ -13,6 +13,10 @@ class AdminAboutController extends Controller
     {
         return view('admin.about.index');
     }
+    public function create()
+    {
+        return view('admin.about.create');
+    }
     public function edit(About $about)
     {
         return view('admin.about.edit', [
@@ -32,5 +36,26 @@ class AdminAboutController extends Controller
         }
         $about->update($attributes);
         return back()->with('success', 'Saved!');
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'title' => 'required|max:255',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'thumbnail' => 'required|image',
+        ]);
+        $attributes['user_id'] = auth()->id();
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+
+        About::create($attributes);
+        return redirect(route('about.index.admin'))->with('success', 'Added!');
+    }
+
+    public function destroy(About $about)
+    {
+        $about->delete();
+        return back()->with('success', 'Article deleted!');
     }
 }

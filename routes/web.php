@@ -29,19 +29,22 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/users/{user:username}', [UserController::class, 'show'])->name('user.show');
-    Route::get('/users/{user:username}/about', [AboutController::class, 'index'])->name('about.index');
-    Route::get('/users/{user:username}/about/{about}', [AboutController::class, 'show'])->name('about.show');
+    Route::get('users/{user:username}', [UserController::class, 'show'])->name('user.show');
+    Route::get('users/{user:username}/about', [AboutController::class, 'index'])->name('about.index');
+    Route::get('users/{user:username}/about/{about}', [AboutController::class, 'show'])->name('about.show');
 
 
 
 
     // ADMIN PANEL
-    Route::get('/admin/user', [AdminUserController::class, 'edit'])->name('user.edit');
+    Route::get('admin/user', [AdminUserController::class, 'edit'])->name('user.edit');
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('user.update');
-    Route::get('/admin/about', [AdminAboutController::class, 'index'])->name('about.index.admin');
-    Route::get('/admin/about/{about}', [AdminAboutController::class, 'edit'])->name('about.edit');
-    Route::patch('admin/about/{about}', [AdminAboutController::class, 'update'])->name('about.update');
+    Route::get('admin/about', [AdminAboutController::class, 'index'])->name('about.index.admin');
+    Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
+    Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
+    Route::get('admin/about/create', [AdminAboutController::class, 'create'])->name('about.create');
+    Route::post('admin/about', [AdminAboutController::class, 'store'])->name('about.store');
+    Route::delete('admin/about/{about}', [AdminAboutController::class, 'destroy'])->name('about.destroy');
 
 
 
@@ -53,9 +56,9 @@ Route::middleware('auth')->group(function () {
     // Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
     // Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
 
-    Route::get('/users/timeline', [TimelineController::class, 'index'])->name('timeline');
-    Route::get('/users/projects', [ProjectController::class, 'index'])->name('projects');
-    Route::get('/users/courses', [CourseController::class, 'index'])->name('courses');
+    Route::get('users/timeline', [TimelineController::class, 'index'])->name('timeline');
+    Route::get('users/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('users/courses', [CourseController::class, 'index'])->name('courses');
 });
 
 // Route::get('/dashboard', function () {

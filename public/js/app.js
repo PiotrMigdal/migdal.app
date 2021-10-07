@@ -4020,12 +4020,14 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); // Autosize each textarea and on input
+__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); // Autosize textarea on click and input
 
 
-document.querySelectorAll('textarea').forEach(function (item) {
-  item.addEventListener('input', function (event) {
-    event.target.style.height = event.target.scrollHeight + "px";
+['input', 'click'].forEach(function (event) {
+  return document.querySelectorAll('textarea').forEach(function (item) {
+    item.addEventListener(event, function (event) {
+      event.target.style.height = event.target.scrollHeight + "px";
+    });
   });
 });
 
