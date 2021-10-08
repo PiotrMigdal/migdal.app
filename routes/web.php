@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     // ADMIN PANEL
     Route::get('admin/user', [AdminUserController::class, 'edit'])->name('user.edit');
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('user.update');
+
     Route::get('admin/about', [AdminAboutController::class, 'index'])->name('about.index.admin');
     Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
     Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
@@ -47,6 +48,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/about/{about}', [AdminAboutController::class, 'destroy'])->name('about.destroy');
 
 
+    Route::get('admin/projects', [AdminProjectsController::class, 'index'])->name('projects.index.admin');
+    Route::get('admin/projects/{projects}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
+    Route::get('admin/projects/{projects}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
+    Route::get('admin/projects/create', [AdminProjectsController::class, 'create'])->name('projects.create');
+    Route::post('admin/projects', [AdminProjectsController::class, 'store'])->name('projects.store');
+    Route::delete('admin/projects/{projects}', [AdminProjectsController::class, 'destroy'])->name('projects.destroy');
 
 
 

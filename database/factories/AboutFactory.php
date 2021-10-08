@@ -25,6 +25,7 @@ class AboutFactory extends Factory
         return [
             'user_id' => User::factory(),
             'title' => $this->faker->sentence(),
+            'thumbnail' => 'thumbnails/2HEIrxd8wikoWzavyOWhTNWMFWkPHwO5ejZT5NTD.jpg',
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(4)) . '</p>',
             'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(8)) . '</p>'
         ];
