@@ -16,4 +16,13 @@
     .card-shadow {
         @apply border border-brand-gray-dark rounded-3xl shadow-lg
     }
+    .btn-header {
+        @apply p-2 truncate max-w-xs inline-block text-brand-pink-light hover:text-brand-pink uppercase
+    }
+    .btn-primary {
+        @apply bg-brand-pink text-white hover:bg-brand-pink-dark active:bg-brand-pink-light focus:border-brand-pink focus:ring ring-brand-pink inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:outline-none disabled:opacity-25 transition ease-in-out duration-150
+    }
+    .btn-secondary {
+        @apply bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 focus:border-gray-900 focus:ring ring-gray-300 bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 focus:border-gray-900 focus:ring ring-gray-300 inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:outline-none disabled:opacity-25 transition ease-in-out duration-150
+    }
 }

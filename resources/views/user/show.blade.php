@@ -1,6 +1,6 @@
 <x-layouts.app :user="$user">
     <x-slot name="header">
-        {{ __($user->name) }}
+        {{ $user->name }}
     </x-slot>
     <article class="md:flex my-12">
         <aside class="px-6">

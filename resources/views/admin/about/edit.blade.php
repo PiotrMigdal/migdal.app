@@ -1,6 +1,9 @@
 <x-layouts.app :admin='true'>
     <x-slot name="header">
-        Edit {{ $about->title }}
+        <a href="{{ route('about.index.admin') }}">
+            <button class="btn-header">About</button>
+        </a> /
+        Edit: {{ $about->title }}
     </x-slot>
     <form action="/admin/about/{{ $about->id }}" method="post" enctype="multipart/form-data">
         @csrf

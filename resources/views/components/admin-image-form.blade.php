@@ -20,7 +20,7 @@
                 @endisset
             </div>
         </div>
-        <div class="flex justify-end"><x-form.button>Save</x-form.button></div>
+        <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
     </section>
 </article>
 
