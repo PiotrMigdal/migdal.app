@@ -32,9 +32,9 @@
 
                     <div class="text-center">
                         <a href="{{ app('router')->has('home') ? route('home') : url('/') }}">
-                            <x-btn-primary>
+                            <div class="btn-primary">
                                 {{ __('Go Home') }}
-                            </x-btn-primary>
+                            </div>
                         </a>
                     </div>
                 </div>

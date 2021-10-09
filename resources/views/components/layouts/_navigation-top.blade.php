@@ -95,7 +95,7 @@
                     <a :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        <x-btn-secondary>{{ __('Log Out') }}</x-btn-secondary>
+                        <button class="btn-secondary">{{ __('Log Out') }}</button>
                     </a>
                 </form>
             </div>
