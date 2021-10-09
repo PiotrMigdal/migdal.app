@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminAboutController;
+use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
@@ -48,12 +49,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/about/{about}', [AdminAboutController::class, 'destroy'])->name('about.destroy');
 
 
-    Route::get('admin/projects', [AdminProjectsController::class, 'index'])->name('projects.index.admin');
-    Route::get('admin/projects/{projects}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
-    Route::get('admin/projects/{projects}/edit', [AdminProjectsController::class, 'edit'])->name('projects.edit');
-    Route::get('admin/projects/create', [AdminProjectsController::class, 'create'])->name('projects.create');
-    Route::post('admin/projects', [AdminProjectsController::class, 'store'])->name('projects.store');
-    Route::delete('admin/projects/{projects}', [AdminProjectsController::class, 'destroy'])->name('projects.destroy');
+    Route::get('admin/projects', [AdminProjectController::class, 'index'])->name('projects.index.admin');
+    Route::get('admin/projects/{project}/edit', [AdminProjectController::class, 'edit'])->name('projects.edit');
+    Route::patch('admin/projects/{project}', [AdminProjectController::class, 'update'])->name('projects.update');
+    Route::get('admin/projects/create', [AdminProjectController::class, 'create'])->name('projects.create');
+    Route::post('admin/projects', [AdminProjectController::class, 'store'])->name('projects.store');
+    Route::delete('admin/projects/{project}', [AdminProjectController::class, 'destroy'])->name('projects.destroy');
 
 
 

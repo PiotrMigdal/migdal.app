@@ -20,10 +20,10 @@ class CreateProjectsTable extends Migration
             $table->string('thumbnail');
             $table->text('photos')->nullable();
             $table->text('description');
-            $table->date('release_date');
+            $table->date('release_date')->nullable();
             $table->text('technologies')->nullable();
-            $table->string('repository');
-            $table->foreignId('course_id');
+            $table->string('repository')->nullable();
+            $table->foreignId('course_id')->nullable();
             $table->timestamps();
         });
     }

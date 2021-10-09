@@ -11,6 +11,9 @@
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}
         </x-nav-left-link>
+        <x-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit'])">
+            {{ __('Projects') }}
+        </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Courses') }}
         </x-nav-left-link>
@@ -27,6 +30,9 @@
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs(['about.index.admin', 'about.edit'])">
             {{ __('About') }}
+        </x-responsive-nav-left-link>
+        <x-responsive-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit'])">
+            {{ __('Projects') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Courses') }}
