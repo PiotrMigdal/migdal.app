@@ -25,7 +25,7 @@ class ProjectFactory extends Factory
         return [
             'user_id' => User::factory(),
             'name' => $this->faker->sentence(),
-            'thumbnail' => 'thumbnails/2HEIrxd8wikoWzavyOWhTNWMFWkPHwO5ejZT5NTD.jpg',
+            'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
             'release_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
             'technologies' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',

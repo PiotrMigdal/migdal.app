@@ -7,7 +7,10 @@
         <span class="p-2 truncate max-w-xs">About</span>
     </x-slot>
     @foreach ($user->abouts as $about)
-        <x-about-card>
+        <x-article-image-card>
+            <x-slot name="thumbnail">
+                <x-image-circle class="h-48 w-48" :filename="$about->thumbnail" alt="{{ $about->name }}"/>
+            </x-slot>
             <x-slot name="title">
                 {{ $about->title }}
             </x-slot>
@@ -19,7 +22,7 @@
                     </button>
                 </a>
             </div>
-        </x-about-card>
+        </x-article-image-card>
     @endforeach
 </x-layouts.app>
 
