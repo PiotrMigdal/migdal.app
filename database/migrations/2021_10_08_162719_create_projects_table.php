@@ -17,9 +17,10 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
+            $table->text('purpose');
+            $table->text('description');
             $table->string('thumbnail');
             $table->text('photos')->nullable();
-            $table->text('description');
             $table->date('release_date')->nullable();
             $table->text('technologies')->nullable();
             $table->string('repository')->nullable();

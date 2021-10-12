@@ -15,12 +15,13 @@
             <x-slot name="title">
                 {{ $project->name }}
             </x-slot>
-            {!! $project->description !!}
+            <p>{{ $project->purpose }}</p>
+            <p>Released on: {{ $project->release_date }}</p>
             <div class="flex justify-end">
               <a href="{{ route('projects.show', [$user->username, $project]) }}">
-                    <button class="btn-primary">
+                  <button class="btn-primary mt-4">
                         Read more
-                    </button>
+                  </button>
                 </a>
             </div>
         </x-article-image-card>

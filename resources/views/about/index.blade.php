@@ -17,7 +17,7 @@
             {!! $about->excerpt !!}
             <div class="flex justify-end">
                 <a href="{{ route('about.show', [$user->username, $about]) }}">
-                    <button class="btn-primary">
+                    <button class="btn-primary mt-4">
                         Read more
                     </button>
                 </a>

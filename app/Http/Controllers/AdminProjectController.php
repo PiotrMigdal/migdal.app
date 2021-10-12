@@ -27,9 +27,10 @@ class AdminProjectController extends Controller
     {
         $attributes = request()->validate([
             'name' => 'required|max:255',
+            'purpose' => 'required|max:500',
             'description' => 'required',
-            'thumbnail' => 'image',
-            'photos' => 'image',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'max:255|date',
             'course_id' => 'numeric',
             'repository' => 'max:255|url',
@@ -46,9 +47,10 @@ class AdminProjectController extends Controller
     {
         $attributes = request()->validate([
             'name' => 'required|max:255',
+            'purpose' => 'required|max:500',
             'description' => 'required',
-            'thumbnail' => 'required|image',
-            'photos' => 'image',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'max:255|date',
             'course_id' => 'numeric',
             'repository' => 'max:255|url',

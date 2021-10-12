@@ -48,6 +48,7 @@ class DatabaseSeeder extends Seeder
         Project::factory()->create([
             'user_id' => 21,
             'name' => 'First nice project',
+            'purpose' => 'Fugit tempore quidem ullam debitis ipsam maxime eos. Harum provident aut ipsum et nesciunt nihil aut.',
             'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>Fugit tempore quidem ullam debitis ipsam maxime eos. Harum provident aut ipsum et nesciunt nihil aut. Et voluptatum delectus quasi soluta est nam sed vitae.</p><p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p><p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
             'release_date' => '2021-10-01',
@@ -58,6 +59,7 @@ class DatabaseSeeder extends Seeder
         Project::factory()->create([
             'user_id' => 21,
             'name' => 'Second nice project',
+            'purpose' => 'Corporis repudiandae expedita ut saepe aspernatur sed quisquam.',
             'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p><p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
             'release_date' => '2021-10-11',

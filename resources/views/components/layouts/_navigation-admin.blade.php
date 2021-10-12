@@ -5,13 +5,13 @@
         <x-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs(['about.index.admin', 'about.edit'])">
+        <x-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs(['about.index.admin', 'about.edit', 'about.create'])">
             {{ __('About') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit'])">
+        <x-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit', 'projects.create'])">
             {{ __('Projects') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
@@ -28,10 +28,10 @@
         <x-responsive-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs(['about.index.admin', 'about.edit'])">
+        <x-responsive-nav-left-link :href="route('about.index.admin')" :active="request()->routeIs(['about.index.admin', 'about.edit', 'about.create'])">
             {{ __('About') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit'])">
+        <x-responsive-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit', 'projects.create'])">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">

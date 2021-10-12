@@ -15,7 +15,17 @@
         <x-slot name="title">
             {{ $project->name }}
         </x-slot>
+        <p class="my-4"><b>{{ $project->purpose }}</b></p>
+        @isset($project->release_date)
+            <p class="my-4">Released on: <b>{{ $project->release_date }}</b></p>
+        @endisset
+        @isset($project->technologies)
+        <p class="my-4">Built using: <b>{{ $project->technologies }}</b></p>
+        @endisset
         {!! $project->description !!}
+        @isset($project->repository)
+        <p class="my-4">See code on: <a class="text-blue-500 hover:text-blue-400 hover:underline" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
+        @endisset
         <a href="{{ route('projects.index', $user->username) }}">
             <button class="btn-primary mt-10">
                 < back

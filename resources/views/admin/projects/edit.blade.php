@@ -19,6 +19,7 @@
                 <x-form.input name='repository' class="w-full" type="url" :value="old('repository', $project->repository)"/>
                 <x-form.input name='course_id' class="w-full" type="number" :value="old('course_id', $project->course_id)"/>
             <x-slot name="column2">
+                <x-form.textarea name='purpose'>{{ old('purpose', $project->purpose) }}</x-form.textarea>
                 <x-form.textarea name='description'>{{ old('description', $project->description) }}</x-form.textarea>
                 <x-form.textarea name='technologies'>{{ old('technologies', $project->technologies) }}</x-form.textarea>
             </x-slot>
