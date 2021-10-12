@@ -8,7 +8,7 @@
         <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('projects')" :active="request()->routeIs('projects')">
+        <x-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs('projects.index')">
             {{ __('Projects') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('courses')" :active="request()->routeIs('courses')">
@@ -25,7 +25,7 @@
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
             {{ __('Timeline') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-left-link :href="route('projects')" :active="request()->routeIs('projects')">
+        <x-responsive-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs('projects.index')">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">

@@ -1,0 +1,26 @@
+<x-layouts.app :user="$project->user">
+    <x-slot name="header">
+        <a href="{{ route('user.show', $user->username) }}">
+            <button class="btn-header">{{ $user->name }}</button>
+        </a> /
+        <a href="{{ route('projects.index', $user->username) }}">
+            <button class="btn-header">Projects</button>
+        </a> /
+        <span class="p-2 truncate max-w-xs">{{ $project->name }}</span>
+    </x-slot>
+    <x-article-image-card>
+        <x-slot name="thumbnail">
+            <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
+        </x-slot>
+        <x-slot name="title">
+            {{ $project->name }}
+        </x-slot>
+        {!! $project->description !!}
+        <a href="{{ route('projects.index', $user->username) }}">
+            <button class="btn-primary mt-10">
+                < back
+            </button>
+        </a>
+    </x-article-image-card>
+</x-layouts.app>
+
