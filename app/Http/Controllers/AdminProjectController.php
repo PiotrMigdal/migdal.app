@@ -69,3 +69,34 @@ class AdminProjectController extends Controller
         return back()->with('success', 'Project deleted!');
     }
 }
+
+// public function store()
+// {
+//     $attributes = request()->validate([
+//         'name' => 'required|max:255',
+//         'purpose' => 'required|max:500',
+//         'description' => 'required',
+//         'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//         'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//         'photos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//         'release_date' => 'max:255|date',
+//         'course_id' => 'numeric',
+//         'repository' => 'max:255|url',
+//     ]);
+//     if(request()->hasfile('photos'))
+//     {
+
+//        foreach(request()->file('photos') as $photo)
+//        {
+//            $name=$photo->getClientOriginalName();
+//            $photo->store('thumbnails');
+//            $data[] = $name;
+//        }
+//     }
+//     $attributes['user_id'] = auth()->id();
+//     $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+//     $attributes['technologies'] = request('technologies');
+//     $attributes['technologies'] = json_encode($data);
+//     Project::create($attributes);
+//     return redirect(route('projects.index.admin'))->with('success', 'Added!');
+// }

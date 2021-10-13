@@ -14,11 +14,8 @@
         <x-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit', 'projects.create'])">
             {{ __('Projects') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+        <x-nav-left-link :href="route('courses.index.admin')" :active="request()->routeIs(['courses.index.admin', 'courses.edit', 'courses.create'])">
             {{ __('Courses') }}
-        </x-nav-left-link>
-        <x-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
-            {{ __('Others') }}
         </x-nav-left-link>
     </nav>
 </aside>
@@ -34,7 +31,7 @@
         <x-responsive-nav-left-link :href="route('projects.index.admin')" :active="request()->routeIs(['projects.index.admin', 'projects.edit', 'projects.create'])">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+        <x-responsive-nav-left-link :href="route('courses.index.admin')" :active="request()->routeIs(['courses.index.admin', 'courses.edit', 'courses.create'])">
             {{ __('Courses') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('timeline')" :active="request()->routeIs('timeline')">

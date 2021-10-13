@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\About;
+use App\Models\Course;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -66,6 +67,32 @@ class DatabaseSeeder extends Seeder
             'technologies' => 'Tailwin, pure JavaScript, laravel',
             'repository' => 'https://github.com/PiotrMigdal/migdalapp',
             'course_id' => '1',
+        ]);
+        Course::factory()->create([
+            'user_id' => 21,
+            'name' => 'Adobe XD course',
+            'platform' => 'YouTube',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p><p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2021-01-11',
+            'finish_date' => '2021-02-14',
+            'technologies' => 'Tailwin, pure JavaScript, laravel',
+            'repository' => 'https://github.com/PiotrMigdal/migdalapp',
+            'url' => 'https://www.youtube.com/dasdasdas',
+            'project_id' => '1',
+        ]);
+        Course::factory()->create([
+            'user_id' => 21,
+            'name' => 'Laravel for dummies',
+            'platform' => 'Front End Masters',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p><p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2021-04-11',
+            'finish_date' => '2021-05-14',
+            'technologies' => 'Tailwin, pure JavaScript, laravel',
+            'repository' => 'https://github.com/PiotrMigdal/migdalapp',
+            'url' => 'https://www.frontendmasters.com/dasdasdas',
+            'project_id' => '1',
         ]);
     }
 }

@@ -13,6 +13,7 @@
             <p>Miejsce: <span class="text-gray-300">{{ $user->main_job }}</span></p>
             <p>Miejsce: <span class="text-gray-300">{{ $user->additional_job }}</span></p>
         </section>
+        add section about number of articles. last logged on etc
     </article>
 </x-layouts.app>
 

@@ -9,7 +9,7 @@
                     <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$project->thumbnail"/>
                 </div>
                 <div class="lg:flex-1 p-3 md:p-8 m-auto text-center">
-                    <a class="hover:underline" href="/posts/{{ $project->slug }}" title="Preview">{{ $project->name }}</a>
+                    <a class="hover:underline" href="{{ route('projects.show', [Auth::user()->username, $project]) }}" title="Preview">{{ $project->name }} (preview)</a>
                 </div>
 
                 <div class="lg:flex-none flex justify-center">

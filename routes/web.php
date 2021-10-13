@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminAboutController;
+use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
@@ -55,6 +56,14 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/projects/create', [AdminProjectController::class, 'create'])->name('projects.create');
     Route::post('admin/projects', [AdminProjectController::class, 'store'])->name('projects.store');
     Route::delete('admin/projects/{project}', [AdminProjectController::class, 'destroy'])->name('projects.destroy');
+
+
+    Route::get('admin/courses', [AdminCourseController::class, 'index'])->name('courses.index.admin');
+    Route::get('admin/courses/{course}/edit', [AdminCourseController::class, 'edit'])->name('courses.edit');
+    Route::patch('admin/courses/{course}', [AdminCourseController::class, 'update'])->name('courses.update');
+    Route::get('admin/courses/create', [AdminCourseController::class, 'create'])->name('courses.create');
+    Route::post('admin/courses', [AdminCourseController::class, 'store'])->name('courses.store');
+    Route::delete('admin/courses/{course}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
 
     Route::get('users/timeline', [TimelineController::class, 'index'])->name('timeline');
     Route::get('users/courses', [CourseController::class, 'index'])->name('courses');
