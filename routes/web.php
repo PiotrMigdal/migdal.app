@@ -38,6 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{user:username}/projects', [ProjectController::class, 'index'])->name('projects.index');
     Route::get('users/{user:username}/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 
+    Route::get('users/{user:username}/courses', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('users/{user:username}/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
     // ADMIN PANEL
     Route::get('admin/user', [AdminUserController::class, 'edit'])->name('user.edit');
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('user.update');

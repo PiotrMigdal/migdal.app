@@ -11,7 +11,7 @@
         <x-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
         </x-nav-left-link>
-        <x-nav-left-link :href="route('courses')" :active="request()->routeIs('courses')">
+        <x-nav-left-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
             {{ __('Courses') }}
         </x-nav-left-link>
     </nav>
@@ -28,7 +28,7 @@
         <x-responsive-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-link :href="route('courses')" :active="request()->routeIs('courses')">
+        <x-responsive-nav-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
             {{ __('Courses') }}
         </x-responsive-nav-link>
 </nav>
