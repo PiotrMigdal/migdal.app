@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TimelineController extends Controller
+class JobController extends Controller
 {
         public function index()
         {
-            return view('timeline.index');
+            return view('jobs.index');
         }
 }

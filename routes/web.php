@@ -6,8 +6,8 @@ use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\UserController;
 use App\Models\About;
 use App\Models\User;
@@ -68,8 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/courses', [AdminCourseController::class, 'store'])->name('courses.store');
     Route::delete('admin/courses/{course}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
 
-    Route::get('users/timeline', [TimelineController::class, 'index'])->name('timeline');
-    Route::get('users/courses', [CourseController::class, 'index'])->name('courses');
+    Route::get('users/piotrmigdal/jobs', [JobController::class, 'index'])->name('jobs.index');
 });
 
 // Route::get('/dashboard', function () {

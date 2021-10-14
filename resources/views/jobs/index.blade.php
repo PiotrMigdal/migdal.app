@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.app :user="Auth::user()">
     <x-slot name="header">
         {{ __('Timeline ' . Auth::user()->name) }}
     </x-slot>

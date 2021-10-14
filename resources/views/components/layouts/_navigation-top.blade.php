@@ -15,7 +15,7 @@
                     <x-nav-link href="/users/PiotrMigdal" :active="request()->Is('users/PiotrMigdal')">
                         {{ __('Piotr Migdal') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+                    <x-nav-link :href="route('jobs.index')">
                         {{ __('Other colleagues') }}
                     </x-nav-link>
                     <x-nav-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
@@ -72,7 +72,7 @@
             <x-responsive-nav-link href="/users/piotrmigdal" :active="request()->Is('users/piotrmigdal')">
                 {{ __('Piotr Migdal') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
+            <x-responsive-nav-link :href="route('jobs.index')">
                 {{ __('Other colleagues') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
