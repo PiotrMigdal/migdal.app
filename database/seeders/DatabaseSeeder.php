@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\About;
 use App\Models\Course;
+use App\Models\Job;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -93,6 +94,38 @@ class DatabaseSeeder extends Seeder
             'repository' => 'https://github.com/PiotrMigdal/migdalapp',
             'url' => 'https://www.frontendmasters.com/dasdasdas',
             'project_id' => '1',
+        ]);
+        Job::factory()->create([
+            'user_id' => 21,
+            'job_title' => 'Team Manager',
+            'company_name' => 'Proseco',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2017-04-11',
+            'finish_date' => '2019-05-14',
+            'responsibilties' => 'Contacting client, rota planning, workflow maintaining',
+            'is_main' => 1,
+        ]);
+        Job::factory()->create([
+            'user_id' => 21,
+            'job_title' => 'IT Support Engineer',
+            'company_name' => 'Darseq',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2019-05-14',
+            'responsibilties' => 'Infrastrucure, devops, helpdesk',
+            'is_main' => 1,
+        ]);
+        Job::factory()->create([
+            'user_id' => 21,
+            'job_title' => 'Owner',
+            'company_name' => 'Almond F',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2014-04-11',
+            'finish_date' => '2020-05-14',
+            'responsibilties' => 'Furniture selling, delivery planning, website maintaining',
+            'is_main' => 0,
         ]);
     }
 }

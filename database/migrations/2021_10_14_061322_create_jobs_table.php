@@ -18,7 +18,7 @@ class CreateJobsTable extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('job_title');
             $table->string('company_name');
-            $table->text('descritpion');
+            $table->text('description');
             $table->text('responsibilties');
             $table->string('thumbnail');
             $table->boolean('is_main')->default(1);
