@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\AdminCourseController;
+use App\Http\Controllers\AdminJobController;
 use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
@@ -67,6 +68,13 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/courses/create', [AdminCourseController::class, 'create'])->name('courses.create');
     Route::post('admin/courses', [AdminCourseController::class, 'store'])->name('courses.store');
     Route::delete('admin/courses/{course}', [AdminCourseController::class, 'destroy'])->name('courses.destroy');
+
+    Route::get('admin/jobs', [AdminJobController::class, 'index'])->name('jobs.index.admin');
+    Route::get('admin/jobs/{job}/edit', [AdminJobController::class, 'edit'])->name('jobs.edit');
+    Route::patch('admin/jobs/{job}', [AdminJobController::class, 'update'])->name('jobs.update');
+    Route::get('admin/jobs/create', [AdminJobController::class, 'create'])->name('jobs.create');
+    Route::post('admin/jobs', [AdminJobController::class, 'store'])->name('jobs.store');
+    Route::delete('admin/jobs/{job}', [AdminJobController::class, 'destroy'])->name('jobs.destroy');
 
     Route::get('users/piotrmigdal/jobs', [JobController::class, 'index'])->name('jobs.index');
 });

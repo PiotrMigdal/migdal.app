@@ -1,6 +1,6 @@
 <x-layouts.app :admin='true'>
     <x-slot name="header">
-        Create about article
+        Add something about
     </x-slot>
     <form action="/admin/about" method="post" enctype="multipart/form-data">
         @csrf

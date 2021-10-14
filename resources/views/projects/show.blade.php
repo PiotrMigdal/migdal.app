@@ -24,7 +24,7 @@
         @endisset
         {!! $project->description !!}
         @isset($project->repository)
-        <p class="my-4">See code on: <a class="text-blue-500 hover:text-blue-400 hover:underline" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
+        <p class="my-4">See code on: <a class="link" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
         @endisset
         <a href="{{ route('projects.index', $user->username) }}">
             <button class="btn-primary mt-10">

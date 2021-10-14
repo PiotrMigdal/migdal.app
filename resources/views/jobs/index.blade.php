@@ -41,16 +41,14 @@
                 </div>
                 <ul class="border-gray-500 border-r col-span-3 p-4 sm:col-span-5">
                     <li>
-                        <div class="sm:flex">
-                            <div>
-                                <h3>Officia suscipit</h3>
-                                <div class="hidden sm:block text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit:<br>
-                                    - Sunt porro a voluptates enim ex in nemo facilis,<br>
-                                    - incidunt fugit voluptatibus quam laudantium voluptate, officia suscipit ipsam beatae?
-                                </div>
+                        <div class="sm:flex sm:items-center text-sm">
+                            <div class="sm:flex-shrink-0 sm:p-3">
+                                <x-image-circle filename="small.jpg" class="h-16 w-16"/>
                             </div>
-                            <div class="sm:flex-shrink-0 w-26 sm:p-3">
-                                <img class="m-auto h-20 w-20 rounded-full border-gray-50 border-2 object-cover" src="images\small.jpg" alt="">
+                            <div>
+                                <h3>Finished workin at Parseq as Team manager</h3>
+                                <p>Total duration: 3 years 2 months</p>
+                                <a href="#" class="link">See job details</a>
                             </div>
                         </div>
                         <div class="border-brand-pink border-dashed border-t my-4 tracking-normal w-full">

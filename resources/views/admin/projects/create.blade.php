@@ -1,6 +1,6 @@
 <x-layouts.app :admin='true'>
     <x-slot name="header">
-        Create projects article
+        Add project
     </x-slot>
     <form action="/admin/projects" method="post" enctype="multipart/form-data">
         @csrf

@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Job;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
+class AdminJobController extends Controller
+{
+    public function index()
+    {
+        return view('admin.jobs.index');
+    }
+    public function create()
+    {
+        return view('admin.jobs.create');
+    }
+    public function edit(Job $job)
+    {
+        return view('admin.jobs.edit', [
+            'job' => $job,
+        ]);
+    }
+    public function update(Job $job)
+    {
+        $attributes = request()->validate([
+            'company_name' => 'required|max:255',
+            'job_title' => 'required|max:255',
+            'description' => 'required',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'responsibilties' => 'required|max:700',
+            'start_date' => 'required|max:255|date',
+            'finish_date' => 'max:255|date',
+            'is_main' => 'required|boolean',
+        ]);
+        if(isset($attributes['thumbnail'])) {
+            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        }
+        $job->update($attributes);
+        return back()->with('success', 'Saved!');
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'company_name' => 'required|max:255',
+            'job_title' => 'required|max:255',
+            'description' => 'required',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'responsibilties' => 'required|max:700',
+            'start_date' => 'required|max:255|date',
+            'finish_date' => 'max:255|date',
+            'is_main' => 'required|boolean',
+
+        ]);
+        $attributes['user_id'] = auth()->id();
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+
+        Job::create($attributes);
+        return redirect(route('jobs.index.admin'))->with('success', 'Added!');
+    }
+
+    public function destroy(Job $job)
+    {
+        $job->delete();
+        return back()->with('success', 'Job deleted!');
+    }
+}

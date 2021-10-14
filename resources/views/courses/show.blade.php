@@ -15,7 +15,7 @@
         <x-slot name="title">
             {{ $course->name }}
         </x-slot>
-        <p class="my-4">Course on <a class="text-blue-500 hover:text-blue-400 hover:underline" href="{{ $course->url }}">{{ $course->platform }}</a></p>
+        <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>
 
         @isset($course->start_date)
             <p class="my-4">Started on <b>{{ $course->start_date }}</b></p>
@@ -32,7 +32,7 @@
         {!! $course->description !!}
 
         @isset($course->repository)
-        <p class="my-4">See code on: <a class="text-blue-500 hover:text-blue-400 hover:underline" href="{{ $course->repository }}">{{ $course->repository }}</a></p>
+        <p class="my-4">See code on: <a class="link" href="{{ $course->repository }}">{{ $course->repository }}</a></p>
         @endisset
         <a href="{{ route('courses.index', $user->username) }}">
             <button class="btn-primary mt-10">
