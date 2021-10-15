@@ -42,6 +42,10 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{user:username}/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('users/{user:username}/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
 
+    Route::get('users/{user:username}/jobs', [JobController::class, 'index'])->name('jobs.index');
+    Route::get('users/{user:username}/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
+
+
     // ADMIN PANEL
     Route::get('admin/user', [AdminUserController::class, 'edit'])->name('user.edit');
     Route::patch('admin/user/{user}', [AdminUserController::class, 'update'])->name('user.update');
@@ -76,7 +80,6 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/jobs', [AdminJobController::class, 'store'])->name('jobs.store');
     Route::delete('admin/jobs/{job}', [AdminJobController::class, 'destroy'])->name('jobs.destroy');
 
-    Route::get('users/piotrmigdal/jobs', [JobController::class, 'index'])->name('jobs.index');
 });
 
 // Route::get('/dashboard', function () {

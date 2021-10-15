@@ -19,7 +19,7 @@ class CreateJobsTable extends Migration
             $table->string('job_title');
             $table->string('company_name');
             $table->text('description');
-            $table->text('responsibilties');
+            $table->text('responsibilities');
             $table->string('thumbnail');
             $table->boolean('is_main')->default(1);
             $table->date('start_date');

@@ -25,9 +25,9 @@ class JobFactory extends Factory
         return [
             'user_id' => User::factory(),
             'job_title' => $this->faker->jobTitle(),
-            'job_title' => $this->faker->company(),
+            'company_name' => $this->faker->company(),
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
-            'responsibilties' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
+            'responsibilities' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'thumbnail' => 'thumbnails/small.jpg',
             'is_main' => $this->faker->boolean(50) ? 0 : 1,
             'start_date' => $this->faker->date($format = 'Y-m-d', $max='now'),

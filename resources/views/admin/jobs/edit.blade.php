@@ -3,7 +3,7 @@
         <a href="{{ route('jobs.index.admin') }}">
             <button class="btn-header">Jobs</button>
         </a> /
-        Edit: {{ $job->name }}
+        Edit: {{ $job->job_title }}
     </x-slot>
     <form action="/admin/jobs/{{ $job->id }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -17,7 +17,7 @@
                 <x-form.input name='job_title' class="w-full" :value="old('job_title', $job->job_title)"/>
                 <x-form.input name='start_date' class="w-full" type="date" :value="old('start_date', $job->start_date)"/>
                 <x-form.input name='finish_date' class="w-full" type="date" :value="old('finish_date', $job->finish_date)"/>
-                <x-form.input name='responsibilties' class="w-full" :value="old('responsibilties', $job->responsibilties)"/>
+                <x-form.input name='responsibilities' class="w-full" :value="old('responsibilities', $job->responsibilities)"/>
             <x-slot name="column2">
                 <x-form.input name='is_main' class="w-full" type="number" :value="old('is_main', $job->is_main)"/>
                 <x-form.textarea name='description'>{{ old('description', $job->description) }}</x-form.textarea>
