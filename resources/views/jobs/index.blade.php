@@ -21,20 +21,17 @@
             </ul>
         </aside>
         <article class="sm:col-span-5">
-            <header class="grid grid-cols-7 sm:grid-cols-11">
+            <header class="grid grid-cols-4 sm:grid-cols-8">
                 <div class="col-span-1 border-gray-500 border-r">
                 </div>
                 <div class="sm:col-span-5 col-span-3 text-center border-gray-500 border-r">
                     <h1 class="px-4">Main</h1>
                 </div>
-                <div class="sm:col-span-5 col-span-3 text-center">
-                    <h1 class="mb-1 px-4">Additional</h1>
-                    <p class="mb-3">(web related)</p>
-                </div>
             </header>
+            main nie moze byc w tym samym czase info error zeby dodac additional. Additional tez nie moze
             {{-- Section is one year --}}
             @for ($year = date('Y'); $year >= $min_year; $year--)
-            <section class="border-dashed border-gray-500 border-t grid sm:grid-cols-11 grid-cols-7">
+            <section class="border-dashed border-gray-500 border-t grid sm:grid-cols-8 grid-cols-4">
                 <div class="col-span-1 border-gray-500 border-r">
                     <div class="flex h-full items-center">
                         <span class="-rotate-90 text-3xl text-gray-500 transform w-full whitespace-nowrap text-center">
@@ -42,63 +39,36 @@
                         </span>
                     </div>
                 </div>
-                <ul class="border-gray-500 border-r col-span-3 p-4 sm:col-span-5">
-                    @foreach ($jobs as $job)
-                        @if ($job->is_main === 1 && ($job->start_year == $year || $job->finish_year == $year))
-                            <li>
-                                <div class="sm:flex sm:items-center text-sm">
-                                    <div class="sm:flex-shrink-0 sm:p-3">
-                                        <x-image-circle :filename="$job->thumbnail" class="h-16 w-16"/>
-                                    </div>
-                                    <div>
-                                        <h3>{{ $job->job_title }} at {{ $job->company_name }}</h3>
-                                        <p>Total duration: <b>xxx</b></p>
-                                        <a href="{{ route('jobs.show', [$user->username, $job]) }}" class="link">See job details</a>
-                                    </div>
-                                </div>
-                                <div class="border-brand-pink border-dashed border-t my-4 tracking-normal w-full">
-                                    <p class="font-mono p-1 text-brand-pink text-center text-xs">
-                                        @if ($job->start_year == $year && $job->finish_year == $year)
-                                        {{ $job->start_date }} - {{ $job->finish_date }}
-                                        @elseif  ($job->start_year == $year)
-                                        Started on {{ $job->start_date }}
-                                        @else
-                                        Finished on {{ $job->finish_date }}
-                                        @endif
-                                    </p>
-                                </div>
-                            </li>
-                        @endif
-                    @endforeach
-                </ul>
                 <ul class="sm:col-span-5 col-span-3 p-4">
-                    @foreach ($jobs as $job)
-                        @if ($job->is_main === 0 && ($job->start_year == $year || $job->finish_year == $year))
-                            <li>
-                                <div class="sm:flex sm:items-center text-sm">
-                                    <div class="sm:flex-shrink-0 sm:p-3">
-                                        <x-image-circle :filename="$job->thumbnail" class="h-16 w-16"/>
+                    <li>
+                        @foreach ($jobs as $job)
+                            @if ($job->start_year == $year || $job->finish_year == $year)
+                                <li>
+                                    <div class="sm:flex sm:items-center text-sm">
+                                        <div class="sm:flex-shrink-0 sm:p-3">
+                                            <x-image-circle :filename="$job->thumbnail" class="h-16 w-16"/>
+                                        </div>
+                                        <div>
+                                            <h3>{{ $job->job_title }} at {{ $job->company_name }}</h3>
+                                            <p>Total duration: <b>xxx</b></p>
+                                            <a href="{{ route('jobs.show', [$user->username, $job]) }}" class="link">See job details</a>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3>{{ $job->job_title }} at {{ $job->company_name }}</h3>
-                                        <p>Total duration: <b>xxx</b></p>
-                                        <a href="{{ route('jobs.show', [$user->username, $job]) }}" class="link">See job details</a>
+                                    <div class="border-brand-pink border-dashed border-t my-4 tracking-normal w-full">
+                                        <p class="font-mono p-1 text-brand-pink text-center text-xs">
+                                            @if ($job->start_year == $year && $job->finish_year == $year)
+                                            {{ $job->start_date }} - {{ $job->finish_date }}
+                                            @elseif  ($job->start_year == $year)
+                                            Started on {{ $job->start_date }}
+                                            @else
+                                            Finished on {{ $job->finish_date }}
+                                            @endif
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="border-brand-pink border-dashed border-t my-4 tracking-normal w-full">
-                                    <p class="font-mono p-1 text-brand-pink text-center text-xs">
-                                        @if ($job->start_year == $year && $job->finish_year == $year)
-                                        {{ $job->start_date }} - {{ $job->finish_date }}
-                                        @elseif  ($job->start_year == $year)
-                                        Started on {{ $job->start_date }}
-                                        @else
-                                        Finished on {{ $job->finish_date }}
-                                        @endif
-                                    </p>
-                                </div>
-                            </li>
-                        @endif
-                    @endforeach
+                                </li>
+                            @endif
+                        @endforeach
+                    </li>
                 </ul>
             </section>
             @endfor
