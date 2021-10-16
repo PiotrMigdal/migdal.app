@@ -93,12 +93,23 @@ class DatabaseSeeder extends Seeder
         ]);
         Job::factory()->create([
             'user_id' => 1,
+            'job_title' => 'Agent',
+            'company_name' => 'Proseco',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2016-04-01',
+            'finish_date' => '2017-11-01',
+            'responsibilities' => 'Contacting client, rota planning, workflow maintaining',
+            'is_main' => 1,
+        ]);
+        Job::factory()->create([
+            'user_id' => 1,
             'job_title' => 'Team Manager',
             'company_name' => 'Proseco',
             'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>Nihil facilis aut sed nobis. Quis tempora aut aspernatur aut. Corporis repudiandae expedita ut saepe aspernatur sed quisquam.</p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
-            'start_date' => '2017-04-11',
-            'finish_date' => '2019-05-14',
+            'start_date' => '2017-11-01',
+            'finish_date' => '2019-12-01',
             'responsibilities' => 'Contacting client, rota planning, workflow maintaining',
             'is_main' => 1,
         ]);
@@ -108,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'company_name' => 'Darseq',
             'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
-            'start_date' => '2019-05-14',
+            'start_date' => '2019-12-01',
             'responsibilities' => 'Infrastrucure, devops, helpdesk',
             'is_main' => 1,
         ]);
@@ -119,18 +130,7 @@ class DatabaseSeeder extends Seeder
             'thumbnail' => 'thumbnails/small.jpg',
             'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
             'start_date' => '2014-04-11',
-            'finish_date' => '2020-05-14',
-            'responsibilities' => 'Furniture selling, delivery planning, website maintaining',
-            'is_main' => 0,
-        ]);
-        Job::factory()->create([
-            'user_id' => 1,
-            'job_title' => 'Owner',
-            'company_name' => 'Almond 2',
-            'thumbnail' => 'thumbnails/small.jpg',
-            'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
-            'start_date' => '2014-04-11',
-            'finish_date' => '2020-05-14',
+            'finish_date' => '2020-01-01',
             'responsibilities' => 'Furniture selling, delivery planning, website maintaining',
             'is_main' => 0,
         ]);

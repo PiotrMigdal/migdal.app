@@ -14,7 +14,7 @@
         @apply font-bold my-2 text-sm
     }
     .card-shadow {
-        @apply border border-brand-gray-dark rounded-3xl shadow-lg
+        @apply border-2 border-brand-gray-dark rounded-3xl shadow-lg
     }
     .btn-header {
         @apply p-2 truncate max-w-xs inline-block text-brand-pink hover:text-brand-pink-dark uppercase

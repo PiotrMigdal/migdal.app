@@ -24,6 +24,18 @@ module.exports = {
                     dark: '#a50041',
                 },
             },
+            minHeight: (theme) => ({
+              ...theme('spacing'),
+            }),
+            maxHeight: (theme) => ({
+              ...theme('spacing'),
+            }),
+            minWidth: (theme) => ({
+              ...theme('spacing'),
+            }),
+            maxWidth: (theme) => ({
+              ...theme('spacing'),
+            }),
         },
     },
 
