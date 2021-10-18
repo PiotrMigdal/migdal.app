@@ -48,27 +48,14 @@
                     @endif
                 @endforeach
                 {{-- Courses --}}
-                @foreach ($courses as $course)
-                    @if ($course->finish_year == $year)
-                    <x-timeline-event class="md:justify-self-end" link="{{ route('courses.show', [$user->username, $course]) }}" image="{{ $course->thumbnail }}" color="brand-pink">
+                @foreach ($adds as $add)
+                    @if ($add->release_year == $year)
+                    <x-timeline-event link="{{ route($add->type . 's.show', [$user->username, $add->id]) }}" class="md:justify-self-end" image="{{ $add->thumbnail }}" color="brand-pink">
                         <x-slot name="date">
-                            Completed course on {{ $course->finish_date }}
+                            Completed add on {{ $add->release_date }}
                         </x-slot>
                         <x-slot name="header">
-                            {{ $course->name }}
-                        </x-slot>
-                    </x-timeline-event>
-                    @endif
-                @endforeach
-                {{-- Projects --}}
-                @foreach ($projects as $project)
-                    @if ($project->finish_year == $year)
-                    <x-timeline-event class="md:justify-self-end" link="{{ route('projects.show', [$user->username, $project]) }}" image="{{ $project->thumbnail }}" color="brand-pink">
-                        <x-slot name="date">
-                            Completed project on {{ $project->release_date }}
-                        </x-slot>
-                        <x-slot name="header">
-                            {{ $project->name }}
+                            {{ $add->name }}
                         </x-slot>
                     </x-timeline-event>
                     @endif

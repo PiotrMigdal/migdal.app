@@ -17,23 +17,40 @@ class JobController extends Controller
             $job['finish_year'] = Carbon::createFromFormat('Y-m-d', $job->finish_date)->format('Y');
             return $job;
         });
-        $user->courses->map(function ($course) {
-            $course['finish_year'] = Carbon::createFromFormat('Y-m-d', $course->finish_date)->format('Y');
-            return $course;
-        });
-        $user->projects->map(function ($project) {
-            $project['finish_year'] = Carbon::createFromFormat('Y-m-d', $project->release_date)->format('Y');
-            return $project;
+
+        // $courses = $user->courses->map(function ($course) {
+        //     $course['finish_year'] = Carbon::createFromFormat('Y-m-d', $course->finish_date)->format('Y');
+        //     return $course;
+        // });
+
+        // Union of courses and projects creates new collection - adds. This is used to sort both by release_date
+        $courses = DB::table("courses")
+            ->select("courses.id"
+            ,"courses.name"
+            ,"courses.finish_date"
+            ,"courses.thumbnail",DB::raw('"course" AS "type"'))
+            ->where('user_id', $user->id);
+        $adds = DB::table("projects")
+            ->select("projects.id"
+            ,"projects.name"
+            ,"projects.release_date"
+            ,"projects.thumbnail",DB::raw('"project" AS "type"'))
+            ->where('user_id', $user->id)
+            ->unionAll($courses)
+            ->get();
+
+        $adds = $adds->map(function ($add) {
+            $add->release_year = Carbon::createFromFormat('Y-m-d', $add->release_date)->format('Y');
+            return $add;
         });
         return view('jobs.index', [
             'user' => $user,
             'jobs' => $user->jobs->sortByDesc('start_date'),
-            'courses' => $user->courses->sortByDesc('finish_date'),
-            'projects' => $user->projects->sortByDesc('release_date'),
-            // 'start_date_year' => $user->jobs->groupBy(function($job){ return Carbon::createFromFormat('Y-m-d', $job->start_date)->format('Y'); }),
-            // 'finish_date_year' => $user->jobs->groupBy(function($job){ return Carbon::createFromFormat('Y-m-d', $job->finish_date)->format('Y'); }),
+            'adds' => $adds->sortByDesc('release_date'),
             'min_year' => $user->jobs->min(function($job){ return Carbon::createFromFormat('Y-m-d', $job->start_date)->format('Y'); })
 
+            // 'start_date_year' => $user->jobs->groupBy(function($job){ return Carbon::createFromFormat('Y-m-d', $job->start_date)->format('Y'); }),
+            // 'finish_date_year' => $user->jobs->groupBy(function($job){ return Carbon::createFromFormat('Y-m-d', $job->finish_date)->format('Y'); }),
         ]);
     }
     public function show(User $user, Job $job) {
