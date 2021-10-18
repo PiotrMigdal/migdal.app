@@ -31,7 +31,7 @@
 
         {!! $job->description !!}
 
-        <a href="{{ route('jobs.index', $user->username) }}">
+        <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back
             </button>

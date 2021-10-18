@@ -16,7 +16,7 @@
             {{ $about->title }}
         </x-slot>
         {!! $about->body !!}
-        <a href="{{ route('about.index', $user->username) }}">
+        <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back
             </button>

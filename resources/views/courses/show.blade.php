@@ -34,7 +34,7 @@
         @isset($course->repository)
         <p class="my-4">See code on: <a class="link" href="{{ $course->repository }}">{{ $course->repository }}</a></p>
         @endisset
-        <a href="{{ route('courses.index', $user->username) }}">
+        <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back
             </button>
