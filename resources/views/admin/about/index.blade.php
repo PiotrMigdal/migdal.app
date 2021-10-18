@@ -3,7 +3,7 @@
         Your about articles
     </x-slot>
     <div class="card-shadow">
-        @foreach (Auth::user()->abouts as $about)
+        @foreach ($abouts as $about)
             <div class="lg:flex hover:bg-brand-gray-dark rounded-2xl lg:px-10">
                 <div class="lg:flex-none p-8 m-auto">
                     <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$about->thumbnail"/>
@@ -30,4 +30,5 @@
         @endforeach
             <x-icon-and-text icon="plus" href="{{ route('about.create' ) }} " title="Add about" ></x-icon-and-text>
     </div>
+    {{ $abouts->links() }}
 </x-layouts.app>

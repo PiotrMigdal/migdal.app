@@ -3,7 +3,7 @@
         Your jobs
     </x-slot>
     <div class="card-shadow">
-        @foreach (Auth::user()->jobs as $job)
+        @foreach ($jobs as $job)
             <div class="lg:flex hover:bg-brand-gray-dark rounded-2xl lg:px-10">
                 <div class="lg:flex-none p-8 m-auto">
                     <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$job->thumbnail"/>
@@ -30,4 +30,5 @@
         @endforeach
             <x-icon-and-text icon="plus" href="{{ route('jobs.create' ) }} " title="Add job" ></x-icon-and-text>
     </div>
+    {{ $jobs->links() }}
 </x-layouts.app>

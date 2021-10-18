@@ -134,6 +134,18 @@ class DatabaseSeeder extends Seeder
             'responsibilities' => 'Furniture selling, delivery planning, website maintaining',
             'is_main' => 0,
         ]);
+        Job::factory(20)->create([
+            'user_id' => 1
+        ]);
+        About::factory(20)->create([
+            'user_id' => 1
+        ]);
+        Project::factory(20)->create([
+            'user_id' => 1
+        ]);
+        Course::factory(20)->create([
+            'user_id' => 1
+        ]);
 
         About::factory(10)->create();
         Project::factory(10)->create();

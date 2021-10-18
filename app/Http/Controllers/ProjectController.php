@@ -11,7 +11,8 @@ class ProjectController extends Controller
     public function index(User $user)
     {
         return view('projects.index', [
-            'user' => $user
+            'user' => $user,
+            'projects' => Project::where('user_id', $user->id)->paginate(8)
         ]);
     }
     public function show(User $user, Project $project) {

@@ -11,7 +11,8 @@ class AboutController extends Controller
     public function index(User $user)
     {
         return view('about.index', [
-            'user' => $user
+            'user' => $user,
+            'abouts' => About::where('user_id', $user->id)->paginate(3)
         ]);
     }
 

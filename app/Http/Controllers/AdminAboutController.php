@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class AdminAboutController extends Controller
 {
     public function index()
     {
-        return view('admin.about.index');
+        return view('admin.about.index', [
+            'abouts' => About::where('user_id', Auth::user()->id)->paginate(10)
+        ]);
     }
     public function create()
     {

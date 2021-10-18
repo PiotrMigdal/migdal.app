@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class AdminJobController extends Controller
 {
     public function index()
     {
-        return view('admin.jobs.index');
+        return view('admin.jobs.index', [
+            'jobs' => Job::where('user_id', Auth::user()->id)->paginate(10)
+        ]);
     }
     public function create()
     {

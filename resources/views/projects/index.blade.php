@@ -7,7 +7,7 @@
       <span class="p-2 truncate max-w-xs">Projects</span>
   </x-slot>
   <div class="2xl:grid 2xl:grid-cols-2">
-    @foreach ($user->projects as $project)
+    @foreach ($projects as $project)
         <x-article-image-card>
             <x-slot name="thumbnail">
               <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
@@ -27,4 +27,5 @@
         </x-article-image-card>
     @endforeach
   </div>
+  {{ $projects->links() }}
 </x-layouts.app>

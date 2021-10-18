@@ -3,7 +3,7 @@
         Your projects
     </x-slot>
     <div class="card-shadow">
-        @foreach (Auth::user()->projects as $project)
+        @foreach ($projects as $project)
             <div class="lg:flex hover:bg-brand-gray-dark rounded-2xl lg:px-10">
                 <div class="lg:flex-none p-8 m-auto">
                     <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$project->thumbnail"/>
@@ -30,4 +30,5 @@
         @endforeach
             <x-icon-and-text icon="plus" href="{{ route('projects.create' ) }} " title="Add project" ></x-icon-and-text>
     </div>
+    {{ $projects->links() }}
 </x-layouts.app>

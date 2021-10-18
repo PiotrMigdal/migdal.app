@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class AdminCourseController extends Controller
 {
     public function index()
     {
-        return view('admin.courses.index');
+        return view('admin.courses.index', [
+            'courses' => Course::where('user_id', Auth::user()->id)->paginate(10)
+        ]);
     }
     public function create()
     {

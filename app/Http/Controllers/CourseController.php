@@ -11,7 +11,8 @@ class CourseController extends Controller
     public function index(User $user)
     {
         return view('courses.index', [
-            'user' => $user
+            'user' => $user,
+            'courses' => Course::where('user_id', $user->id)->paginate(8)
         ]);
     }
     public function show(User $user, Course $course) {
