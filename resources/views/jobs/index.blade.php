@@ -52,7 +52,7 @@
                     @if ($add->release_year == $year)
                     <x-timeline-event link="{{ route($add->type . 's.show', [$user->username, $add->id]) }}" class="md:justify-self-end" image="{{ $add->thumbnail }}" color="brand-pink">
                         <x-slot name="date">
-                            Completed add on {{ $add->release_date }}
+                            Completed {{ $add->type }} on {{ $add->release_date }}
                         </x-slot>
                         <x-slot name="header">
                             {{ $add->name }}

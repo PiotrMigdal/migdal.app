@@ -32,7 +32,9 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('users', [UserController::class, 'index'])->name('user.index');
     Route::get('users/{user:username}', [UserController::class, 'show'])->name('user.show');
+
     Route::get('users/{user:username}/about', [AboutController::class, 'index'])->name('about.index');
     Route::get('users/{user:username}/about/{about}', [AboutController::class, 'show'])->name('about.show');
 

@@ -9,7 +9,7 @@
             {{ __('About') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('jobs.index', $user->username)" :active="request()->routeIs('jobs.index')">
-            {{ __('Job history') }}
+            {{ __('Timeline') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
@@ -29,12 +29,12 @@
             {{ __('About') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('jobs.index', $user->username)" :active="request()->routeIs('jobs.index')">
-            {{ __('Job history') }}
+            {{ __('Timeline') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
-        <x-responsive-nav-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
+        <x-responsive-nav-left-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
             {{ __('Courses') }}
-        </x-responsive-nav-link>
+        </x-responsive-nav-left-link>
 </nav>

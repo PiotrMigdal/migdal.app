@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('users.index', [
+            'users' => User::with('projects', 'courses')->paginate(15)
+        ]);
+    }
 
     public function show(User $user)
     {
-        return view('user.show', [
+        return view('users.show', [
             'user' => $user
         ]);
     }
