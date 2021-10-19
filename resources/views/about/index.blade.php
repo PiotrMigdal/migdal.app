@@ -6,6 +6,7 @@
         </a> /
         <span class="p-2 truncate max-w-xs">About</span>
     </x-slot>
+    @if ($abouts->count())
     @foreach ($abouts as $about)
         <x-article-image-card>
             <x-slot name="thumbnail">
@@ -25,5 +26,8 @@
         </x-article-image-card>
     @endforeach
     {{ $abouts->links() }}
+    @else
+    <x-sorry-no-content>Sorry, no abouts yet</x-sorry-no-content>
+    @endif
 </x-layouts.app>
 

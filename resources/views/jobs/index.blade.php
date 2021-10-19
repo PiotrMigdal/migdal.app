@@ -3,6 +3,9 @@
         {{ __('Job history ' . $user->name) }}
     </x-slot>
 
+    @if (is_null($min_year))
+    <x-sorry-no-content>Sorry, no events yet</x-sorry-no-content>
+    @else
     <article>
         <header class="grid grid-cols-4 sm:grid-cols-6">
             <div class="col-span-1 border-gray-500 border-r">
@@ -64,6 +67,7 @@
         </section>
         @endfor
     </article>
+    @endif
 
 </x-layouts.app>
 

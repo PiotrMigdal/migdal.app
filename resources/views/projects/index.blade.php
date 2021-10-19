@@ -6,6 +6,7 @@
       </a> /
       <span class="p-2 truncate max-w-xs">Projects</span>
   </x-slot>
+  @if ($projects->count())
   <div class="2xl:grid 2xl:grid-cols-2">
     @foreach ($projects as $project)
         <x-article-image-card>
@@ -28,4 +29,7 @@
     @endforeach
   </div>
   {{ $projects->links() }}
+  @else
+  <x-sorry-no-content>Sorry, no projects yet</x-sorry-no-content>
+  @endif
 </x-layouts.app>
