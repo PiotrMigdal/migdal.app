@@ -31,6 +31,7 @@ class AdminProjectController extends Controller
     {
         return view('admin.projects.edit', [
             'project' => $project,
+            'courses' => Course::where('user_id', Auth::user()->id)->get(),
         ]);
     }
     public function update(Project $project)
@@ -67,6 +68,7 @@ class AdminProjectController extends Controller
             'course_id' => 'numeric',
             'repository' => 'max:255|url',
         ]);
+
         $attributes['user_id'] = auth()->id();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         $attributes['technologies'] = request('technologies');
