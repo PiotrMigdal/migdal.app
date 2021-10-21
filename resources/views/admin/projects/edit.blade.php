@@ -15,7 +15,7 @@
                 <x-form.input class="w-60" name='photos' type='file'/>
             </x-slot>
                 <x-form.input name='name' class="w-full" :value="old('name', $project->name)"/>
-                <x-form.input name='release_date' class="w-full" type="date" :value="old('release_date', $project->release_date)"/>
+                <x-form.input labelname="Release date" name='release_date' class="w-full" type="date" :value="old('release_date', $project->release_date)"/>
                 <x-form.input name='repository' class="w-full" type="url" :value="old('repository', $project->repository)"/>
                 <div class="mb-6">
                     <x-form.label name="course"/>
