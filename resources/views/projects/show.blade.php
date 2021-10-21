@@ -22,9 +22,12 @@
         @isset($project->technologies)
         <p class="my-4">Built using: <b>{{ $project->technologies }}</b></p>
         @endisset
-        {!! $project->description !!}
         @isset($project->repository)
         <p class="my-4">See code on: <a class="link" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
+        @endisset
+        {!! $project->description !!}
+        @isset($project->course_id)
+        <p class="my-4">This project was made as part of a course <a class="link" href="{{ route('courses.show', [$user->username, $course->id]) }}">{{ $course->name }}</a></p>
         @endisset
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">

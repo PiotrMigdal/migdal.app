@@ -19,6 +19,7 @@ class CourseController extends Controller
         return view('courses.show', [
           'course' => $course,
           'user' => $user,
+          'projects' => $course->projects,
         ]);
     }
 }

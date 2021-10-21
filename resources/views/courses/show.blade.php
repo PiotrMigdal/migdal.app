@@ -34,6 +34,12 @@
         @isset($course->repository)
         <p class="my-4">See code on: <a class="link" href="{{ $course->repository }}">{{ $course->repository }}</a></p>
         @endisset
+        @isset($course->projects)
+        <p>Projects made in the course:</p>
+        @endisset
+        @foreach ($course->projects as $project)
+            <li><a class="link" href="{{ route('projects.show', [$user->username, $project->id]) }}">{{$project->name}}</a></li>
+        @endforeach
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back
