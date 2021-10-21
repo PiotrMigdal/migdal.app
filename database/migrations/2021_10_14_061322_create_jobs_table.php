@@ -21,7 +21,6 @@ class CreateJobsTable extends Migration
             $table->text('description');
             $table->text('responsibilities');
             $table->string('thumbnail');
-            $table->boolean('is_main')->default(1);
             $table->date('start_date');
             $table->date('finish_date')->nullable();
             $table->timestamps();

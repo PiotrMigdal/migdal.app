@@ -11,7 +11,6 @@
             <x-form.input labelname="Start date" name='start_date' class="w-full" type="date" :value="old('start_date')"/>
             <x-form.input labelname="Finish date" name='finish_date' class="w-full" type="date" :value="old('finish_date')"/>
             <x-form.input name='responsibilities' class="w-full" :value="old('responsibilities')"/>
-            <x-form.input name='is_main' class="w-full" type="number" :value="old('is_main')"/>
             <x-form.textarea name='description'>{{ old('description') }}</x-form.textarea>
             </x-admin-image-form>
     </form>

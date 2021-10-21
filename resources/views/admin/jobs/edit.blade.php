@@ -19,7 +19,6 @@
                 <x-form.input labelname="Finish date" name='finish_date' class="w-full" type="date" :value="old('finish_date', $job->finish_date)"/>
                 <x-form.input name='responsibilities' class="w-full" :value="old('responsibilities', $job->responsibilities)"/>
             <x-slot name="column2">
-                <x-form.input name='is_main' class="w-full" type="number" :value="old('is_main', $job->is_main)"/>
                 <x-form.textarea name='description'>{{ old('description', $job->description) }}</x-form.textarea>
             </x-slot>
         </x-admin-image-form>

@@ -100,7 +100,6 @@ class DatabaseSeeder extends Seeder
             'start_date' => '2016-04-01',
             'finish_date' => '2017-11-01',
             'responsibilities' => 'Contacting client, rota planning, workflow maintaining',
-            'is_main' => 1,
         ]);
         Job::factory()->create([
             'user_id' => 1,
@@ -111,7 +110,6 @@ class DatabaseSeeder extends Seeder
             'start_date' => '2017-11-01',
             'finish_date' => '2019-12-01',
             'responsibilities' => 'Contacting client, rota planning, workflow maintaining',
-            'is_main' => 1,
         ]);
         Job::factory()->create([
             'user_id' => 1,
@@ -121,7 +119,6 @@ class DatabaseSeeder extends Seeder
             'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
             'start_date' => '2019-12-01',
             'responsibilities' => 'Infrastrucure, devops, helpdesk',
-            'is_main' => 1,
         ]);
         Job::factory()->create([
             'user_id' => 1,
@@ -132,7 +129,6 @@ class DatabaseSeeder extends Seeder
             'start_date' => '2014-04-11',
             'finish_date' => '2020-01-01',
             'responsibilities' => 'Furniture selling, delivery planning, website maintaining',
-            'is_main' => 0,
         ]);
         Job::factory(20)->create([
             'user_id' => 1

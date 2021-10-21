@@ -40,7 +40,6 @@ class AdminJobController extends Controller
             'responsibilities' => 'required|max:700',
             'start_date' => 'required|max:255|date',
             'finish_date' => 'max:255|date',
-            'is_main' => 'required|boolean',
         ]);
         if(isset($attributes['thumbnail'])) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
@@ -59,7 +58,6 @@ class AdminJobController extends Controller
             'responsibilities' => 'required|max:700',
             'start_date' => 'required|max:255|date',
             'finish_date' => 'max:255|date',
-            'is_main' => 'required|boolean',
 
         ]);
         $attributes['user_id'] = auth()->id();

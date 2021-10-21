@@ -29,7 +29,6 @@ class JobFactory extends Factory
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'responsibilities' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'thumbnail' => 'thumbnails/small.jpg',
-            'is_main' => $this->faker->boolean(50) ? 0 : 1,
             'start_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
             'finish_date' => $this->faker->date($format = 'Y-m-d', $max='now')
         ];
