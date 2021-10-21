@@ -18,7 +18,7 @@
             {{ $project->name }}
         </x-slot>
         <p>{{ $project->purpose }}</p>
-        <p>Released on: {{ $project->release_date }}</p>
+        <p>Released {{ \Carbon\Carbon::parse($project->release_date)->diffForHumans() }}</p>
         <div class="flex justify-end">
           <a href="{{ route('projects.show', [$user->username, $project]) }}">
               <button class="btn-primary mt-4">
