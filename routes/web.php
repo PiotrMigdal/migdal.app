@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/about', [AdminAboutController::class, 'index'])->name('about.index.admin');
     Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
-    Route::get('admin/about/{about}/edit', [AdminAboutController::class, 'edit'])->name('about.edit');
+    Route::patch('admin/about/{about}', [AdminAboutController::class, 'update'])->name('about.update');
     Route::get('admin/about/create', [AdminAboutController::class, 'create'])->name('about.create');
     Route::post('admin/about', [AdminAboutController::class, 'store'])->name('about.store');
     Route::delete('admin/about/{about}', [AdminAboutController::class, 'destroy'])->name('about.destroy');

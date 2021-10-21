@@ -10,6 +10,10 @@ use Illuminate\Validation\Rule;
 
 class AdminJobController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(model:Job::class, parameter: 'job');
+    }
     public function index()
     {
         return view('admin.jobs.index', [

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,6 +11,10 @@ use Illuminate\Validation\Rule;
 
 class AdminProjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(model:Project::class, parameter: 'project');
+    }
     public function index()
     {
         return view('admin.projects.index', [
@@ -18,7 +23,9 @@ class AdminProjectController extends Controller
     }
     public function create()
     {
-        return view('admin.projects.create');
+        return view('admin.projects.create', [
+            'courses' => Course::where('user_id', Auth::user()->id)->get(),
+        ]);
     }
     public function edit(Project $project)
     {
@@ -28,22 +35,24 @@ class AdminProjectController extends Controller
     }
     public function update(Project $project)
     {
-        $attributes = request()->validate([
+        {
+            $attributes = request()->validate([
             'name' => 'required|max:255',
             'purpose' => 'required|max:500',
             'description' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'max:255|date',
-            'course_id' => 'numeric',
+            'course_id' => 'exists:courses,id',
             'repository' => 'max:255|url',
-        ]);
-        $attributes['technologies'] = request('technologies');
-        if(isset($attributes['thumbnail'])) {
-            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            ]);
+            $attributes['technologies'] = request('technologies');
+            if(isset($attributes['thumbnail'])) {
+                $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            }
+            $project->update($attributes);
+            return back()->with('success', 'Saved!');
         }
-        $project->update($attributes);
-        return back()->with('success', 'Saved!');
     }
 
     public function store()

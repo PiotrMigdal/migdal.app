@@ -33,7 +33,7 @@ class CourseFactory extends Factory
             'technologies' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',
             'repository' => $this->faker->url(),
             'url' => $this->faker->url(),
-            'project_id' => $this->faker->randomNumber(),
+            'project_id' => $this->faker->boolean(50) ? $this->faker->randomNumber() : NULL,
         ];
     }
 }

@@ -9,23 +9,25 @@
   @if ($projects->count())
   <div class="2xl:grid 2xl:grid-cols-2">
     @foreach ($projects as $project)
-        <x-article-image-card>
-            <x-slot name="thumbnail">
-              <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
-            </x-slot>
-            <x-slot name="title">
-                {{ $project->name }}
-            </x-slot>
-            <p>{{ $project->purpose }}</p>
-            <p>Released on: {{ $project->release_date }}</p>
-            <div class="flex justify-end">
-              <a href="{{ route('projects.show', [$user->username, $project]) }}">
-                  <button class="btn-primary mt-4">
-                        Read more
-                  </button>
-                </a>
-            </div>
-        </x-article-image-card>
+    @can('view-any', $project)
+    <x-article-image-card>
+        <x-slot name="thumbnail">
+          <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
+        </x-slot>
+        <x-slot name="title">
+            {{ $project->name }}
+        </x-slot>
+        <p>{{ $project->purpose }}</p>
+        <p>Released on: {{ $project->release_date }}</p>
+        <div class="flex justify-end">
+          <a href="{{ route('projects.show', [$user->username, $project]) }}">
+              <button class="btn-primary mt-4">
+                    Read more
+              </button>
+            </a>
+        </div>
+    </x-article-image-card>
+    @endcan
     @endforeach
   </div>
   {{ $projects->links() }}

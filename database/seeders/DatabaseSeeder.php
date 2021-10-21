@@ -148,6 +148,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         About::factory(10)->create();
+        Course::factory(10)->create();
         Project::factory(10)->create();
         Job::factory(10)->create();
 

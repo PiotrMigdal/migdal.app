@@ -10,6 +10,10 @@ use Illuminate\Validation\Rule;
 
 class AdminCourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(model:Course::class, parameter: 'course');
+    }
     public function index()
     {
         return view('admin.courses.index', [
