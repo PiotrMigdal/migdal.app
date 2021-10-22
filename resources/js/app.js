@@ -10,3 +10,11 @@ require('alpinejs');
         });
     })
 );
+document.querySelector('.enlarge').addEventListener('click', function() {
+    document.querySelector('.enlarged').classList.remove('hidden');
+    document.querySelector('.enlarged').classList.add('flex');
+});
+document.querySelector('.enlarged').addEventListener('click', function() {
+    document.querySelector('.enlarged').classList.add('hidden');
+    document.querySelector('.enlarged').classList.remove('flex');
+});

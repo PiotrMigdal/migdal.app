@@ -9,9 +9,11 @@
         <span class="p-2 truncate max-w-xs">{{ $course->name }}</span>
     </x-slot>
     <x-article-image-card>
-        <x-slot name="thumbnail">
-            <x-image-play :filename="$course->thumbnail" alt="{{ $course->name }}"/>
-        </x-slot>
+        @isset($project->featured_image)
+            <x-slot name="thumbnail">
+                <x-image-enlarge class="h-40 w-56" :filename="$project->featured_image" alt="Featured image"/>
+            </x-slot>
+        @endisset
         <x-slot name="header">
             <h1>{{ $course->name }}</h1>
             <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>
@@ -34,12 +36,12 @@
         @isset($course->repository)
         <p class="my-4">See code on: <a class="link" href="{{ $course->repository }}">{{ $course->repository }}</a></p>
         @endisset
-        @isset($course->projects)
-        <p>Projects made in the course:</p>
-        @endisset
-        @foreach ($course->projects as $project)
-            <li><a class="link" href="{{ route('projects.show', [$user->username, $project->id]) }}">{{$project->name}}</a></li>
-        @endforeach
+        @if ($course->projects->count())
+            <p>Projects made in the course:</p>
+            @foreach ($course->projects as $project)
+                <li><a class="link" href="{{ route('projects.show', [$user->username, $project->id]) }}">{{$project->name}}</a></li>
+            @endforeach
+        @endif
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back

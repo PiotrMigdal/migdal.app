@@ -14,4 +14,4 @@
         <circle id="Ellipse_2-9" data-name="Ellipse 2" cx="5.5" cy="5.5" r="5.5" transform="translate(36 36)" fill="#fff"/>
     </svg>
 </div>
-<div class="ml-3 text-4xl tracking-wider">test<span class="text-brand-pink">.</span>app</div>
+<div class="ml-3 text-4xl tracking-wider">migdal<span class="text-brand-pink">.</span>app</div>
