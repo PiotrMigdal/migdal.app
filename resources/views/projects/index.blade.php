@@ -14,11 +14,11 @@
         <x-slot name="thumbnail">
           <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
         </x-slot>
-        <x-slot name="title">
-            {{ $project->name }}
+        <x-slot name="header">
+            <h1>{{ $project->name }}</h1>
+            <p>{{ $project->purpose }}</p>
+            <p>Released {{ \Carbon\Carbon::parse($project->release_date)->diffForHumans() }}</p>
         </x-slot>
-        <p>{{ $project->purpose }}</p>
-        <p>Released {{ \Carbon\Carbon::parse($project->release_date)->diffForHumans() }}</p>
         <div class="flex justify-end">
           <a href="{{ route('projects.show', [$user->username, $project]) }}">
               <button class="btn-primary mt-4">

@@ -10,7 +10,7 @@
         @method('PATCH')
         <x-admin-image-form>
             <x-slot name="thumbnail">
-                <x-image-circle class="w-48 h-48" alt="About current photo" :filename="$about->thumbnail"/>
+                <x-image-circle class="w-48 h-48" alt="Current thumbnail" :filename="$about->thumbnail"/>
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
             </x-slot>
                 <x-form.input name='title' class="w-full" :value="old('title', $about->title)" required/>

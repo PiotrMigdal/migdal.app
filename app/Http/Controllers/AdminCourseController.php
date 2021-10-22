@@ -37,7 +37,7 @@ class AdminCourseController extends Controller
             'platform' => 'required|max:500',
             'description' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'required|max:255|date',
             'finish_date' => 'max:255|date',
             'repository' => 'max:255|url',
@@ -46,6 +46,9 @@ class AdminCourseController extends Controller
         $attributes['technologies'] = request('technologies');
         if(isset($attributes['thumbnail'])) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        }
+        if(isset($attributes['featured_image'])) {
+            $attributes['featured_image'] = request()->file('featured_image')->store('featured_image');
         }
         $course->update($attributes);
         return back()->with('success', 'Saved!');
@@ -58,7 +61,7 @@ class AdminCourseController extends Controller
             'platform' => 'required|max:500',
             'description' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'required|max:255|date',
             'finish_date' => 'max:255|date',
             'repository' => 'max:255|url',
@@ -68,6 +71,9 @@ class AdminCourseController extends Controller
         $attributes['technologies'] = request('technologies');
         $attributes['user_id'] = auth()->id();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        if(isset($attributes['featured_image'])) {
+            $attributes['featured_image'] = request()->file('featured_image')->store('featured_image');
+        }
 
         Course::create($attributes);
         return redirect(route('courses.index.admin'))->with('success', 'Added!');

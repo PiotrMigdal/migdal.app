@@ -6,7 +6,7 @@
         @csrf
         <x-admin-image-form>
             <x-form.input class="w-60" name='thumbnail' type='file' required/>
-            <x-form.input class="w-60" name='photos' type='file' multiple/>
+            <x-form.input class="w-60" name='featured_image' type='file'/>
             <x-form.input name='name' class="w-full" :value="old('name')" required/>
             <x-form.input labelname="Release date" name='release_date' class="w-full" type="date" :value="old('release_date')" required/>
             <x-form.input name='repository' class="w-full" type="url" :value="old('repository')"/>

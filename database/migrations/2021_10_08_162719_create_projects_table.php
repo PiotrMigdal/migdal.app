@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->text('purpose');
             $table->text('description');
             $table->string('thumbnail');
-            $table->text('photos')->nullable();
+            $table->text('featured_image')->nullable();
             $table->date('release_date')->nullable();
             $table->text('technologies')->nullable();
             $table->string('repository')->nullable();

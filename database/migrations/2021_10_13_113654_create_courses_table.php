@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('thumbnail');
-            $table->text('photos')->nullable();
+            $table->text('featured_image')->nullable();
             $table->string('platform');
             $table->string('url')->nullable();
             $table->date('start_date')->nullable();

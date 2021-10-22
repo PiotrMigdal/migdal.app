@@ -1,12 +1,16 @@
 
-<article class="lg:flex card-shadow p-4 lg:p-8 m-4 ">
-    <aside class="lg:flex-shrink-0 p-6 lg:mr-4">
-        {{ $thumbnail }}
-    </aside>
-    <section class="lg:flex-1">
-        <h1>
-            {{ $title }}
-        </h1>
+<article class="card-shadow p-4 lg:p-8 m-4 ">
+    <div class="lg:flex">
+        <aside class="m-auto lg:flex-shrink-0 p-6">
+            {{ $thumbnail }}
+        </aside>
+        @isset($header)
+        <header class="lg:flex-1">
+            {{ $header }}
+        </header>
+        @endisset
+    </div>
+    <section class="pt-6">
         {{ $slot }}
     </section>
 </article>

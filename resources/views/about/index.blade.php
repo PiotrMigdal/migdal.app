@@ -12,10 +12,10 @@
             <x-slot name="thumbnail">
                 <x-image-circle class="h-48 w-48" :filename="$about->thumbnail" alt="{{ $about->name }}"/>
             </x-slot>
-            <x-slot name="title">
-                {{ $about->title }}
+            <x-slot name="header">
+                <h1>{{ $about->title }}</h1>
+                {!! $about->excerpt !!}
             </x-slot>
-            {!! $about->excerpt !!}
             <div class="flex justify-end">
                 <a href="{{ route('about.show', [$user->username, $about]) }}">
                     <button class="btn-primary mt-4">

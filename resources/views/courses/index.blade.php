@@ -13,11 +13,11 @@
             <x-slot name="thumbnail">
               <x-image-play :filename="$course->thumbnail" alt="{{ $course->name }}"/>
             </x-slot>
-            <x-slot name="title">
-                {{ $course->name }}
+            <x-slot name="header">
+                <h1>{{ $course->name }}</h1>
+                <p>Course on {{ $course->platform }}</p>
+                <p>Finished {{ \Carbon\Carbon::parse($course->finish_date)->diffForHumans() }}</p>
             </x-slot>
-            <p>Course on {{ $course->platform }}</p>
-            <p>Finished {{ \Carbon\Carbon::parse($course->finish_date)->diffForHumans() }}</p>
             <div class="flex justify-end">
               <a href="{{ route('courses.show', [$user->username, $course]) }}">
                   <button class="btn-primary mt-4">

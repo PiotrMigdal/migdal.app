@@ -10,9 +10,12 @@
         @method('PATCH')
         <x-admin-image-form>
             <x-slot name="thumbnail">
-                <x-image-circle class="w-48 h-48" alt="Project current photo" :filename="$project->thumbnail"/>
+                <x-image-rectangle  class="mb-6 mt-10 w-48 h-32" alt="Current thumbnail" :filename="$project->thumbnail"/>
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
-                <x-form.input class="w-60" name='photos' type='file'/>
+                @isset($project->featured_image)
+                <x-image-rectangle class="mb-6 mt-10 w-48 h-32" alt="Current featured image" :filename="$project->featured_image"/>
+                @endisset
+                <x-form.input labelname="Featured image" class="w-60" name='featured_image' type='file'/>
             </x-slot>
                 <x-form.input name='name' class="w-full" :value="old('name', $project->name)" required/>
                 <x-form.input labelname="Release date" name='release_date' class="w-full" type="date" :value="old('release_date', $project->release_date)" required/>

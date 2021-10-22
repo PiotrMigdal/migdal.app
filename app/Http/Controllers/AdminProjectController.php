@@ -42,7 +42,7 @@ class AdminProjectController extends Controller
             'purpose' => 'required|max:500',
             'description' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'required|max:255|date',
             'course_id' => 'exists:courses,id',
             'repository' => 'max:255|url',
@@ -50,6 +50,9 @@ class AdminProjectController extends Controller
             $attributes['technologies'] = request('technologies');
             if(isset($attributes['thumbnail'])) {
                 $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            }
+            if(isset($attributes['featured_image'])) {
+                $attributes['featured_image'] = request()->file('featured_image')->store('featured_image');
             }
             $project->update($attributes);
             return back()->with('success', 'Saved!');
@@ -63,7 +66,7 @@ class AdminProjectController extends Controller
             'purpose' => 'required|max:500',
             'description' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'required|max:255|date',
             'course_id' => 'numeric',
             'repository' => 'max:255|url',
@@ -71,6 +74,9 @@ class AdminProjectController extends Controller
 
         $attributes['user_id'] = auth()->id();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        if(isset($attributes['featured_image'])) {
+            $attributes['featured_image'] = request()->file('featured_image')->store('featured_image');
+        }
         $attributes['technologies'] = request('technologies');
 
         Project::create($attributes);

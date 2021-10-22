@@ -13,21 +13,21 @@
             <x-image-circle class="w-44 h-44" :filename="$job->thumbnail" alt="{{ $job->job_title }}"/>
         </x-slot>
 
-        <x-slot name="title">
-            {{ $job->job_title }}
+        <x-slot name="header">
+            <h1>{{ $job->job_title }}</h1>
+
+            <p class="my-4">Company name: <b>{{ $job->company_name }}</b></p>
+
+            <p class="my-4">Started on: <b>{{ $job->start_date }}</b></p>
+
+            @isset($job->finish_date)
+                <p class="my-4">Finished on: <b>{{ $job->finish_date }}</b></p>
+            @endisset
+
+            @isset($job->responsibilities)
+            <p class="my-4">Main responsibilities: <b>{{ $job->responsibilities }}</b></p>
+            @endisset
         </x-slot>
-
-        <p class="my-4">Company name: <b>{{ $job->company_name }}</b></p>
-
-        <p class="my-4">Started on: <b>{{ $job->start_date }}</b></p>
-
-        @isset($job->finish_date)
-            <p class="my-4">Finished on: <b>{{ $job->finish_date }}</b></p>
-        @endisset
-
-        @isset($job->responsibilities)
-        <p class="my-4">Main responsibilities: <b>{{ $job->responsibilities }}</b></p>
-        @endisset
 
         {!! $job->description !!}
 
@@ -36,6 +36,7 @@
                 < back
             </button>
         </a>
+
     </x-article-image-card>
 </x-layouts.app>
 

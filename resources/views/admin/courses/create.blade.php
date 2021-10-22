@@ -6,7 +6,7 @@
         @csrf
         <x-admin-image-form>
                 <x-form.input class="w-60" name='thumbnail' type='file' required/>
-                <x-form.input class="w-60" name='photos' type='file'/>
+                <x-form.input class="w-60" name='featured_image' type='file'/>
                 <x-form.input name='name' class="w-full" :value="old('name')" required/>
                 <x-form.input name='platform' class="w-full" :value="old('platform')" required/>
                 <x-form.input name='url' class="w-full" type="url" :value="old('url')"/>

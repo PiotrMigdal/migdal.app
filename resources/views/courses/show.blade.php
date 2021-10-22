@@ -12,22 +12,22 @@
         <x-slot name="thumbnail">
             <x-image-play :filename="$course->thumbnail" alt="{{ $course->name }}"/>
         </x-slot>
-        <x-slot name="title">
-            {{ $course->name }}
+        <x-slot name="header">
+            <h1>{{ $course->name }}</h1>
+            <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>
+
+            @isset($course->start_date)
+                <p class="my-4">Started on <b>{{ $course->start_date }}</b></p>
+            @endisset
+
+            @isset($course->finish_date)
+                <p class="my-4">Finished on <b>{{ $course->finish_date }}</b></p>
+            @endisset
+
+            @isset($course->technologies)
+            <p class="my-4">Included: <b>{{ $course->technologies }}</b></p>
+            @endisset
         </x-slot>
-        <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>
-
-        @isset($course->start_date)
-            <p class="my-4">Started on <b>{{ $course->start_date }}</b></p>
-        @endisset
-
-        @isset($course->finish_date)
-            <p class="my-4">Finished on <b>{{ $course->finish_date }}</b></p>
-        @endisset
-
-        @isset($course->technologies)
-        <p class="my-4">Included: <b>{{ $course->technologies }}</b></p>
-        @endisset
 
         {!! $course->description !!}
 

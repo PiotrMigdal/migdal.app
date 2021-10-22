@@ -12,9 +12,7 @@
         <x-slot name="thumbnail">
             <x-image-circle class="h-48 w-48" :filename="$about->thumbnail" alt="{{ $about->name }}"/>
         </x-slot>
-        <x-slot name="title">
-            {{ $about->title }}
-        </x-slot>
+        <h1>{{ $about->title }}</h1>
         {!! $about->body !!}
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">

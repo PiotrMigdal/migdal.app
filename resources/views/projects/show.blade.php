@@ -12,19 +12,19 @@
         <x-slot name="thumbnail">
             <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
         </x-slot>
-        <x-slot name="title">
-            {{ $project->name }}
+        <x-slot name="header">
+            <h1>{{ $project->name }}</h1>
+            <p class="my-4"><b>{{ $project->purpose }}</b></p>
+            @isset($project->release_date)
+                <p class="my-4">Released on: <b>{{ $project->release_date }}</b></p>
+            @endisset
+            @isset($project->technologies)
+            <p class="my-4">Built using: <b>{{ $project->technologies }}</b></p>
+            @endisset
+            @isset($project->repository)
+            <p class="my-4">See code on: <a class="link" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
+            @endisset
         </x-slot>
-        <p class="my-4"><b>{{ $project->purpose }}</b></p>
-        @isset($project->release_date)
-            <p class="my-4">Released on: <b>{{ $project->release_date }}</b></p>
-        @endisset
-        @isset($project->technologies)
-        <p class="my-4">Built using: <b>{{ $project->technologies }}</b></p>
-        @endisset
-        @isset($project->repository)
-        <p class="my-4">See code on: <a class="link" href="{{ $project->repository }}">{{ $project->repository }}</a></p>
-        @endisset
         {!! $project->description !!}
         @isset($project->course_id)
         <p class="my-4">This project was made as part of a course <a class="link" href="{{ route('courses.show', [$user->username, $course->id]) }}">{{ $course->name }}</a></p>
