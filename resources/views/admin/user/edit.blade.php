@@ -10,9 +10,9 @@
                 <x-image-circle class="w-48 h-48" alt="Current photo" :filename="Auth::user()->thumbnail"/>
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
             </x-slot>
-            <x-form.input name='username' :value="old('username', Auth::user()->username)"/>
-            <x-form.input name='name' :value="old('name', Auth::user()->name)"/>
-            <x-form.input name='email' :value="old('email', Auth::user()->email)"/>
+            <x-form.input name='username' :value="old('username', Auth::user()->username)" required/>
+            <x-form.input name='name' :value="old('name', Auth::user()->name)" required/>
+            <x-form.input name='email' :value="old('email', Auth::user()->email)" required/>
             <x-slot name="column2">
                 <x-form.input name='age' :value="old('age', Auth::user()->age)"/>
                 <x-form.input name='education' :value="old('education', Auth::user()->education)"/>

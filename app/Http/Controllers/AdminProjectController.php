@@ -43,7 +43,7 @@ class AdminProjectController extends Controller
             'description' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'release_date' => 'max:255|date',
+            'release_date' => 'required|max:255|date',
             'course_id' => 'exists:courses,id',
             'repository' => 'max:255|url',
             ]);
@@ -64,7 +64,7 @@ class AdminProjectController extends Controller
             'description' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'release_date' => 'max:255|date',
+            'release_date' => 'required|max:255|date',
             'course_id' => 'numeric',
             'repository' => 'max:255|url',
         ]);

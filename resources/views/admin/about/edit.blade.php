@@ -13,9 +13,9 @@
                 <x-image-circle class="w-48 h-48" alt="About current photo" :filename="$about->thumbnail"/>
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
             </x-slot>
-                <x-form.input name='title' class="w-full" :value="old('title', $about->title)"/>
-                <x-form.textarea name='excerpt'>{{ old('excerpt', $about->excerpt) }}</x-form.textarea>
-                <x-form.textarea name='body'>{{ old('body', $about->body) }}</x-form.textarea>
+                <x-form.input name='title' class="w-full" :value="old('title', $about->title)" required/>
+                <x-form.textarea name='excerpt' required>{{ old('excerpt', $about->excerpt) }}</x-form.textarea>
+                <x-form.textarea name='body' required>{{ old('body', $about->body) }}</x-form.textarea>
         </x-admin-image-form>
     </form>
 </x-layouts.app>

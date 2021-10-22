@@ -14,8 +14,8 @@
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
                 <x-form.input class="w-60" name='photos' type='file'/>
             </x-slot>
-                <x-form.input name='name' class="w-full" :value="old('name', $project->name)"/>
-                <x-form.input labelname="Release date" name='release_date' class="w-full" type="date" :value="old('release_date', $project->release_date)"/>
+                <x-form.input name='name' class="w-full" :value="old('name', $project->name)" required/>
+                <x-form.input labelname="Release date" name='release_date' class="w-full" type="date" :value="old('release_date', $project->release_date)" required/>
                 <x-form.input name='repository' class="w-full" type="url" :value="old('repository', $project->repository)"/>
                 <div class="mb-6">
                     <x-form.label name="course"/>
@@ -30,7 +30,7 @@
                     <x-form.error name="course"/>
                 </div>
                 <x-form.textarea name='purpose'>{{ old('purpose', $project->purpose) }}</x-form.textarea>
-                <x-form.textarea name='description'>{{ old('description', $project->description) }}</x-form.textarea>
+                <x-form.textarea name='description' required>{{ old('description', $project->description) }}</x-form.textarea>
                 <x-form.textarea name='technologies'>{{ old('technologies', $project->technologies) }}</x-form.textarea>
         </x-admin-image-form>
     </form>
