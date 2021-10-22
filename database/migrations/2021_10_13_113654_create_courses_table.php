@@ -26,7 +26,6 @@ class CreateCoursesTable extends Migration
             $table->date('finish_date')->nullable();
             $table->text('technologies')->nullable();
             $table->string('repository')->nullable();
-            $table->foreignId('project_id')->nullable();
             $table->timestamps();
         });
     }

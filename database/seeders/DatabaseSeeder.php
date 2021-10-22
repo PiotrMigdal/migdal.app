@@ -76,7 +76,6 @@ class DatabaseSeeder extends Seeder
             'technologies' => 'Tailwin, pure JavaScript, laravel',
             'repository' => 'https://github.com/PiotrMigdal/migdalapp',
             'url' => 'https://www.youtube.com/dasdasdas',
-            'project_id' => '1',
         ]);
         Course::factory()->create([
             'user_id' => 1,
@@ -89,7 +88,6 @@ class DatabaseSeeder extends Seeder
             'technologies' => 'Tailwin, pure JavaScript, laravel',
             'repository' => 'https://github.com/PiotrMigdal/migdalapp',
             'url' => 'https://www.frontendmasters.com/dasdasdas',
-            'project_id' => '1',
         ]);
         Job::factory()->create([
             'user_id' => 1,

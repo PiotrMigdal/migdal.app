@@ -20,7 +20,6 @@
                 <x-form.input labelname="Start date" name='start_date' class="w-full" type="date" :value="old('start_date', $course->start_date)"/>
                 <x-form.input labelname="Finish date" name='finish_date' class="w-full" type="date" :value="old('finish_date', $course->finish_date)"/>
                 <x-form.input name='repository' class="w-full" type="url" :value="old('repository', $course->repository)"/>
-                <x-form.input labelname="Project" name='project_id' class="w-full" type="number" :value="old('project_id', $course->project_id)"/>
             <x-slot name="column2">
                 <x-form.textarea name='description'>{{ old('description', $course->description) }}</x-form.textarea>
                 <x-form.textarea name='technologies'>{{ old('technologies', $course->technologies) }}</x-form.textarea>

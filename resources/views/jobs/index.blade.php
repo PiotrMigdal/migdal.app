@@ -1,12 +1,15 @@
 <x-layouts.app :user="$user">
     <x-slot name="header">
-        {{ __('Job history ' . $user->name) }}
+        <a href="{{ route('user.show', $user->username) }}">
+            <button class="btn-header">{{ $user->name }}</button>
+        </a> /
+        <span class="p-2 truncate max-w-xs">Timeline</span>
     </x-slot>
 
     @if (is_null($min_year))
     <x-sorry-no-content>Sorry, no events yet</x-sorry-no-content>
     @else
-    <article>
+    <article class="lg:p-6 pt-8">
         <header class="grid grid-cols-4 sm:grid-cols-6">
             <div class="col-span-1 border-gray-500 border-r">
             </div>

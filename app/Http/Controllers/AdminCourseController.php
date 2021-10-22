@@ -40,7 +40,6 @@ class AdminCourseController extends Controller
             'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'max:255|date',
             'finish_date' => 'max:255|date',
-            'project_id' => 'numeric',
             'repository' => 'max:255|url',
             'url' => 'max:255|url',
         ]);
@@ -62,7 +61,6 @@ class AdminCourseController extends Controller
             'photos' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'start_date' => 'max:255|date',
             'finish_date' => 'max:255|date',
-            'project_id' => 'numeric',
             'repository' => 'max:255|url',
             'url' => 'max:255|url',
 
