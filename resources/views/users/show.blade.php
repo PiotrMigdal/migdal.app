@@ -4,7 +4,7 @@
     </x-slot>
     <article class="md:flex my-12">
         <aside class="px-6">
-            <x-image-circle class="w-24 h-24" alt="{{ $user->name }}'s photo" :filename="$user->thumbnail"/>
+            <x-image-user-thumbnail class="w-24 h-24 text-3xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
         </aside>
         <section class="text-center p-4">
             <h2>{{ $user->name }}</h2>

@@ -7,7 +7,7 @@
         @method('PATCH')
         <x-admin-image-form>
             <x-slot name="thumbnail">
-                <x-image-circle class="w-48 h-48" alt="Current photo" :filename="Auth::user()->thumbnail"/>
+                <x-image-user-thumbnail class="w-48 h-48 text-7xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
                 <x-form.input class="w-60" name='thumbnail' type='file'/>
             </x-slot>
             <x-form.input name='username' :value="old('username', Auth::user()->username)" required/>
