@@ -18,14 +18,21 @@
         <h1>Projects</h1>
         <div>
             <div class="flex place-content-end">
-                <div class="flex-shrink-0 font-mono text-xs w-4 mb-4 pb-2 border-r border-gray-500">
-
-                    <div class="h-8">1</div>
+                <div class="flex-shrink-0 font-mono w-4 mb-4 pb-2 border-r border-gray-500">
+                    @for ($max_projects; $max_projects > 0; $max_projects--)
+                        <div class="h-8">{{ $max_projects}}</div>
+                    @endfor
                 </div>
                 <div class="flex-1 flex items-end">
-                        @for ($year = date('Y'); $year <= ($year-5); $year++)
+                        @for ($year = date('Y') - 5; $year <= date('Y'); $year++)
                             <div class="text-center flex-1">
-                                <div class="bg-brand-pink h-8 mx-1 "></div>
+                                @foreach ($years as $year_project => $projects)
+                                    @if ($year_project == $year)
+                                        @foreach ($projects as $project)
+                                        <a href="{{ route('projects.show', [$user->username, $project]) }}" title="{{ $project->name }}"><div class="bg-brand-pink h-8 mx-1 hover:bg-brand-pink-dark"></div></a>
+                                        @endforeach
+                                    @endif
+                                @endforeach
                                 <div class="font mono pt-1 border-t border-gray-500 text-xs h-4">{{ $year }}</div>
                             </div>
                         @endfor
@@ -36,9 +43,10 @@
     <article>
         <h1>Jobs</h1>
         @foreach ($jobs as $job)
+        <a href="{{ route('jobs.show', [$user->username, $job->id]) }}">
             <div class="grid grid-cols-12 m-4">
                 <div class="col-span-4 hover:text-white text-sm">
-                    <a href="{{ route('jobs.show', [$user->username, $job->id]) }}">{{ $job->job_title . 'at' . $job->company_name . $job->current}} </a>
+                    {{ $job->job_title . 'at' . $job->company_name . $job->current}}
                 </div>
                 <div class="group col-span-6">
                     <div class="bg-brand-pink h-5" style="width: {{ $job->years / $max_length * 100 }}% ">
@@ -48,6 +56,7 @@
                     </div>
                 </div>
             </div>
+        </a>
         @endforeach
     </article>
 </x-layouts.app>

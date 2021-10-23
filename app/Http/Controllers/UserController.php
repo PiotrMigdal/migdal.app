@@ -26,15 +26,21 @@ class UserController extends Controller
             $job['current'] = $job->finish_date ? '' : ' (current)';
             return $job;
         });
+
         $projects = $user->projects->map(function ($project) {
-            $projects['release_year'] = Carbon::createFromFormat('Y-m-d', $project->release_date)->format('Y');
+            $project['release_year'] = Carbon::createFromFormat('Y-m-d', $project->release_date)->format('Y');
             return $project;
         });
+
+        $years = $projects->groupBy('release_year');
+        $counts = $years->map->count();
+
         return view('users.show', [
             'user' => $user,
             'jobs' => $jobs->sortByDesc('start_date'),
-            'projects' => $projects->sortByDesc('release_date'),
-            'max_length' => $jobs->max('years')
+            'max_projects' => $counts->max(),
+            'years' => $years,
+            'max_length' => $jobs->max('years'),
         ]);
     }
 }

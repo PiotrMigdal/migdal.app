@@ -42,7 +42,7 @@
                                 @if ($job->start_year == $year && $job->finish_year == $year)
                                 {{ $job->start_date }} - {{ $job->finish_date }}
                                 @elseif  ($job->start_year == $year)
-                                Started job on {{ $job->start_date }}
+                                Started job on {{ $job->start_date }} {{ $job->finish_date === null ? '(current job)' : '' }}
                                 @else
                                 Finished job on {{ $job->finish_date }}
                                 @endif

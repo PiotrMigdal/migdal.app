@@ -14,7 +14,7 @@ class JobController extends Controller
     {
         $jobs = $user->jobs->map(function ($job) {
             $job['start_year'] = Carbon::createFromFormat('Y-m-d', $job->start_date)->format('Y');
-            $job['finish_year'] = Carbon::createFromFormat('Y-m-d', $job->finish_date)->format('Y');
+            $job['finish_year'] = $job->finish_date ? Carbon::createFromFormat('Y-m-d', $job->finish_date)->format('Y') : '';
             return $job;
         });
 
