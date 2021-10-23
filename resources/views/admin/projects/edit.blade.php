@@ -25,7 +25,7 @@
                     <select  class="w-full bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-pink focus:ring-opacity-50 p-2 ring-1 ring-brand-gray-light rounded-md shadow-sm" name="course_id" id="course_id">
                         <option  class="bg-brand-gray-dark" value="">--- select course ---</option>
                         @foreach ($courses as $course)
-                            <option  class="bg-brand-gray-dark" value="{{ $course->id }}" {{ $course->id === $project->course_id ? 'selected' : '' }} {{ $course->project_id ? 'disabled' : '' }}>
+                            <option  class="bg-brand-gray-dark" value="{{ $course->id }}" {{ $course->id === $project->course_id ? 'selected' : '' }}>
                                 {{ ucwords($course->name) }}
                             </option>
                         @endforeach

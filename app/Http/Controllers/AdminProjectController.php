@@ -44,7 +44,7 @@ class AdminProjectController extends Controller
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'required|max:255|date',
-            'course_id' => 'exists:courses,id',
+            'course_id' => 'exists:courses,id|nullable',
             'repository' => 'max:255|url',
             ]);
             $attributes['technologies'] = request('technologies');
@@ -68,7 +68,7 @@ class AdminProjectController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'release_date' => 'required|max:255|date',
-            'course_id' => 'numeric',
+            'course_id' => 'exists:courses,id|nullable',
             'repository' => 'max:255|url',
         ]);
 

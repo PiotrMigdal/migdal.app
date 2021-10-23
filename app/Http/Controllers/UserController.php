@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\Course;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -32,15 +34,16 @@ class UserController extends Controller
             return $project;
         });
 
-        $years = $projects->groupBy('release_year');
-        $counts = $years->map->count();
+        $project_years = $projects->groupBy('release_year');
 
         return view('users.show', [
             'user' => $user,
+            'courses' => Course::where('user_id', $user->id)->orderBy('finish_date', 'DESC')->limit(5)->get(),
+            'abouts' => About::where('user_id', $user->id)->get(),
             'jobs' => $jobs->sortByDesc('start_date'),
-            'max_projects' => $counts->max(),
-            'years' => $years,
-            'max_length' => $jobs->max('years'),
+            'max_projects' => $project_years->map->count()->max(),
+            'project_years' => $project_years,
+            'max_job_length' => $jobs->max('years'),
         ]);
     }
 }
