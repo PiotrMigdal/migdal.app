@@ -15,6 +15,25 @@
         </section>
     </article>
     <article>
+        <h1>Projects</h1>
+        <div>
+            <div class="flex place-content-end">
+                <div class="flex-shrink-0 font-mono text-xs w-4 mb-4 pb-2 border-r border-gray-500">
+
+                    <div class="h-8">1</div>
+                </div>
+                <div class="flex-1 flex items-end">
+                        @for ($year = date('Y'); $year <= ($year-5); $year++)
+                            <div class="text-center flex-1">
+                                <div class="bg-brand-pink h-8 mx-1 "></div>
+                                <div class="font mono pt-1 border-t border-gray-500 text-xs h-4">{{ $year }}</div>
+                            </div>
+                        @endfor
+                </div>
+            </div>
+        </div>
+    </article>
+    <article>
         <h1>Jobs</h1>
         @foreach ($jobs as $job)
             <div class="grid grid-cols-12 m-4">
