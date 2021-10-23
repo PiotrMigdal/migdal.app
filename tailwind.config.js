@@ -43,6 +43,7 @@ module.exports = {
         extend: {
             opacity: ['disabled'],
             backgroundColor: ['active'],
+            display: ["group-hover"],
         },
     },
 

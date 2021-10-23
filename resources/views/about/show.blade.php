@@ -10,7 +10,7 @@
     </x-slot>
     <x-article-image-card>
         <x-slot name="thumbnail">
-            <x-image-circle class="h-48 w-48" :filename="$about->thumbnail" alt="{{ $about->name }}"/>
+            <x-image-circle class="h-48 w-48" :filename="$about->thumbnail" alt="About thumbnail"/>
         </x-slot>
         <h1>{{ $about->title }}</h1>
         {!! $about->body !!}

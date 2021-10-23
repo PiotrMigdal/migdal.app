@@ -91,6 +91,16 @@ class DatabaseSeeder extends Seeder
         ]);
         Job::factory()->create([
             'user_id' => 1,
+            'job_title' => 'IT Support Engineer',
+            'company_name' => 'Darseq',
+            'thumbnail' => 'thumbnails/small.jpg',
+            'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
+            'start_date' => '2019-12-01',
+            'finish_date' => null,
+            'responsibilities' => 'Infrastrucure, devops, helpdesk',
+        ]);
+        Job::factory()->create([
+            'user_id' => 1,
             'job_title' => 'Agent',
             'company_name' => 'Proseco',
             'thumbnail' => 'thumbnails/small.jpg',
@@ -111,15 +121,6 @@ class DatabaseSeeder extends Seeder
         ]);
         Job::factory()->create([
             'user_id' => 1,
-            'job_title' => 'IT Support Engineer',
-            'company_name' => 'Darseq',
-            'thumbnail' => 'thumbnails/small.jpg',
-            'description' => '<p>Vel qui quisquam cum ex. Provident sint eligendi qui asperiores dolorem cumque. Illum quaerat quasi excepturi voluptatem ad. Rem ad culpa ducimus at libero id.</p><p>Nam recusandae iste sit totam provident dolorem aut. Ut ut autem hic dignissimos. In dolorem aut quod.</p>',
-            'start_date' => '2019-12-01',
-            'responsibilities' => 'Infrastrucure, devops, helpdesk',
-        ]);
-        Job::factory()->create([
-            'user_id' => 1,
             'job_title' => 'Owner',
             'company_name' => 'Almond F',
             'thumbnail' => 'thumbnails/small.jpg',
@@ -127,9 +128,6 @@ class DatabaseSeeder extends Seeder
             'start_date' => '2014-04-11',
             'finish_date' => '2020-01-01',
             'responsibilities' => 'Furniture selling, delivery planning, website maintaining',
-        ]);
-        Job::factory(20)->create([
-            'user_id' => 1
         ]);
         About::factory(20)->create([
             'user_id' => 1
@@ -144,7 +142,6 @@ class DatabaseSeeder extends Seeder
         About::factory(10)->create();
         Course::factory(10)->create();
         Project::factory(10)->create();
-        Job::factory(10)->create();
 
     }
 }
