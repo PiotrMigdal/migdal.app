@@ -3,8 +3,8 @@
         User Profile
     </x-slot>
     <div class="lg:grid lg:grid-cols-12 lg:gap-12 card-shadow p-4 lg:p-8 m-4">
-        <section class="flex flex-wrap mb-12 lg:col-span-12 justify-between">
-            <div>
+        <section class="flex flex-wrap mb-12 lg:col-span-12 lg:justify-between">
+            <div class="m-auto lg:m-0">
                 <h1 class="text-5xl">{{ $user->name }}</h1>
                 <div class="font-mono p-8 space-y-2">
                     <p>Education: <span class="text-gray-300">{{ $user->education }}</span></p>
@@ -15,7 +15,7 @@
                     @endisset
                 </div>
             </div>
-            <aside class="flex-shrink-0 my-auto">
+            <aside class="flex-shrink-0 m-auto lg:m-0">
                 <x-image-user-thumbnail class="w-64 h-64 text-3xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
             </aside>
         </section>
@@ -54,7 +54,7 @@
                         {{ $job->job_title . 'at' . $job->company_name . $job->current}}
                     </div>
                     <div class="group col-span-8">
-                        <div class="bg-brand-pink h-5" style="width: {{ $job->years / $max_job_length * 100 }}% ">
+                        <div class="bg-brand-pink h-5 hover:bg-brand-pink-dark" style="width: {{ $job->years / $max_job_length * 100 }}% ">
                         </div>
                         <div class="bg-brand-gray-dark font-mono text-xs hidden absolute  group-hover:block p-2">
                             {{ $job->years > 0 ? ($job->years > 1 ? $job->years . ' years' : $job->years . ' year') : '' }} {{ $job->months > 0 ? $job->months . ' months' : 'less than month' }}

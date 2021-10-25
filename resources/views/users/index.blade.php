@@ -7,7 +7,7 @@
             <a href="{{ route('user.show', $user) }}">
                 <div class="grid grid-cols-8 gap-3 hover:bg-brand-gray-dark rounded-2xl lg:px-10">
                     <div class="col-span-3 md:col-span-2 lg:col-span-1 p-4 m-auto">
-                        <x-image-user-thumbnail class="w-12 h-12 text-3xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
+                        <x-image-user-thumbnail class="w-12 h-12 text-3xl" :user="$user" :filename="$user->thumbnail"/>
                         <div class="text-center mt-2 lg:hidden">
                             {{ $user->name }}
                         </div>

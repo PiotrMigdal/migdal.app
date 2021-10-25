@@ -1,6 +1,6 @@
 @props(['user' => false, 'admin' => false])
 <x-layouts.layout>
-    <div class="sm:flex">
+    <div class="md:flex">
         @if ($user == true)
         @include('components.layouts._navigation-app')
         @elseif ($admin == true)

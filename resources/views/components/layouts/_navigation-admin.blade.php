@@ -1,6 +1,6 @@
 
 <!-- Left navigation -->
-<aside class="hidden mt-5 sm:block w-48 sm:flex-shrink-0">
+<aside class="hidden mt-5 md:block w-48 md:flex-shrink-0">
     <nav class="bg-brand-gray-dark mr-8">
         <x-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
@@ -21,7 +21,7 @@
 </aside>
 
 <!-- Responsive left navigation -->
-<nav class="sm:hidden grid grid-cols-2 gap-2">
+<nav class="md:hidden grid grid-cols-2 gap-2">
         <x-responsive-nav-left-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
             {{ __('Profile') }}
         </x-responsive-nav-left-link>
