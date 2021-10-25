@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }">
     <!-- Primary Navigation Menu -->
-    <div class="container mx-auto px-4 lg:px-6 lg:px-8">
+    <div class="container mx-auto px-4 lg:px-6">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -25,9 +25,10 @@
             </div>
             <!-- Search -->
             <div class="m-auto px-2 py-1">
-                <form method="GET" action="/">
+                <form method="GET" action="/users/{{ $user->username }}/search">
                   <input type="text" name="search" placeholder="Find something"
                           class="bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-pink focus:ring-opacity-50 p-2 ring-1 ring-brand-gray-light rounded-md shadow-sm text-sm w-64" value="{{ request('search') }}">
+                          <x-form.error name="search"/>
                 </form>
             </div>
 

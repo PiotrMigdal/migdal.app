@@ -10,6 +10,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserSearchController;
 use App\Models\About;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('users/{user:username}/search', [UserSearchController::class, 'index'])->name('user_search.index');
+
     Route::get('users', [UserController::class, 'index'])->name('user.index');
     Route::get('users/{user:username}', [UserController::class, 'show'])->name('user.show');
 
