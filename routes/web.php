@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutCommentController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\AdminCourseController;
@@ -11,8 +12,6 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserSearchController;
-use App\Models\About;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{user:username}/jobs', [JobController::class, 'index'])->name('jobs.index');
     Route::get('users/{user:username}/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
 
+    Route::post('comment/about/{about}', [AboutCommentController::class, 'store'])->name('about_comment.store');
+    Route::delete('comment/about/{comment}', [AboutCommentController::class, 'destroy'])->name('about_comment.destroy');
 
     // ADMIN PANEL
     Route::get('admin/user', [AdminUserController::class, 'edit'])->name('user.edit');

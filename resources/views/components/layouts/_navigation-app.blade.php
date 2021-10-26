@@ -1,7 +1,7 @@
 
 <!-- Left navigation -->
-<aside class="hidden mt-5 md:block w-48 md:flex-shrink-0">
-    <nav class="bg-brand-gray-dark mr-8">
+<aside class="hidden ml-5 mr-8 rounded-xl md:block w-52 md:flex-shrink-0 mt-1">
+    <nav class="rounded-b-xl bg-brand-gray-dark h-full space-y-2 pt-4">
         <x-nav-left-link :href="route('user.show', $user->username)" :active="request()->routeIs(['user.show'])">
             {{ __('Profile') }}
         </x-nav-left-link>

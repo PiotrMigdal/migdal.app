@@ -20,5 +20,34 @@
             </button>
         </a>
     </x-article-image-card>
+    <section class="p-5">
+        <h1>Comments</h1>
+        @foreach ($about->comments as $comment)
+        <x-comment :filename="Auth::user()->thumbnail" class="shadow-xl">
+            <x-slot name="header">
+                {{ $comment->user->name }}
+            </x-slot>
+            <p class="text-xs font-mono mb-3">
+                Posted <time>{{ $comment->created_at->format("F j, Y, g:i a") }}</time>
+            </p>
+            <p>
+                {{ $comment->body }}
+            </p>
+        </x-comment>
+        @endforeach
+        <form action="{{ route('about_comment.store', $about->id) }}" method="POST">
+        @csrf
+        <x-comment :filename="Auth::user()->thumbnail">
+            <x-slot name="header">
+                Want to leave a comment?
+            </x-slot>
+            <x-form.textarea name='body' :label="false"/>
+            <div class="flex justify-end mt-6 pt-6 border-t border-gray-700">
+                <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
+            </div>
+        </x-comment>
+
+        </form>
+    </section>
 </x-layouts.app>
 
