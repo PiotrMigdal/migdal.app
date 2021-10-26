@@ -27,7 +27,7 @@
             <div class="m-auto px-2 py-1">
                 <form method="GET" action="/users/{{ $user->username }}/search">
                   <input type="text" name="search" placeholder="Search {{ $user->name }}"
-                          class="bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-pink focus:ring-opacity-50 p-2 ring-1 ring-brand-gray-light border-0 rounded-md shadow-sm text-sm w-64" value="{{ request('search') }}">
+                          class="bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-pink focus:ring-opacity-50 px-3 py-1.5 font-mono tracking-wider ring-1 ring-brand-gray-light border-0 rounded-md shadow-sm text-sm w-64" value="{{ request('search') }}">
                           <x-form.error name="search"/>
                 </form>
             </div>

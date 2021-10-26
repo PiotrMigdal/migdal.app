@@ -21,7 +21,7 @@
             @include('components.layouts._navigation-top')
 
             <!-- Page Content -->
-            <main class="bg-brand-gray">
+            <main style="background-color: #02010d">
                 <div class="container mx-auto">
                     <div class="overflow-hidden pb-16">
                         {{ $slot }}
