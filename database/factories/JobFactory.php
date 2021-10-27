@@ -27,10 +27,10 @@ class JobFactory extends Factory
             'job_title' => $this->faker->jobTitle(),
             'company_name' => $this->faker->company(),
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
-            'responsibilities' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
+            'responsibilities' => $this->faker->paragraph(),
             'thumbnail' => 'thumbnails/small.jpg',
-            'start_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
-            'finish_date' => $this->faker->date($format = 'Y-m-d', $max='now')
+            'start_date'  => $this->faker->dateTimeBetween('-10 years', 'now'),
+            'finish_date'  => $this->faker->dateTimeBetween('-10 years', 'now'),
         ];
     }
 }

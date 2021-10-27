@@ -7,7 +7,7 @@
       <span class="p-2 truncate max-w-xs">Projects</span>
   </x-slot>
   @if ($projects->count())
-  <div class="2xl:grid 2xl:grid-cols-3">
+  <div class="lg:grid 2xl:grid-cols-3 lg:grid-cols-2">
     @foreach ($projects as $project)
     <a href="{{ route('projects.show', [$user->username, $project]) }}">
       <x-article-index-card>

@@ -10,9 +10,9 @@
                     <p>Education: <span class="text-gray-300">{{ $user->education }}</span></p>
                     <p>Age:  <span class="text-gray-300">{{ $user->age }}</span></p>
                     <p>Main job: <span class="text-gray-300">{{ $user->main_job }}</span></p>
-                    @isset($user->additional_job)
+                    @if($user->additional_job)
                     <p>Additional job: <span class="text-gray-300">{{ $user->additional_job }}</span></p>
-                    @endisset
+                    @endif
                 </div>
             </div>
             <aside class="flex-shrink-0 m-auto lg:m-0">

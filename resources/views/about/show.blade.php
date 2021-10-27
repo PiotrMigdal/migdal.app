@@ -20,7 +20,7 @@
             </button>
         </a>
     </x-article-image-card>
-    <section class="p-5">
+    <section class="card-shadow p-4 lg:p-8 m-4 bg-brand-gray-dark">
         <h1>Comments</h1>
         @foreach ($about->comments as $comment)
         <x-comment :filename="Auth::user()->thumbnail" class="shadow-xl">
@@ -41,7 +41,7 @@
             <x-slot name="header">
                 Want to leave a comment?
             </x-slot>
-            <x-form.textarea name='body' :label="false"/>
+            <x-form.textarea name='body' :label="false" placeholder="Leave a comment"/>
             <div class="flex justify-end mt-6 pt-6 border-t border-gray-700">
                 <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
             </div>

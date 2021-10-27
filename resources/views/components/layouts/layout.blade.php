@@ -17,11 +17,11 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased bg-brand-gray-dark text-gray-50">
-        <div class="min-h-screen">
+        <div class="flex flex-col min-h-screen">
             @include('components.layouts._navigation-top')
 
             <!-- Page Content -->
-            <main class="bg-brand-gray">
+            <main class="bg-brand-gray flex-1">
                 <div class="container mx-auto">
                     <div class="overflow-hidden pb-16">
                         {{ $slot }}

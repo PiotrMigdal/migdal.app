@@ -28,9 +28,9 @@ class CourseFactory extends Factory
             'thumbnail' => 'thumbnails/small.jpg',
             'platform' => $this->faker->sentence(),
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
-            'start_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
-            'finish_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
-            'technologies' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',
+            'start_date'  => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'finish_date'  => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'technologies' => $this->faker->paragraph(),
             'repository' => $this->faker->url(),
             'url' => $this->faker->url(),
         ];

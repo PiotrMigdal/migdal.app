@@ -12,7 +12,7 @@ class CourseController extends Controller
     {
         return view('courses.index', [
             'user' => $user,
-            'courses' => Course::where('user_id', $user->id)->paginate(8)
+            'courses' => Course::where('user_id', $user->id)->paginate(9)
         ]);
     }
     public function show(User $user, Course $course) {

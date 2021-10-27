@@ -9,13 +9,20 @@
         <span class="p-2 truncate max-w-xs">{{ $project->name }}</span>
     </x-slot>
     <x-article-image-card>
-        @isset($project->featured_image)
-            <x-slot name="thumbnail">
-                <x-image-enlarge class="h-40 w-56" :filename="$project->featured_image" alt="Featured image"/>
+        @if($project->featured_image)
+            <x-slot name="featured_image">
+                <x-image-enlarge :filename="$project->featured_image" alt="Featured image"/>
             </x-slot>
-        @endisset
+        @elseif ($project->thumbnail)
+        <x-slot name="thumbnail">
+          <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
+        </x-slot>
+        @endif
         <x-slot name="header">
             <h1>{{ $project->name }}</h1>
+        </x-slot>
+
+        <x-slot name="features">
             <p class="my-4"><b>{{ $project->purpose }}</b></p>
             @isset($project->release_date)
                 <p class="my-4">Released on: <b>{{ $project->release_date }}</b></p>
@@ -29,13 +36,15 @@
         </x-slot>
         {!! $project->description !!}
         @isset($course)
-        <p class="my-4">This project was made as part of a course <a class="link" href="{{ route('courses.show', [$user->username, $course->id]) }}">{{ $course->name }}</a></p>
+        <p class="my-4">Project is part of course: <a class="link" href="{{ route('courses.show', [$user->username, $course->id]) }}">{{ $course->name }}</a></p>
         @endisset
-        <a href="{{ url()->previous() }}">
-            <button class="btn-primary mt-10">
-                < back
-            </button>
-        </a>
+        <p>
+            <a href="{{ url()->previous() }}">
+                <button class="btn-primary mt-10">
+                    < back
+                </button>
+            </a>
+        </p>
     </x-article-image-card>
 </x-layouts.app>
 

@@ -28,8 +28,8 @@ class ProjectFactory extends Factory
             'thumbnail' => 'thumbnails/small.jpg',
             'purpose' => $this->faker->paragraph(),
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(6)) . '</p>',
-            'release_date' => $this->faker->date($format = 'Y-m-d', $max='now'),
-            'technologies' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',
+            'release_date' => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'technologies' => $this->faker->paragraph(),
             'repository' => $this->faker->url(),
             'course_id' => $this->faker->randomNumber(),
         ];
