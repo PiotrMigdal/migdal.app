@@ -7,27 +7,20 @@
       <span class="p-2 truncate max-w-xs">Projects</span>
   </x-slot>
   @if ($projects->count())
-  <div class="2xl:grid 2xl:grid-cols-2">
+  <div class="2xl:grid 2xl:grid-cols-3">
     @foreach ($projects as $project)
-    @can('view-any', $project)
-    <x-article-image-card>
-        <x-slot name="thumbnail">
-          <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
-        </x-slot>
-        <x-slot name="header">
-            <h1>{{ $project->name }}</h1>
-            <p>{{ $project->purpose }}</p>
-            <p>Released {{ \Carbon\Carbon::parse($project->release_date)->diffForHumans() }}</p>
-        </x-slot>
-        <div class="flex justify-end">
-          <a href="{{ route('projects.show', [$user->username, $project]) }}">
-              <button class="btn-primary mt-4">
-                    Read more
-              </button>
-            </a>
-        </div>
-    </x-article-image-card>
-    @endcan
+    <a href="{{ route('projects.show', [$user->username, $project]) }}">
+      <x-article-index-card>
+          <x-slot name="thumbnail">
+            <x-image-pc :filename="$project->thumbnail" alt="{{ $project->name }}"/>
+          </x-slot>
+          <x-slot name="header">
+              {{ $project->name }}
+          </x-slot>
+          <p class="font-mono pb-2">Released {{ \Carbon\Carbon::parse($project->release_date)->diffForHumans() }}</p>
+          <p>{{ $project->purpose }}</p>
+      </x-article-index-card>
+    </a>
     @endforeach
   </div>
   {{ $projects->links() }}
