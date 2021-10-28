@@ -29,18 +29,18 @@
                         @endfor
                     </div>
                     <div class="flex-1 flex items-end">
-                            @for ($year = date('Y') - 5; $year <= date('Y'); $year++)
-                                <div class="text-center flex-1">
-                                    @foreach ($project_years as $project_year => $projects)
-                                        @if ($project_year == $year)
-                                            @foreach ($projects as $project)
-                                            <a href="{{ route('projects.show', [$user->username, $project]) }}" title="{{ $project->name }}"><div class="bg-brand-pink h-8 mx-1 hover:bg-brand-pink-dark"></div></a>
-                                            @endforeach
-                                        @endif
-                                    @endforeach
-                                    <div class="font mono pt-1 border-t border-gray-500 text-xs h-4">{{ $year }}</div>
-                                </div>
-                            @endfor
+                        @for ($year = date('Y') - 5; $year <= date('Y'); $year++)
+                            <div class="text-center flex-1">
+                                @foreach ($project_years as $project_year => $projects)
+                                    @if ($project_year == $year)
+                                        @foreach ($projects as $project)
+                                        <a href="{{ route('projects.show', [$user->username, $project]) }}" title="{{ $project->name }}"><div class="bg-brand-pink h-8 mx-1 hover:bg-brand-pink-dark"></div></a>
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                                <div class="font mono pt-1 border-t border-gray-500 text-xs h-4">{{ $year }}</div>
+                            </div>
+                        @endfor
                     </div>
                 </div>
             </div>
