@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 defaults:
   run:
-    working-directory: ../var/www/migdal.app
+    working-directory: application
 
 jobs:
   laravel-tests:
