@@ -5,9 +5,10 @@ on:
     branches: [ master ]
 
 jobs:
-  run:
-    working-directory: ../var/www/migdal.app
   laravel-tests:
+    defaults:
+      run:
+        working-directory: ../var/www/migdal.app
 
     runs-on: self-hosted
     steps:
