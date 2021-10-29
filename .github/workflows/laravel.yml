@@ -12,7 +12,7 @@ jobs:
     - name: Checkout tools repo
       uses: actions/checkout@v2
       with:
-        path: ./var/www/migdal.app
+        working-directory: ./var/www/migdal.app
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
