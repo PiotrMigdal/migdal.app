@@ -1,6 +1,6 @@
 
 <!-- Left navigation -->
-<aside class="hidden ml-5 mr-8 rounded-xl md:block w-52 md:flex-shrink-0 mt-1">
+<aside class="hidden ml-5 rounded-xl lg:block w-52 lg:flex-shrink-0 mt-1">
     <nav class="rounded-b-xl bg-brand-gray-dark h-full space-y-2 pt-4">
         <x-nav-left-link :href="route('user.show', $user->username)" :active="request()->routeIs(['user.show'])">
             {{ __('Profile') }}
@@ -21,7 +21,7 @@
 </aside>
 
 <!-- Responsive left navigation -->
-<nav class="md:hidden grid grid-cols-2 gap-2">
+<nav class="lg:hidden grid grid-cols-2 gap-2 my-4">
         <x-responsive-nav-left-link :href="route('user.show', $user->username)" :active="request()->routeIs(['user.show'])">
             {{ __('Profile') }}
         </x-responsive-nav-left-link>

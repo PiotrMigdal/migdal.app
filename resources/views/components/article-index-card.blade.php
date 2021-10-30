@@ -1,5 +1,5 @@
 
-<article {{ $attributes->merge(['class' => 'group hover:bg-brand-gray-dark p-4 lg:p-8 m-4 relative rounded-xl']) }}>
+<article {{ $attributes->merge(['class' => 'group hover:bg-brand-gray-dark p-4 lg:p-8 relative rounded-xl mb-6']) }}>
     <section class="">
         @isset($thumbnail)
         <div class="m-auto">

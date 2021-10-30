@@ -1,5 +1,5 @@
 
-<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark m-4']) }}>
+<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark mb-6']) }}>
     @isset($featured_image)
         {{ $featured_image }}
     @endisset

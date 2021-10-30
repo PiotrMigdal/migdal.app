@@ -1,5 +1,5 @@
 
-<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark m-4']) }}>
+<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark mb-6']) }}>
     <section class="p-4 lg:p-8">
 
         <div class="sm:flex flex-wrap justify-center">

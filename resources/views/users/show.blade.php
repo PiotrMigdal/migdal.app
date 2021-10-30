@@ -1,8 +1,10 @@
 <x-layouts.app :user="$user">
     <x-slot name="header">
-        User Profile
+        <a href="{{ route('user.show', $user->username) }}">
+            <button class="btn-header">{{ $user->name }}</button>
+        </a>
     </x-slot>
-    <div class="lg:grid lg:grid-cols-12 lg:gap-12 card-shadow p-4 lg:p-8 m-4">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-12 card-shadow p-4 lg:p-8 bg-brand-gray-dark">
         <section class="flex flex-wrap mb-12 lg:col-span-12 lg:justify-between">
             <div class="m-auto lg:m-0">
                 <h1 class="text-5xl">{{ $user->name }}</h1>
@@ -19,6 +21,7 @@
                 <x-image-user-thumbnail class="w-64 h-64 text-3xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
             </aside>
         </section>
+        @if ($project_years->count())
         <section class="lg:col-span-5">
             <h1>Projects</h1>
             <div>
@@ -45,6 +48,8 @@
                 </div>
             </div>
         </section>
+        @endif
+        @if ($jobs->count())
         <section class="lg:col-span-7">
             <h1>Jobs</h1>
             @foreach ($jobs as $job)
@@ -64,6 +69,8 @@
             </a>
             @endforeach
         </section>
+        @endif
+        @if ($abouts->count())
         <section class="lg:col-span-12">
             <h1>Latest courses</h1>
             @foreach ($courses as $course)
@@ -76,6 +83,7 @@
                 <li class="p-1"><a class="link" href="{{ route('about.show', [$user->username, $about]) }}">{{ $about->title }}</a> | {{ Str::of($about->excerpt)->words(10, ' ...') }}</li>
             @endforeach
         </section>
+        @endif
     </div>
 </x-layouts.app>
 

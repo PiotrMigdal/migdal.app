@@ -16,7 +16,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-brand-gray-dark text-gray-50">
+    <body class="font-sans antialiased bg-brand-gray-dark text-gray-200">
         <div class="flex flex-col min-h-screen">
             @include('components.layouts._navigation-top')
 

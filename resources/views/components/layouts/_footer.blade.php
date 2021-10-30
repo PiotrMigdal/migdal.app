@@ -6,7 +6,7 @@
                 Created by Piotr Migdal in 2021.
             </div>
             <div>
-                See more on <a class="text-brand-pink-dark" href="#" >GitHub</a>
+                See more on <a class="text-brand-pink-dark" href="https://github.com/PiotrMigdal/migdal.app" >GitHub</a>
             </div>
         </div>
     </div>
