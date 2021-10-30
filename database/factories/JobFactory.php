@@ -28,7 +28,7 @@ class JobFactory extends Factory
             'company_name' => $this->faker->company(),
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
             'responsibilities' => $this->faker->paragraph(),
-            'thumbnail' => 'thumbnails/small.jpg',
+            'thumbnail' => 'thumbnails/p'. rand(1, 10) . '.jpg',
             'start_date'  => $this->faker->dateTimeBetween('-10 years', 'now'),
             'finish_date'  => $this->faker->dateTimeBetween('-10 years', 'now'),
         ];

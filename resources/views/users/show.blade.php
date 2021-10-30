@@ -18,7 +18,7 @@
                 </div>
             </div>
             <aside class="flex-shrink-0 m-auto lg:m-0">
-                <x-image-user-thumbnail class="w-64 h-64 text-3xl" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
+                <x-image-user-thumbnail class="w-64 h-64 text-3xl" :user="$user" :filename="$user->thumbnail"/>
             </aside>
         </section>
         @if ($project_years->count())
