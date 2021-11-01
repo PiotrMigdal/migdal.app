@@ -80,7 +80,7 @@ class AdminProjectController extends Controller
         $attributes['technologies'] = request('technologies');
 
         Project::create($attributes);
-        return redirect(route('projects.index.admin'))->with('success', 'Added!');
+        return back()->with('success', 'Added!');
     }
 
     public function destroy(Project $project)

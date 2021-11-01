@@ -57,7 +57,7 @@ class AdminAboutController extends Controller
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
         About::create($attributes);
-        return redirect(route('about.index.admin'))->with('success', 'Added!');
+        return back()->with('success', 'Added!');
     }
 
     public function destroy(About $about)

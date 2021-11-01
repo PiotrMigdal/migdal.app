@@ -1,10 +1,10 @@
-<x-layouts.app :user="$user">
+<x-layouts.app :user="$user"  x-data="{ open: false }">
     <x-slot name="header">
         <a href="{{ route('user.show', $user->username) }}">
             <button class="btn-header">{{ $user->name }}</button>
         </a>
     </x-slot>
-    <div class="lg:grid lg:grid-cols-12 lg:gap-12 card-shadow p-4 lg:p-8 bg-brand-gray-dark">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-12 card-shadow p-4 lg:p-8 bg-brand-gray-dark relative">
         <section class="flex flex-wrap mb-12 lg:col-span-12 lg:justify-between">
             <div class="m-auto lg:m-0">
                 <h1 class="text-5xl">{{ $user->name }}</h1>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <aside class="flex-shrink-0 m-auto lg:m-0">
-                <x-image-user-thumbnail class="w-64 h-64 text-3xl" :user="$user" :filename="$user->thumbnail"/>
+                <x-image-user-thumbnail class="w-64 h-64 text-9xl" :user="$user" :filename="$user->thumbnail"/>
             </aside>
         </section>
         @if ($project_years->count())
@@ -84,6 +84,35 @@
             @endforeach
         </section>
         @endif
+        <x-dropdown align="right" width="48">
+            <x-slot name="trigger">
+                <button class="flex items-center text-sm font-medium  hover: hover:border-gray-300 focus:outline-none focus: focus:border-gray-300 transition duration-150 ease-in-out">
+                    <x-image-user-thumbnail class="w-6 h-6" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
+                    <div class="ml-2">{{ Auth::user()->name }}</div>
+
+                    <div class="ml-1">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </button>
+            </x-slot>
+
+            <x-slot name="content">
+    <x-dropdown align="right" width="48">
+        <x-slot name="trigger">
+            <button class="absolute right-4 top-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="27" viewBox="0 0 6 27">
+                    <g id="Icon_feather-more-vertical" data-name="Icon feather-more-vertical" transform="translate(-15 -4.5)">
+                    <path id="Path_17" data-name="Path 17" d="M19.5,18A1.5,1.5,0,1,1,18,16.5,1.5,1.5,0,0,1,19.5,18Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                    <path id="Path_18" data-name="Path 18" d="M19.5,7.5A1.5,1.5,0,1,1,18,6,1.5,1.5,0,0,1,19.5,7.5Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                    <path id="Path_19" data-name="Path 19" d="M19.5,28.5A1.5,1.5,0,1,1,18,27,1.5,1.5,0,0,1,19.5,28.5Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                    </g>
+                </svg>
+            </button>
+        </x-slot>
+
+        <x-slot name="content"></x-slot>
     </div>
 </x-layouts.app>
 

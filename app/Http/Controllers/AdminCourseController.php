@@ -76,7 +76,7 @@ class AdminCourseController extends Controller
         }
 
         Course::create($attributes);
-        return redirect(route('courses.index.admin'))->with('success', 'Added!');
+        return back()->with('success', 'Added!');
     }
 
     public function destroy(Course $course)

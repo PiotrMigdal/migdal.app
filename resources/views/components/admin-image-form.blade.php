@@ -20,7 +20,14 @@
                 @endisset
             </div>
         </div>
-        <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
+        <div class="flex justify-between">
+            <a href="{{ url()->previous() }}" class="btn-primary">
+                < Back
+            </a>
+            <button class="btn-primary" type="submit">
+                Save
+            </button>
+        </div>
     </section>
 </article>
 

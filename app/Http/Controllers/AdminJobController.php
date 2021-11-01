@@ -64,7 +64,7 @@ class AdminJobController extends Controller
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
         Job::create($attributes);
-        return redirect(route('jobs.index.admin'))->with('success', 'Added!');
+        return back()->with('success', 'Added!');
     }
 
     public function destroy(Job $job)
