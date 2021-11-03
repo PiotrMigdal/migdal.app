@@ -42,6 +42,7 @@
                 <li><a class="link" href="{{ route('projects.show', [$user->username, $project->id]) }}">{{$project->name}}</a></li>
             @endforeach
         @endif
+        <br>
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back

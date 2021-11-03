@@ -38,6 +38,7 @@
         @isset($course)
         <p class="my-4">Project is part of course: <a class="link" href="{{ route('courses.show', [$user->username, $course->id]) }}">{{ $course->name }}</a></p>
         @endisset
+        <br>
         <p>
             <a href="{{ url()->previous() }}">
                 <button class="btn-primary mt-10">

@@ -36,7 +36,7 @@ class AdminAboutController extends Controller
             'title' => 'required|max:255',
             'excerpt' => 'required',
             'body' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
         if(isset($attributes['thumbnail'])) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
@@ -51,7 +51,7 @@ class AdminAboutController extends Controller
             'title' => 'required|max:255',
             'excerpt' => 'required',
             'body' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
         $attributes['user_id'] = auth()->id();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');

@@ -14,6 +14,7 @@
         </x-slot>
         <h1>{{ $about->title }}</h1>
         {!! $about->body !!}
+        <br>
         <a href="{{ url()->previous() }}">
             <button class="btn-primary mt-10">
                 < back

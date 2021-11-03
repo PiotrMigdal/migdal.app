@@ -20,7 +20,7 @@ class AdminUserController extends Controller
                 'name' => 'required|max:255',
                 'username' => ['required', Rule::unique('users', 'username')->ignore($user->id)],
                 'email' => ['required', 'max:255', 'email', Rule::unique('users', 'email')->ignore($user->id)],
-                'thumbnail' => 'image',
+                'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240|nullable',
                 'age' => 'max:255',
                 'education' => 'max:255',
                 'main_job' => 'max:255',

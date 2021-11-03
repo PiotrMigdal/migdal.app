@@ -36,10 +36,10 @@ class AdminJobController extends Controller
             'company_name' => 'required|max:255',
             'job_title' => 'required|max:255',
             'description' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'responsibilities' => 'required|max:700',
             'start_date' => 'required|max:255|date',
-            'finish_date' => 'max:255|date',
+            'finish_date' => 'max:255|date|nullable',
         ]);
         if(isset($attributes['thumbnail'])) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
@@ -54,10 +54,10 @@ class AdminJobController extends Controller
             'company_name' => 'required|max:255',
             'job_title' => 'required|max:255',
             'description' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'responsibilities' => 'required|max:700',
             'start_date' => 'required|max:255|date',
-            'finish_date' => 'max:255|date',
+            'finish_date' => 'max:255|date|nullable',
 
         ]);
         $attributes['user_id'] = auth()->id();

@@ -41,11 +41,11 @@ class AdminProjectController extends Controller
             'name' => 'required|max:255',
             'purpose' => 'required|max:500',
             'description' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'release_date' => 'required|max:255|date',
             'course_id' => 'exists:courses,id|nullable',
-            'repository' => 'max:255|url',
+            'repository' => 'max:255|url|nullable',
             ]);
             $attributes['technologies'] = request('technologies');
             if(isset($attributes['thumbnail'])) {
@@ -65,11 +65,11 @@ class AdminProjectController extends Controller
             'name' => 'required|max:255',
             'purpose' => 'required|max:500',
             'description' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+            'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'release_date' => 'required|max:255|date',
             'course_id' => 'exists:courses,id|nullable',
-            'repository' => 'max:255|url',
+            'repository' => 'max:255|url|nullable',
         ]);
 
         $attributes['user_id'] = auth()->id();
