@@ -10,7 +10,7 @@
                 <p class="font-mono pt-4 lg:pt-0 text-xs text-{{ $color }}">
                     {{ $date }}
                 </p>
-                <h3 class="hover:text-gray-400 hover:underline">{{ $header }}</h3>
+                <h3 class="header-link">{{ $header }}</h3>
             </div>
         </div>
     </a>

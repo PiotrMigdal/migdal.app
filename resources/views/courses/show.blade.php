@@ -19,15 +19,15 @@
             <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>
 
             @isset($course->start_date)
-                <p class="my-4">Started on <b>{{ $course->start_date }}</b></p>
+                <p class="my-4">Started on {{ $course->start_date }}</p>
             @endisset
 
             @isset($course->finish_date)
-                <p class="my-4">Finished on <b>{{ $course->finish_date }}</b></p>
+                <p class="my-4">Finished on {{ $course->finish_date }}</p>
             @endisset
 
             @isset($course->technologies)
-            <p class="my-4">Included: <b>{{ $course->technologies }}</b></p>
+            <p class="my-4">Included: {{ $course->technologies }}</p>
             @endisset
         </x-slot>
 

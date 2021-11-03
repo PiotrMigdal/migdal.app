@@ -8,7 +8,7 @@
         @endisset
         @isset($header)
         <div>
-            <h1 class="transition hover:text-gray-400 text-center mb-4 hover:underline">{{ $header }}</h1>
+            <h1 class="text-center mb-4 header-link">{{ $header }}</h1>
         </div>
         @endisset
     </section>

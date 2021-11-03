@@ -39,7 +39,7 @@ class AdminCourseController extends Controller
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'start_date' => 'required|max:255|date',
-            'finish_date' => 'max:255|date',
+            'finish_date' => 'max:255|date|after_or_equal:start_date',
             'repository' => 'max:255|url|nullable',
             'url' => 'max:255|url',
         ]);
@@ -63,7 +63,7 @@ class AdminCourseController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'featured_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
             'start_date' => 'required|max:255|date',
-            'finish_date' => 'max:255|date',
+            'finish_date' => 'max:255|date|after_or_equal:start_date',
             'repository' => 'max:255|url|nullable',
             'url' => 'max:255|url',
 

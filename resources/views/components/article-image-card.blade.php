@@ -10,14 +10,14 @@
                 {{ $thumbnail }}
             </aside>
             @endisset
-            <div class="lg:flex-1">
+            <div class="lg:flex-1 px-4">
                 @isset($header)
                 <header>
                     {{ $header }}
                 </header>
                 @endisset
                 @isset($features)
-                <section class="font-mono">
+                <section>
                     {{ $features }}
                 </section>
                 @endisset

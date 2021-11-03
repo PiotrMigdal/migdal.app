@@ -23,12 +23,12 @@
         </x-slot>
 
         <x-slot name="features">
-            <p class="my-4"><b>{{ $project->purpose }}</b></p>
+            <p class="my-4">{{ $project->purpose }}</p>
             @isset($project->release_date)
-                <p class="my-4">Released on: <b>{{ $project->release_date }}</b></p>
+                <p class="my-4">Released on: {{ $project->release_date }}</p>
             @endisset
             @isset($project->technologies)
-            <p class="my-4">Built using: <b>{{ $project->technologies }}</b></p>
+            <p class="my-4">Built using: {{ $project->technologies }}</p>
             @endisset
             @isset($project->repository)
             <p class="my-4">See code on: <a class="link" href="{{ $project->repository }}">{{ $project->repository }}</a></p>

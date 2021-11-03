@@ -16,16 +16,16 @@
         <x-slot name="header">
             <h1>{{ $job->job_title }}</h1>
 
-            <p class="my-4">Company name: <b>{{ $job->company_name }}</b></p>
+            <p class="my-4">Company name: {{ $job->company_name }}</p>
 
-            <p class="my-4">Started on: <b>{{ $job->start_date }}</b></p>
+            <p class="my-4">Started on: {{ $job->start_date }}</p>
 
             @isset($job->finish_date)
-                <p class="my-4">Finished on: <b>{{ $job->finish_date }}</b></p>
+                <p class="my-4">Finished on: {{ $job->finish_date }}</p>
             @endisset
 
             @isset($job->responsibilities)
-            <p class="my-4">Main responsibilities: <b>{{ $job->responsibilities }}</b></p>
+            <p class="my-4">Main responsibilities: {{ $job->responsibilities }}</p>
             @endisset
         </x-slot>
 

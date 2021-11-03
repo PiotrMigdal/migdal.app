@@ -23,6 +23,21 @@
     </x-article-image-card>
     <section class="card-shadow p-4 lg:p-8 m-4 bg-brand-gray-dark">
         <h1>Comments</h1>
+        <div class="pb-3">
+            <form action="{{ route('about_comment.store', $about->id) }}" method="POST">
+            @csrf
+            <x-comment :filename="Auth::user()->thumbnail">
+                <x-slot name="header">
+                    Want to leave a comment?
+                </x-slot>
+                <x-form.textarea name='body' :label="false" placeholder="Leave a comment"/>
+                <div class="flex justify-end mt-6 pt-6 border-t border-gray-700">
+                    <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
+                </div>
+            </x-comment>
+
+            </form>
+        </div>
         @foreach ($about->comments as $comment)
         <x-comment :filename="Auth::user()->thumbnail" class="shadow-xl">
             <x-slot name="header">
@@ -36,19 +51,6 @@
             </p>
         </x-comment>
         @endforeach
-        <form action="{{ route('about_comment.store', $about->id) }}" method="POST">
-        @csrf
-        <x-comment :filename="Auth::user()->thumbnail">
-            <x-slot name="header">
-                Want to leave a comment?
-            </x-slot>
-            <x-form.textarea name='body' :label="false" placeholder="Leave a comment"/>
-            <div class="flex justify-end mt-6 pt-6 border-t border-gray-700">
-                <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
-            </div>
-        </x-comment>
-
-        </form>
     </section>
 </x-layouts.app>
 
