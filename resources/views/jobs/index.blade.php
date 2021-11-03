@@ -3,73 +3,42 @@
         <a href="{{ route('user.show', $user->username) }}">
             <button class="btn-header">{{ $user->name }}</button>
         </a> /
-        <span class="p-2 truncate max-w-xs">Timeline</span>
+        <span class="p-2 truncate max-w-xs">Jobs</span>
     </x-slot>
-
-    @if (is_null($min_year))
-    <x-sorry-no-content>Sorry, no events yet</x-sorry-no-content>
-    @else
+    @if ($jobs->count())
     <article class="lg:p-6 pt-8">
-        <header class="grid grid-cols-4 sm:grid-cols-6">
-            <div class="col-span-1 border-gray-500 border-r">
-            </div>
-            <div class="sm:col-span-5 col-span-3">
-                <div class="hidden md:grid grid-cols-2">
-                    <h1 class="px-4 text-center">Jobs</h1>
-                    <h1 class="px-4 text-center">Courses & Projects</h1>
+        <div class="card-shadow">
+            @foreach ($jobs as $job)
+                <div class="lg:flex hover:bg-brand-gray-dark rounded-2xl lg:px-10">
+                    <div class="lg:flex-none p-8 m-auto">
+                        <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$job->thumbnail"/>
+                    </div>
+                    <div class="lg:flex-1 p-3 md:p-8 m-auto text-center">
+                        <a class="hover:underline" href="{{ route('jobs.show', [$user->username, $job]) }}" title="Preview">{{ $job->job_title . ' at ' . $job->company_name }}</a>
+                    </div>
+                    <div class="p-3 md:p-8 m-auto">
+                        <span class="text-green-600">
+                            From {{ $job->start_date }}
+                        </span>
+
+                        @isset($job->finish_date)
+                        <span class="text-red-600">
+                            to {{ $job->finish_date }}
+                        </span>
+                        @else
+                        <span class="text-green-600">
+                            (current job)
+                        </span>
+                        @endisset
+                    </div>
                 </div>
-                <div class="md:hidden">
-                    <h1 class="px-4 text-center">Events</h1>
-                </div>
-            </div>
-        </header>
-        {{-- Section is one year --}}
-        @for ($year = date('Y'); $year >= $min_year; $year--)
-        <section class="min-h-32 border-dashed border-gray-500 border-t grid sm:grid-cols-6 grid-cols-4">
-            <div class="col-span-1 border-gray-500 border-r">
-                <div class="flex h-full items-center">
-                    <span class="-rotate-90 text-3xl text-gray-500 transform w-full whitespace-nowrap text-center">
-                        {{ $year }}
-                    </span>
-                </div>
-            </div>
-            <ul class="sm:col-span-5 col-span-3 p-4 grid">
-                {{-- JOBS --}}
-                @foreach ($jobs as $job)
-                    @if ($job->start_year == $year || $job->finish_year == $year)
-                        <x-timeline-event link="{{ route('jobs.show', [$user->username, $job]) }}" image="{{ $job->thumbnail }}" color="{{ $job->start_year == $year ? 'green-600' : ($job->finish_year == $year ? 'red-600' : 'yellow-600') }}">
-                            <x-slot name="date">
-                                @if ($job->start_year == $year && $job->finish_year == $year)
-                                {{ $job->start_date }} - {{ $job->finish_date }}
-                                @elseif  ($job->start_year == $year)
-                                Started job on {{ $job->start_date }} {{ $job->finish_date === null ? '(current job)' : '' }}
-                                @else
-                                Finished job on {{ $job->finish_date }}
-                                @endif
-                            </x-slot>
-                            <x-slot name="header">
-                                {{ $job->job_title }} at {{ $job->company_name }}
-                            </x-slot>
-                        </x-timeline-event>
-                    @endif
-                @endforeach
-                {{-- Courses --}}
-                @foreach ($adds as $add)
-                    @if ($add->release_year == $year)
-                    <x-timeline-event link="{{ route($add->type . 's.show', [$user->username, $add->id]) }}" class="md:justify-self-end" image="{{ $add->thumbnail }}" color="brand-pink">
-                        <x-slot name="date">
-                            Completed {{ $add->type }} on {{ $add->release_date }}
-                        </x-slot>
-                        <x-slot name="header">
-                            {{ $add->name }}
-                        </x-slot>
-                    </x-timeline-event>
-                    @endif
-                @endforeach
-            </ul>
-        </section>
-        @endfor
+                <div class="m-4 bg-gradient-to-r from-transparent via-gray-100 to-transparent h-0.5"></div>
+            @endforeach
+        </div>
+        {{ $jobs->links() }}
     </article>
+    @else
+    <x-sorry-no-content>Sorry, no jobs yet</x-sorry-no-content>
     @endif
 
 </x-layouts.app>

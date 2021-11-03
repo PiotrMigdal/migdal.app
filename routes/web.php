@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserSearchController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('users/{user:username}/courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('users/{user:username}/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
+    Route::get('users/{user:username}/timeline', [TimelineController::class, 'index'])->name('timeline.index');
 
     Route::get('users/{user:username}/jobs', [JobController::class, 'index'])->name('jobs.index');
     Route::get('users/{user:username}/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');

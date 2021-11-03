@@ -9,13 +9,16 @@
             {{ __('About') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('jobs.index', $user->username)" :active="request()->routeIs('jobs.index', 'jobs.show')">
-            {{ __('Timeline') }}
+            {{ __('Jobs') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
         </x-nav-left-link>
         <x-nav-left-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
             {{ __('Courses') }}
+        </x-nav-left-link>
+        <x-nav-left-link :href="route('timeline.index', $user->username)" :active="request()->routeIs('timeline.index')">
+            {{ __('Timeline') }}
         </x-nav-left-link>
     </nav>
 </aside>
@@ -29,12 +32,15 @@
             {{ __('About') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('jobs.index', $user->username)" :active="request()->routeIs('jobs.index', 'jobs.show')">
-            {{ __('Timeline') }}
+            {{ __('Jobs') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('projects.index', $user->username)" :active="request()->routeIs(['projects.index', 'projects.show'])">
             {{ __('Projects') }}
         </x-responsive-nav-left-link>
         <x-responsive-nav-left-link :href="route('courses.index', $user->username)" :active="request()->routeIs(['courses.index', 'courses.show'])">
             {{ __('Courses') }}
+        </x-responsive-nav-left-link>
+        <x-responsive-nav-left-link :href="route('timeline.index', $user->username)" :active="request()->routeIs('timeline.index')">
+            {{ __('Timeline') }}
         </x-responsive-nav-left-link>
 </nav>

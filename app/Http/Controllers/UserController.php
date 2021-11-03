@@ -43,7 +43,7 @@ class UserController extends Controller
             'jobs' => $jobs->sortByDesc('start_date'),
             'max_projects' => $project_years->map->count()->max(),
             'project_years' => $project_years,
-            'max_job_length' => $jobs->max('years'),
+            'max_job_length' => $jobs->max('years') === 0 ? 1 : $jobs->max('years'),
         ]);
     }
 }
