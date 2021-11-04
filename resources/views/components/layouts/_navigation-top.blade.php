@@ -36,7 +36,7 @@
 
             <!-- Right navigation Links -->
             <div class="hidden lg:flex lg:items-center lg:ml-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown align="top" width="36">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium  hover: hover:border-gray-300 focus:outline-none focus: focus:border-gray-300 transition duration-150 ease-in-out">
                             <x-image-user-thumbnail class="w-6 h-6" :user="Auth::user()" :filename="Auth::user()->thumbnail"/>
@@ -98,18 +98,20 @@
     <div :class="{'block': open, 'hidden': ! open}" class="flex lg:hidden container m-auto px-6 justify-between">
         <div class="pt-2 pb-3 space-y-0.5 shadow-md md:flex">
             <x-responsive-nav-link href="/users/piotrmigdal" :active="request()->Is('users/piotrmigdal')">
-                {{ __('Piotr Migdal') }}
+                <button class="btn-secondary">Piotr Migdal</button>
             </x-responsive-nav-link>
+            @if (Auth()->user()->username <> 'PiotrMigdal')
+            <x-responsive-nav-link :href="route('user.show', Auth()->user()->username)" :active="request()->Is('users/' . Auth()->user()->username)">
+                <button class="btn-secondary">{{ Auth()->user()->name }}</button>
+            </x-responsive-nav-link>
+            @endif
             <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                {{ __('Other colleagues') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('user.edit')" :active="request()->routeIs('user.edit')">
-                {{ __('My account') }}
+                <button class="btn-secondary">Other colleagues</button>
             </x-responsive-nav-link>
         </div>
 
 
-        <div class="px-2 m-2 space-y-2">
+        <div class="border border-gray-400 m-2 p-2 px-2 rounded space-y-2">
                 <x-responsive-nav-link :href="route('user.show', Auth::user()->username)" class="flex">
                     <div class="pr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 27 30">

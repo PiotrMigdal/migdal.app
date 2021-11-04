@@ -41,7 +41,7 @@ class AdminCourseController extends Controller
             'start_date' => 'required|max:255|date',
             'finish_date' => 'max:255|date|after_or_equal:start_date',
             'repository' => 'max:255|url|nullable',
-            'url' => 'max:255|url',
+            'url' => 'max:255|url|nullable',
         ]);
         $attributes['technologies'] = request('technologies');
         if(isset($attributes['thumbnail'])) {

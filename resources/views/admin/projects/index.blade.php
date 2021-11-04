@@ -1,4 +1,4 @@
-<x-layouts.app :admin='true'>
+<x-layouts.app menu="admin">
     <x-slot name="header">
         Your projects
     </x-slot>

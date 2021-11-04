@@ -1,4 +1,4 @@
-<x-layouts.app  left_panel="none">
+<x-layouts.app  left_panel="none" menu="nomenu">
     <x-slot name="header">
         Colleagues
     </x-slot>

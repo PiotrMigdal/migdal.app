@@ -1,9 +1,10 @@
-@props(['user' => Auth::user(), 'admin' => false])
+@props(['user' => Auth::user(), 'menu' => 'app'])
 <x-layouts.layout :user='$user'>
     <div class="lg:flex">
-        @if ($admin == false)
+        @if ($menu == 'nomenu')
+        @elseif ($menu == 'app')
         @include('components.layouts._navigation-app')
-        @elseif ($admin == true)
+        @elseif ($menu == 'admin')
         @include('components.layouts._navigation-admin')
         @endif
 
