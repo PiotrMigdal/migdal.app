@@ -23,7 +23,11 @@
         </section>
         @if ($project_years->count())
         <section class="lg:col-span-5">
-            <h1>Projects</h1>
+            <a class="header-link" href="{{ route('projects.index', [$user->username]) }}">
+                <h1>
+                    Projects
+                </h1>
+            </a>
             <div>
                 <div class="flex place-content-end">
                     <div class="flex-shrink-0 font-mono w-4 mb-4 pb-2 border-r border-gray-500">
@@ -51,7 +55,11 @@
         @endif
         @if ($jobs->count())
         <section class="lg:col-span-7">
-            <h1>Jobs</h1>
+            <a class="header-link" href="{{ route('jobs.index', [$user->username]) }}">
+                <h1>
+                    Jobs
+                </h1>
+            </a>
             @foreach ($jobs as $job)
             <a href="{{ route('jobs.show', [$user->username, $job->id]) }}">
                 <div class="grid grid-cols-12 mb-4">
@@ -72,13 +80,21 @@
         @endif
         @if ($abouts->count())
         <section class="lg:col-span-12">
-            <h1>Latest courses</h1>
+            <a class="header-link" href="{{ route('courses.index', [$user->username]) }}">
+                <h1>
+                    Latest courses
+                </h1>
+            </a>
             @foreach ($courses as $course)
                 <li class="p-1"><a class="link" href="{{ route('courses.show', [$user->username, $course]) }}">{{ $course->name }} </a>on {{ $course->platform . ' finished ' . \Carbon\Carbon::parse($course->finish_date)->diffForHumans()}}</li>
             @endforeach
         </section>
         <section class="lg:col-span-12">
-            <h1>Abouts</h1>
+            <a class="header-link" href="{{ route('about.index', [$user->username]) }}">
+                <h1>
+                    Abouts
+                </h1>
+            </a>
             @foreach ($abouts as $about)
                 <li class="p-1"><a class="link" href="{{ route('about.show', [$user->username, $about]) }}">{{ $about->title }}</a> | {{ Str::of($about->excerpt)->words(10, ' ...') }}</li>
             @endforeach

@@ -70,6 +70,6 @@ class AdminJobController extends Controller
     public function destroy(Job $job)
     {
         $job->delete();
-        return back()->with('success', 'Job deleted!');
+        return redirect(route('jobs.index.admin'))->with('success', 'Job deleted!');
     }
 }

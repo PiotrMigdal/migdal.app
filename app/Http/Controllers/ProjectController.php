@@ -13,7 +13,7 @@ class ProjectController extends Controller
     {
         return view('projects.index', [
             'user' => $user,
-            'projects' => Project::where('user_id', $user->id)->paginate(9)
+            'projects' => Project::where('user_id', $user->id)->orderBy('release_date', 'desc')->paginate(9)
         ]);
     }
     public function show(User $user, Project $project) {

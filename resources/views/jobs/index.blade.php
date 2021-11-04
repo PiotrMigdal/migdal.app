@@ -9,30 +9,32 @@
     <article class="lg:p-6 pt-8">
         <div class="card-shadow">
             @foreach ($jobs as $job)
+            <a href="{{ route('jobs.show', [$user->username, $job]) }}" title="Preview">
                 <div class="lg:flex hover:bg-brand-gray-dark rounded-2xl lg:px-10">
                     <div class="lg:flex-none p-8 m-auto">
                         <x-image-circle class="flex-shrink-0 w-24 h-24" alt="Current photo" :filename="$job->thumbnail"/>
                     </div>
                     <div class="lg:flex-1 p-3 md:p-8 m-auto text-center">
-                        <a class="hover:underline" href="{{ route('jobs.show', [$user->username, $job]) }}" title="Preview">{{ $job->job_title . ' at ' . $job->company_name }}</a>
+                        {{ $job->job_title . ' at ' . $job->company_name }}
                     </div>
                     <div class="p-3 md:p-8 m-auto">
-                        <span class="text-green-600">
+                        <span>
                             From {{ $job->start_date }}
                         </span>
 
                         @isset($job->finish_date)
-                        <span class="text-red-600">
+                        <span>
                             to {{ $job->finish_date }}
                         </span>
                         @else
-                        <span class="text-green-600">
+                        <span>
                             (current job)
                         </span>
                         @endisset
                     </div>
                 </div>
-                <div class="m-4 bg-gradient-to-r from-transparent via-gray-100 to-transparent h-0.5"></div>
+            </a>
+            <div class="m-4 bg-gradient-to-r from-transparent via-gray-100 to-transparent h-0.5"></div>
             @endforeach
         </div>
         {{ $jobs->links() }}

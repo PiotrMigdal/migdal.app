@@ -9,11 +9,15 @@
         <span class="p-2 truncate max-w-xs">{{ $course->name }}</span>
     </x-slot>
     <x-article-image-card>
-        @isset($project->featured_image)
-            <x-slot name="thumbnail">
-                <x-image-enlarge class="h-40 w-56" :filename="$project->featured_image" alt="Featured image"/>
+        @if($course->featured_image)
+            <x-slot name="featured_image">
+                <x-image-enlarge :filename="$course->featured_image" alt="Featured image"/>
             </x-slot>
-        @endisset
+        @elseif ($course->thumbnail)
+            <x-slot name="thumbnail">
+                <x-image-play :filename="$course->thumbnail" alt="{{ $course->name }}"/>
+            </x-slot>
+        @endif
         <x-slot name="header">
             <h1>{{ $course->name }}</h1>
             <p class="my-4">Course on <a class="link" href="{{ $course->url }}">{{ $course->platform }}</a></p>

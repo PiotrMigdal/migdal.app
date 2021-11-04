@@ -31,11 +31,13 @@
 
         {!! $job->description !!}
 
-        <a href="{{ url()->previous() }}">
-            <button class="btn-primary mt-10">
-                < back
-            </button>
-        </a>
+        <p>
+            <a href="{{ url()->previous() }}">
+                <button class="btn-primary mt-10">
+                    < back
+                </button>
+            </a>
+        </p>
 
     </x-article-image-card>
 </x-layouts.app>
