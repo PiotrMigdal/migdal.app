@@ -18,7 +18,7 @@ class AdminProjectController extends Controller
     public function index()
     {
         return view('admin.projects.index', [
-            'projects' => Project::where('user_id', Auth::user()->id)->paginate(10)
+            'projects' => Project::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
     public function create()

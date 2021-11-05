@@ -64,7 +64,7 @@
             <a href="{{ route('jobs.show', [$user->username, $job->id]) }}">
                 <div class="grid grid-cols-12 mb-4">
                     <div class="col-span-4 hover:text-white text-sm">
-                        {{ $job->job_title . 'at' . $job->company_name . $job->current}}
+                        {{ $job->job_title . ' at ' . $job->company_name . $job->current}}
                     </div>
                     <div class="group col-span-8">
                         <div class="bg-brand-pink h-5 hover:bg-brand-pink-dark" style="width: {{ $job->years / $max_job_length * 100 }}% ">

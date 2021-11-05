@@ -17,7 +17,7 @@ class AdminJobController extends Controller
     public function index()
     {
         return view('admin.jobs.index', [
-            'jobs' => Job::where('user_id', Auth::user()->id)->paginate(10)
+            'jobs' => Job::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
     public function create()

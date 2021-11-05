@@ -17,7 +17,7 @@ class AdminAboutController extends Controller
     public function index()
     {
         return view('admin.about.index', [
-            'abouts' => About::where('user_id', Auth::user()->id)->paginate(10)
+            'abouts' => About::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
     public function create()
