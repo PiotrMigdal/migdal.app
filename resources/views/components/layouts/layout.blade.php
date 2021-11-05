@@ -17,6 +17,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     </head>
     <body class="font-sans antialiased bg-brand-gray-dark text-gray-200">
         <div class="flex flex-col min-h-screen">

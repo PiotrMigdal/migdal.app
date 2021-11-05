@@ -18,9 +18,12 @@
                 <x-form.input labelname="Start date" name='start_date' class="w-full" type="date" :value="old('start_date', $job->start_date)" required/>
                 <x-form.input labelname="Finish date" name='finish_date' class="w-full" type="date" :value="old('finish_date', $job->finish_date)"/>
                 <x-form.input name='responsibilities' class="w-full" :value="old('responsibilities', $job->responsibilities)" required/>
-            <x-slot name="column2">
+            <x-slot name="bottom">
                 <x-form.textarea name='description' required>{{ old('description', $job->description) }}</x-form.textarea>
             </x-slot>
         </x-admin-image-form>
     </form>
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
 </x-layouts.app>

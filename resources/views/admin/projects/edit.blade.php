@@ -33,8 +33,13 @@
                     <x-form.error name="course"/>
                 </div>
                 <x-form.textarea name='purpose'>{{ old('purpose', $project->purpose) }}</x-form.textarea>
-                <x-form.textarea name='description' required>{{ old('description', $project->description) }}</x-form.textarea>
                 <x-form.textarea name='technologies'>{{ old('technologies', $project->technologies) }}</x-form.textarea>
+                <x-slot name="bottom">
+                    <x-form.textarea name='description' required>{{ old('description', $project->description) }}</x-form.textarea>
+                </x-slot>
         </x-admin-image-form>
     </form>
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
 </x-layouts.app>

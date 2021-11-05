@@ -14,4 +14,7 @@
             <x-form.textarea name='description' required>{{ old('description') }}</x-form.textarea>
             </x-admin-image-form>
     </form>
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
 </x-layouts.app>

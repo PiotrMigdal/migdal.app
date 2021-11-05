@@ -13,8 +13,11 @@
                 <x-form.input labelname="Start date" name='start_date' class="w-full" type="date" :value="old('start_date')" required/>
                 <x-form.input labelname="Finish date" name='finish_date' class="w-full" type="date" :value="old('finish_date')"/>
                 <x-form.input name='repository' class="w-full" type="url" :value="old('repository')"/>
-                <x-form.textarea name='description' required>{{ old('description') }}</x-form.textarea>
                 <x-form.textarea name='technologies'>{{ old('technologies') }}</x-form.textarea>
+                <x-form.textarea name='description' required>{{ old('description') }}</x-form.textarea>
             </x-admin-image-form>
     </form>
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
 </x-layouts.app>

@@ -20,6 +20,11 @@
                 @endisset
             </div>
         </div>
+        @isset ( $bottom )
+        <div class="p-4 sm:p-8">
+            {{ $bottom }}
+        </div>
+        @endisset
         <div class="flex justify-end"><button class="btn-primary" type="submit">Save</button></div>
     </section>
 </article>
