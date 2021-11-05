@@ -1,6 +1,6 @@
 <x-layouts.app menu="admin">
     <x-slot name="header">
-        Create courses article
+        Add course
     </x-slot>
     <form action="/admin/courses" method="post" enctype="multipart/form-data">
         @csrf

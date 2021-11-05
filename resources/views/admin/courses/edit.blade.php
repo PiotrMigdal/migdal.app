@@ -1,7 +1,7 @@
 <x-layouts.app menu="admin">
     <x-slot name="header">
         <a href="{{ route('courses.index.admin') }}">
-            <button class="btn-header">Projects</button>
+            <button class="btn-header">Courses</button>
         </a> /
         Edit: {{ $course->name }}
     </x-slot>

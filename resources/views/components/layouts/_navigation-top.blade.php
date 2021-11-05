@@ -21,7 +21,7 @@
                     </x-nav-link>
                     @endif
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                        {{ __('Other colleagues') }}
+                        {{ __('All colleagues') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -106,7 +106,7 @@
             </x-responsive-nav-link>
             @endif
             <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
-                <button class="btn-secondary">Other colleagues</button>
+                <button class="btn-secondary">All colleagues</button>
             </x-responsive-nav-link>
         </div>
 

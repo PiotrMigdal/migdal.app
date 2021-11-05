@@ -14,7 +14,7 @@ class JobController extends Controller
     {
         return view('jobs.index', [
             'user' => $user,
-            'jobs' => Job::where('user_id', $user->id)->orderBy('finish_date', 'desc')->paginate(9)
+            'jobs' => Job::where('user_id', $user->id)->orderBy('start_date', 'desc')->paginate(9)
         ]);
     }
     public function show(User $user, Job $job) {
