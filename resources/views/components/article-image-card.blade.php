@@ -1,5 +1,5 @@
 
-<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark mb-6']) }}>
+<article {{ $attributes->merge(['class' => 'card-shadow bg-brand-gray-dark mb-6 article-content']) }}>
     <div class="p-4 lg:p-8">
         <div class="lg:flex">
             @isset($thumbnail)
