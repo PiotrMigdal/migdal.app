@@ -12,6 +12,7 @@
                 {{ $featured_image }}
             </aside>
             @endisset
+            @if(isset($header) or isset($features))
             <div class="lg:flex-1 px-4">
                 @isset($header)
                 <header>
@@ -24,6 +25,7 @@
                 </section>
                 @endisset
             </div>
+            @endisset
         </div>
         <section class="pt-6">
             {{ $slot }}
