@@ -13,6 +13,13 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserSearchController;
+use App\Models\About;
+use App\Models\AboutComment;
+use App\Models\Course;
+use App\Models\Job;
+use App\Models\Project;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,8 +98,13 @@ Route::middleware('auth')->group(function () {
 
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/all', function () {
+    $About = '<p>About</p>' . About::where('user_id', Auth::user()->id)->get();
+    $User = '<p>User</p>' . User::where('id', Auth::user()->id)->get();
+    $Job = '<p>Job</p>' . Job::where('user_id', Auth::user()->id)->get();
+    $Course = '<p>Course</p>' . Course::where('user_id', Auth::user()->id)->get();
+    $Project = '<p>Project</p>' . Project::where('user_id', Auth::user()->id)->get();
+    return $About . $User . $Job . $Course . $Project;
+})->middleware(['auth'])->name('all');
 
 require __DIR__.'/auth.php';
