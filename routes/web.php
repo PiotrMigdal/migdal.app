@@ -98,13 +98,13 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/all', function () {
-    $About = '<p>About</p>' . About::where('user_id', Auth::user()->id)->get();
-    $User = '<p>User</p>' . User::where('id', Auth::user()->id)->get();
-    $Job = '<p>Job</p>' . Job::where('user_id', Auth::user()->id)->get();
-    $Course = '<p>Course</p>' . Course::where('user_id', Auth::user()->id)->get();
-    $Project = '<p>Project</p>' . Project::where('user_id', Auth::user()->id)->get();
-    return $About . $User . $Job . $Course . $Project;
-})->middleware(['auth'])->name('all');
+// Route::get('/all', function () {
+//     $About = '<p>About</p>' . About::where('user_id', Auth::user()->id)->get();
+//     $User = '<p>User</p>' . User::where('id', Auth::user()->id)->get();
+//     $Job = '<p>Job</p>' . Job::where('user_id', Auth::user()->id)->get();
+//     $Course = '<p>Course</p>' . Course::where('user_id', Auth::user()->id)->get();
+//     $Project = '<p>Project</p>' . Project::where('user_id', Auth::user()->id)->get();
+//     return $About . $User . $Job . $Course . $Project;
+// })->middleware(['auth'])->name('all');
 
 require __DIR__.'/auth.php';
