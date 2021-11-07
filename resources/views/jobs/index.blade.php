@@ -17,7 +17,7 @@
                     <div class="lg:flex-1 p-3 md:p-8 m-auto text-center">
                         {{ $job->job_title . ' at ' . $job->company_name }}
                     </div>
-                    <div class="p-3 md:p-8 m-auto">
+                    <div class="p-3 md:p-8 m-auto text-center">
                         <span>
                             From {{ $job->start_date }}
                         </span>

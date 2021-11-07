@@ -10,9 +10,16 @@
 
         <article class="flex-1 mt-4 px-2 lg:px-8">
             <!-- Page Heading -->
-            <header class="py-4">
+            <header class="py-4 relative">
                 <div class="sm:bg-brand-gray-dark font-semibold inline leading-tight px-8 py-2 rounded-full shadow-md tracking-wide uppercase">
                 {{ $header }}
+                @if ($menu == 'app' && Auth::user()->id === $user->id)
+                <div class="absolute right-0 top-4">
+                    <a class="btn-secondary" href="{{ route('user.edit') }}">
+                        Edit Profile
+                    </a>
+                </div>
+                @endif
                 </div>
             </header>
             <!-- Settings content -->

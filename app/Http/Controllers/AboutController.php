@@ -12,7 +12,7 @@ class AboutController extends Controller
     {
         return view('about.index', [
             'user' => $user,
-            'abouts' => About::where('user_id', $user->id)->paginate(3)
+            'abouts' => About::where('user_id', $user->id)->paginate(6)
         ]);
     }
 
