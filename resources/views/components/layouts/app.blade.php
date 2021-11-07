@@ -19,6 +19,12 @@
                         Edit Profile
                     </a>
                 </div>
+                @elseif ($menu == 'admin')
+                <div class="absolute right-0 top-4">
+                    <a class="btn-secondary" href="{{ route('user.show', Auth::user()) }}">
+                        Show Profile
+                    </a>
+                </div>
                 @endif
                 </div>
             </header>
