@@ -14,13 +14,13 @@
                 <div class="sm:bg-brand-gray-dark font-semibold inline leading-tight px-8 py-2 rounded-full shadow-md tracking-wide uppercase">
                 {{ $header }}
                 @if ($menu == 'app' && Auth::user()->id === $user->id)
-                <div class="absolute right-0 top-4">
+                <div class="absolute right-0 top-4 hidden lg:block">
                     <a class="btn-secondary" href="{{ route('user.edit') }}">
                         Edit Profile
                     </a>
                 </div>
                 @elseif ($menu == 'admin')
-                <div class="absolute right-0 top-4">
+                <div class="absolute right-0 top-4 hidden lg:block">
                     <a class="btn-secondary" href="{{ route('user.show', Auth::user()) }}">
                         Show Profile
                     </a>
